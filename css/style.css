@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+.noTerminado {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-size: 0.75rem;
+    position: fixed;
+    left: 1vw;
+    top: 1vh;
+    z-index: 1;
+}
+
+main {
+    margin: 20px 10px 0px 10px;
+}
+
+header {
+    padding: 5px 0px;
+    font-size: 1.5rem;
+    background-color: rgb(200, 200, 200);
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+h1 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.separacionSeccion {
+    border-top: 2px dashed black;
+}
+
+.div-sobreMi {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.div-sobreMi div {
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.div-sobreMi div p {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+#seccionProyectos {
+    padding: 20px 0px;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#contenedorProyectos {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 1px;
+    row-gap: 15px;
+}
+
+.proyecto-carta {
+    padding: 10px;
+    max-width: 300px;
+    height: 325px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 7px;
+}
+
+.proyecto-titulo {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 45px;
+}
+
+.proyecto-div-imagen {
+    position: relative;
+}
+
+.proyecto-imagen {
+    width: 100%;
+    border: 2px dashed rgb(0, 0, 0);
+}
+
+.proyecto-icono {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 30px;
+}
+
+.proyecto-descripcion {
+    text-align: center;
+}
+
+.proyecto-enlaces {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.proyecto-enlaces a {
+    padding: 1px 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    background-color: rgb(220, 220, 220);
+    text-decoration: none;
+}
+
+.proyecto-enlaces a:hover {
+    background-color: rgb(200, 200, 200);
+} 
+
+.htmlContent {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    width: 200px;
+}
+
+.htmlContent {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#seccionContacto {
+    padding: 20px 0px;
+}
