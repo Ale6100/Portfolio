@@ -1,4 +1,13 @@
+"use strict";
+
 import arrayProyectos from "./proyectos.js"
+import "./fondoColores.js"
+import { animacionFrase, animacionInput, animacionTextArea } from "./utils.js";
+
+const autoText = document.getElementById("autoText") // Etiqueta p donde se va a guardar el texto
+const frases = ["Full Stack Developer", "FrontEnd Developer", "BackEnd Developer"]
+
+animacionFrase(autoText, frases)
 
 const proyectos = document.getElementById("contenedorProyectos")
 
@@ -48,4 +57,25 @@ arrayProyectos.forEach((proyecto, index) => {
         touch: ['hold', 500],
         trigger: 'mouseenter focus',
     });
+})
+
+const inputNombre = document.getElementById("inputNombre")
+const contNombre = document.getElementById("container-nombre")
+const stringNombre = "Nombre"
+animacionInput(inputNombre, contNombre, stringNombre)
+
+const inputEmail = document.getElementById("inputEmail")
+const contEmail  = document.getElementById("container-email")
+const stringEmail  = "Email"
+animacionInput(inputEmail, contEmail, stringEmail)
+
+const textAreaMensaje = document.getElementById("textAreaMensaje")
+const contMensaje = document.getElementById("container-textArea")
+const stringMensaje = "Mensaje"
+animacionTextArea(textAreaMensaje, contMensaje, stringMensaje)
+
+const formContacto = document.getElementById("contenedorContacto")
+
+formContacto.addEventListener("submit", (e) => { // Por ahora el formulario no hace nada
+    e.preventDefault()
 })

@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="https://img.icons8.com/plumpy/24/000000/portfolio.png" type="image/x-icon">
     <title>Portfolio | Alejandro Portaluppi</title>
 </head>
 <body>
@@ -30,6 +31,7 @@
     <main>
         <section class="div-sobreMi">
             <h1>Porfolio | Alejandro Portaluppi</h1>
+            <p id="autoText"></p>
             <div>
                 <p>🎓 Soy desarrollador web titulado en el área Frontend. Actualmente me encuentro aprendiendo tecnologías Backend para poder tener conocimiento de un Stack completo en el área de la programación que más me interesa</p>
                 <p>🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
@@ -50,10 +52,26 @@
                 <h2>Contacto</h2>
             </div>
 
-            <div>
-                <p>Próximamente...</p>
-            </div>
+            <form id="contenedorContacto">
+                <label class="labelForm">
+                    <input type="text" id="inputNombre" class="inputForm">
+                    <p id="container-nombre" class="container-Letras"></p>
+                </label>
+
+                <label class="labelForm">
+                    <input type="text" id="inputEmail" class="inputForm">
+                    <p id="container-email" class="container-Letras"></p>
+                </label>
+
+                <label class="labelFormTextArea">
+                    <textarea id="textAreaMensaje" class="textAreaForm"></textarea>
+                    <p id="container-textArea" class="container-LetrasTextArea"></p>
+                </label>
+
+                <button type="submit">Enviar</button>
+            </form>
         </section>
+        <div id="contenedor-fondoColores"></div>
     </main>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
