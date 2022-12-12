@@ -2,12 +2,9 @@
 
 import arrayProyectos from "./proyectos.js"
 import "./fondoColores.js"
-import { animacionFrase, animacionInput, animacionTextArea } from "./utils.js";
-
-const autoText = document.getElementById("autoText") // Etiqueta p donde se va a guardar el texto
-const frases = ["Full Stack Developer", "FrontEnd Developer", "BackEnd Developer"]
-
-animacionFrase(autoText, frases)
+import { animacionInput, animacionTextArea } from "./utils.js";
+import "./autoTextPixelArt/autoTextPixelArt.js"
+import { endpointAction } from "../keys.js"; 
 
 const proyectos = document.getElementById("contenedorProyectos")
 
@@ -76,6 +73,23 @@ animacionTextArea(textAreaMensaje, contMensaje, stringMensaje)
 
 const formContacto = document.getElementById("contenedorContacto")
 
-formContacto.addEventListener("submit", (e) => { // Por ahora el formulario no hace nada
+formContacto.setAttribute("action", endpointAction) // Endpoint privado
+
+formContacto.addEventListener("submit", async (e) => {
     e.preventDefault()
+    const form = new FormData(formContacto)
+    const response = await fetch(formContacto.action, {
+        method: "POST",
+        body: form,
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    if (response.ok) {
+        formContacto.reset()
+        Swal.fire({
+            icon: 'success',
+            title: 'Mail enviado'
+        })
+    }
 })

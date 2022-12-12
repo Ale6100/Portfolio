@@ -54,8 +54,7 @@ const proyectos = [
         linkGitHub: "https://github.com/Ale6100/Reproductor-de-videos.git",
         linkSitio: "https://reproductordevideos.netlify.app/",
         herramientas: ["HTML", "CSS", "JavaScript", "Tippy.js"]
-    },
-
+    }
 ]
 
 export default proyectos

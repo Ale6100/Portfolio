@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("./autoTextPixelArt.css");
 
 * {
     padding: 0;
@@ -71,13 +72,6 @@ h1 {
     text-shadow: var(--box-shador-titulo);
 }
 
-#autoText {
-    text-align: center;
-    font-size: 1.75rem;
-    height: 32px;
-    text-shadow: var(--box-shador-titulo);
-}
-
 .separacionSeccion {
     border-top: 2px dashed black;
 }
@@ -88,12 +82,12 @@ h1 {
     flex-direction: column;
 }
 
-.div-sobreMi div {
+.contenedor-detalles-sobremi {
     padding: 10px;
     border-radius: 5px;
 }
 
-.div-sobreMi div p {
+.contenedor-detalles-sobremi p {
     margin-bottom: 10px;
     font-size: 1.1rem;
 }
@@ -104,7 +98,7 @@ h1 {
 
 h2 {
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 1.75rem;
     text-align: center;
     text-shadow: var(--box-shador-titulo)
 }
@@ -212,11 +206,11 @@ h2 {
 #contenedorContacto {
     margin: 0px auto;
     padding: 35px 10px 10px 10px;
-    max-width: 500px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 7px;
 }
 
 .labelForm {
@@ -227,6 +221,7 @@ h2 {
 .labelFormTextArea {
     margin-bottom: 10px;
     position: relative;
+    transition: 0.2s all;
 }
 
 .inputForm {
@@ -266,7 +261,7 @@ h2 {
     font-size: 1.2rem;
 }
 
-.letrasColor {
+.letrasAnimadas {
     color: rgb(100, 100, 100);
 }
 
@@ -304,4 +299,18 @@ h2 {
     height: 20px;
     transition: 1s all;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 768px){
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .div-sobreMi div p {
+        font-size: 1rem;
+    }
 }

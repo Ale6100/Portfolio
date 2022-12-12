@@ -31,8 +31,8 @@
     <main>
         <section class="div-sobreMi">
             <h1>Porfolio | Alejandro Portaluppi</h1>
-            <p id="autoText"></p>
-            <div>
+            <div id="contenedor-palabras"></div>
+            <div class="contenedor-detalles-sobremi">
                 <p>🎓 Soy desarrollador web titulado en el área Frontend. Actualmente me encuentro aprendiendo tecnologías Backend para poder tener conocimiento de un Stack completo en el área de la programación que más me interesa</p>
                 <p>🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
                 <p>🔧 Cuento con amplias herramientas para resolver problemas utilizando la lógica gracias a mi experiencia en la carrera de Ciencias Físicas en la UBA, cursos de programación y constante interés por aprender nuevas tecnologías</p>
@@ -52,19 +52,19 @@
                 <h2>Contacto</h2>
             </div>
 
-            <form id="contenedorContacto">
-                <label class="labelForm">
-                    <input type="text" id="inputNombre" class="inputForm">
+            <form id="contenedorContacto" method="POST">
+                <label class="labelForm" for="inputNombre">
+                    <input name="inputNombre" type="text" id="inputNombre" class="inputForm" required>
                     <p id="container-nombre" class="container-Letras"></p>
                 </label>
 
-                <label class="labelForm">
-                    <input type="text" id="inputEmail" class="inputForm">
+                <label class="labelForm" for="inputEmail">
+                    <input name="inputEmail" type="email" id="inputEmail" class="inputForm" required>
                     <p id="container-email" class="container-Letras"></p>
                 </label>
 
-                <label class="labelFormTextArea">
-                    <textarea id="textAreaMensaje" class="textAreaForm"></textarea>
+                <label class="labelFormTextArea" for="textAreaMensaje">
+                    <textarea name="textAreaMensaje" id="textAreaMensaje" class="textAreaForm" required></textarea>
                     <p id="container-textArea" class="container-LetrasTextArea"></p>
                 </label>
 
@@ -75,6 +75,7 @@
     </main>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="./js/script.js"></script>
 </body>
 </html>
