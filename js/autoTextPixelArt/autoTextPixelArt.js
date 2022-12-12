@@ -12,7 +12,7 @@ const contPalabras = document.getElementById("contenedor-palabras")
 const frases = ["Full Stack Developer", "Backend Developer", "Frontend Developer", "HTML CSS JavaScript", "MongoDB ExpressJs ReactJS NodeJs"]
 const anchoEspacioVacío = 3 // Cantidad de cuadraditos horizontales que representa un espacio vacío entre palabras
 const colores = ["rgb(0, 0, 0)", "rgb(255, 0, 0)"]
-const tiempoDeVidaCuadradito = 10000 // Esta variable debe ser 10 veces más grande que la de abajo
+const tiempoDeVidaCuadradito = 5000 // Esta variable debe ser 10 veces más grande que la de abajo
 const tiempoDeVidaCuadraditoVerde = tiempoDeVidaCuadradito/10
 
 const cantidadCuadraditosHorizontalesPorFrase = frases.map(frase => {
@@ -118,11 +118,22 @@ const animacionPintarFrase = async (frase, colores) => { // Pinta una frase vari
     }
 } // animacionPintarFrase(frases[0], colores)
 
+const limpiarTabla = () => { // Quita todos los colores del tablero
+    for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
+        for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
+            const casillero = document.getElementById(`fila-${i}-columna-${j}`)
+            casillero.classList.remove("negro")
+            casillero.classList.remove("verde")
+        }
+    }
+}
+
 const animacion = async (frases, colores) => { // Muestro todas las frases disponibles
     while (true) {
         for (let i=0; i<frases.length; i++) { 
             const indiceRandom = parseInt(Math.random()*frases.length)
             await animacionPintarFrase(frases[indiceRandom], colores)
+            limpiarTabla()
         }
     }
 }
