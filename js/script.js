@@ -4,7 +4,6 @@ import arrayProyectos from "./proyectos.js"
 import "./fondoColores.js"
 import { animacionInput, animacionTextArea } from "./utils.js";
 import "./autoTextPixelArt/autoTextPixelArt.js"
-import { endpointAction } from "../keys.js"; 
 
 const proyectos = document.getElementById("contenedorProyectos")
 
@@ -73,7 +72,7 @@ animacionTextArea(textAreaMensaje, contMensaje, stringMensaje)
 
 const formContacto = document.getElementById("contenedorContacto")
 
-formContacto.setAttribute("action", endpointAction) // Endpoint privado
+formContacto.setAttribute("action", "https://formspree.io/f/mdojqjky")
 
 formContacto.addEventListener("submit", async (e) => {
     e.preventDefault()
@@ -89,7 +88,7 @@ formContacto.addEventListener("submit", async (e) => {
         formContacto.reset()
         Swal.fire({
             icon: 'success',
-            title: 'Mail enviado'
+            title: 'Enviado'
         })
     }
 })
