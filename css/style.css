@@ -301,6 +301,33 @@ h2 {
     border-radius: 50%;
 }
 
+footer {
+    /* margin-top: 10px; */
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--color-secundario)
+}
+
+footer div a {
+    margin: 5px 0px;
+    padding: 5px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: white;
+}
+
+footer div a p {
+    margin: 0px;
+    display: inline-block;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
 @media screen and (max-width: 768px){
     h1 {
         font-size: 1.75rem;
@@ -312,5 +339,24 @@ h2 {
 
     .div-sobreMi div p {
         font-size: 1rem;
+    }
+
+    footer div a {
+        margin: 3px 0px;
+        padding: 2px;
+    }
+
+    footer div a p {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .hoverr {
+        transition: all 0.5s;
+    }
+    
+    .hoverr:hover {
+        background-color: rgb(86, 86, 139);
     }
 }

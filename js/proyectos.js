@@ -29,7 +29,7 @@ const proyectos = [
         descripcion: "Chat grupal utilizando websocket",
         linkGitHub: "https://github.com/Ale6100/Chat-js.git",
         linkSitio: "https://chat-js-ale.onrender.com/",
-        herramientas: ["HTML", "CSS", "JavaScript", "Socket.io", "Express", "NodeJs", "Ejs", "Sweet Alert 2"]
+        herramientas: ["HTML", "CSS", "JavaScript", "MongoDB", "Socket.io", "Express", "NodeJs", "Ejs", "Sweet Alert 2"]
     },
     {
         titulo: 'Simulador de plazo fijo',
