@@ -1,4 +1,3 @@
-
 "use strict";
 
 import { waitFor } from "./utils.js"
@@ -19,11 +18,10 @@ for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
     contenedor.innerHTML += `<div class="fila">${fila}</div>`
 }
 
-const colorRandom = () => {
-    const red = parseInt(Math.random()*256)
-    const green = parseInt(Math.random()*256)
-    const blue = parseInt(Math.random()*256)
-    return `rgb(${red}, ${green}, ${blue})`
+const colorRandom = () => { // Color random donde el azul predomine
+    const red = Math.floor(Math.random()*256)
+    const green = Math.floor(Math.random()*256)
+    return `rgb(${red}, ${green}, 255)`
 }
 
 contenedor.style.setProperty('background-color', `${colorOriginal}`)

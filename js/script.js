@@ -2,8 +2,9 @@
 
 import arrayProyectos from "./proyectos.js"
 import "./fondoColores.js"
-import { animacionInput, animacionTextArea } from "./utils.js";
+import { animacionInput, animacionTextArea, scrollTo } from "./utils.js";
 import "./autoTextPixelArt/autoTextPixelArt.js"
+import arrayTecnologias from "./tecnologias.js"
 
 const proyectos = document.getElementById("contenedorProyectos")
 
@@ -23,7 +24,7 @@ arrayProyectos.forEach((proyecto, index) => {
         <p class="proyecto-descripcion">${proyecto.descripcion}</p>
 
         <div class="proyecto-enlaces">
-            <a href="${proyecto.linkSitio}" target="_blank">Visitar</a>
+            <a href="${proyecto.linkSitio}" class="${proyecto.linkSitio.includes("chat") && "tippyChat"}" target="_blank">Visitar</a>
             <a href="${proyecto.linkGitHub}" target="_blank">GitHub</a>
         </div>
     </div>
@@ -55,20 +56,37 @@ arrayProyectos.forEach((proyecto, index) => {
     });
 })
 
-const inputNombre = document.getElementById("inputNombre")
+tippy(".tippyChat", {
+    content: `Debido al sitio gratuito donde está subido, la primera vez que entres vas a tener que esperar aproximadamente 20 segundos hasta que abra`,
+    placement: 'top',
+    arrow: true,
+    interactive: true,
+    delay: 0,
+    followCursor: false,
+    hideOnClick: false,
+    interactiveBorder: 10,
+    interactiveDebounce: 0,
+    moveTransition: '',
+    offset: [0, 15],
+    showOnCreate: false,
+    touch: ['hold', 500],
+    trigger: 'mouseenter focus',
+});
+
+const Nombre = document.getElementById("Nombre")
 const contNombre = document.getElementById("container-nombre")
 const stringNombre = "Nombre"
-animacionInput(inputNombre, contNombre, stringNombre)
+animacionInput(Nombre, contNombre, stringNombre)
 
-const inputEmail = document.getElementById("inputEmail")
+const Email = document.getElementById("Email")
 const contEmail  = document.getElementById("container-email")
 const stringEmail  = "Email"
-animacionInput(inputEmail, contEmail, stringEmail)
+animacionInput(Email, contEmail, stringEmail)
 
-const textAreaMensaje = document.getElementById("textAreaMensaje")
+const Mensaje = document.getElementById("Mensaje")
 const contMensaje = document.getElementById("container-textArea")
 const stringMensaje = "Mensaje"
-animacionTextArea(textAreaMensaje, contMensaje, stringMensaje)
+animacionTextArea(Mensaje, contMensaje, stringMensaje)
 
 const formContacto = document.getElementById("contenedorContacto")
 
@@ -90,5 +108,46 @@ formContacto.addEventListener("submit", async (e) => {
             icon: 'success',
             title: 'Enviado'
         })
+    }
+})
+
+const [ aSobreMi, destinoSobreMi ] = document.querySelectorAll(".classSobreMi")
+const [ aSeccionProyectos, destinoSeccionProyectos ] = document.querySelectorAll(".classSeccionProyectos")
+const [ aSeccionContacto, destinoSeccionContacto ] = document.querySelectorAll(".classSeccionContacto")
+const [ aSeccionTecnologias, destinoSeccionTecnologias ] = document.querySelectorAll(".classSeccionTecnologias")
+
+scrollTo(aSobreMi, destinoSobreMi)
+scrollTo(aSeccionProyectos, destinoSeccionProyectos)
+scrollTo(aSeccionContacto, destinoSeccionContacto)
+scrollTo(aSeccionTecnologias, destinoSeccionTecnologias)
+
+const tecnologias = document.getElementById("principalesTecnologias")
+const tecnologiasSecundarias = document.getElementById("tecnologiasSecundarias")
+
+arrayTecnologias.forEach(tecnologia => {
+    if (tecnologia.priority) {
+        tecnologias.innerHTML += `
+        <div>
+            <a class="aTecnologias" href=${tecnologia.link} target="_blank">
+                <div>
+                    <img src=${tecnologia.img} alt=${tecnologia.alt}>
+                </div>
+                
+                <p>${tecnologia.title}</p>
+            </a>
+        </div>
+        `
+    } else {
+        tecnologiasSecundarias.innerHTML += `
+        <div>
+            <a class="aTecnologias" href=${tecnologia.link} target="_blank">
+                <div>
+                    <img src=${tecnologia.img} alt=${tecnologia.alt}>
+                </div>
+                
+                <p>${tecnologia.title}</p>
+            </a>
+        </div>
+        `
     }
 })

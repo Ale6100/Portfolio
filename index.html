@@ -21,18 +21,21 @@
         <p class="noTerminado">Portfolio no terminado</p>
         <nav>
             <ul>
-                <li><a href="#idSobreMi">Sobre mí</a></li>
+                <li><a class="classSobreMi">Sobre mí</a></li>
             </ul>
             <ul>
-                <li><a href="#seccionProyectos">Proyectos</a></li>
+                <li><a class="classSeccionProyectos">Proyectos</a></li>
             </ul>
             <ul>
-                <li><a href="#seccionContacto">Contacto</a></li>
+                <li><a class="classSeccionTecnologias">Tecnologias</a></li>
+            </ul>
+            <ul>
+                <li><a class="classSeccionContacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="idSobreMi" class="div-sobreMi">
+        <section class="classSobreMi div-sobreMi">
             <h1>Porfolio | Alejandro Portaluppi</h1>
             <div id="contenedor-palabras"></div>
             <div class="contenedor-detalles-sobremi">
@@ -42,7 +45,7 @@
                 <p>📌 Aspiro insertarme en el mundo laboral guiado por el trabajo en equipo y el autoaprendizaje</p>
             </div>
         </section>
-        <section id="seccionProyectos" class="separacionSeccion">
+        <section id="seccionProyectos" class="separacionSeccion classSeccionProyectos">
             <div>
                 <h2>Proyectos personales</h2>
             </div>
@@ -50,24 +53,40 @@
             <div id="contenedorProyectos"></div>
         </section>
 
-        <section id="seccionContacto" class="separacionSeccion">
+        <section id="seccionTecnologias" class="separacionSeccion classSeccionTecnologias">
+            <div>
+                <h2>Principales tecnologías aprendidas</h2>
+            </div>
+
+            <div>
+                <h3>Primarias</h3>
+                <div id="principalesTecnologias" class="classTec"></div>
+            </div>
+
+            <div>
+                <h3>Secundarias</h3>
+                <div id="tecnologiasSecundarias" class="classTec"></div>
+            </div>
+        </section>
+
+        <section id="seccionContacto" class="separacionSeccion classSeccionContacto">
             <div>
                 <h2>Contacto</h2>
             </div>
 
             <form id="contenedorContacto" method="POST">
-                <label class="labelForm" for="inputNombre">
-                    <input name="inputNombre" type="text" id="inputNombre" class="inputForm" required>
+                <label class="labelForm" for="Nombre">
+                    <input name="Nombre" type="text" id="Nombre" class="inputForm" required>
                     <p id="container-nombre" class="container-Letras"></p>
                 </label>
 
-                <label class="labelForm" for="inputEmail">
-                    <input name="inputEmail" type="email" id="inputEmail" class="inputForm" required>
+                <label class="labelForm" for="Email">
+                    <input name="Email" type="email" id="Email" class="inputForm" required>
                     <p id="container-email" class="container-Letras"></p>
                 </label>
 
-                <label class="labelFormTextArea" for="textAreaMensaje">
-                    <textarea name="textAreaMensaje" id="textAreaMensaje" class="textAreaForm" required></textarea>
+                <label class="labelFormTextArea" for="Mensaje">
+                    <textarea name="Mensaje" id="Mensaje" class="textAreaForm" required></textarea>
                     <p id="container-textArea" class="container-LetrasTextArea"></p>
                 </label>
 

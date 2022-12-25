@@ -9,7 +9,7 @@ const waitFor = (time) => { // Hace que tu código asincrónico espere el tiempo
 
 const contPalabras = document.getElementById("contenedor-palabras")
 
-const frases = ["Full Stack Developer", "Backend Developer", "Frontend Developer", "HTML CSS JavaScript", "MongoDB ExpressJs ReactJS NodeJs"]
+const frases = ["Full Stack Developer", "Backend Developer", "Frontend Developer", "HTML CSS JavaScript", "MongoDB ExpressJs ReactJS NodeJs", "Autodidacta"] // Las tildes, minúsculas y la ñ aún no se admiten
 const anchoEspacioVacío = 3 // Cantidad de cuadraditos horizontales que representa un espacio vacío entre palabras
 const colores = ["rgb(0, 0, 0)", "rgb(255, 0, 0)"]
 const tiempoDeVidaCuadradito = 5000 // Esta variable debe ser 10 veces más grande que la de abajo
@@ -131,7 +131,7 @@ const limpiarTabla = () => { // Quita todos los colores del tablero
 const animacion = async (frases, colores) => { // Muestro todas las frases disponibles
     while (true) {
         for (let i=0; i<frases.length; i++) { 
-            const indiceRandom = parseInt(Math.random()*frases.length)
+            const indiceRandom = Math.floor(Math.random()*frases.length)
             await animacionPintarFrase(frases[indiceRandom], colores)
             limpiarTabla()
         }

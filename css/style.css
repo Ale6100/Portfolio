@@ -15,7 +15,6 @@
 
 html {
     font-size: 16px;
-    scroll-behavior: smooth;
 }
 
 .noTerminado {
@@ -28,19 +27,20 @@ html {
 }
 
 main {
-    padding: 20px 10px 0px 10px;
+    padding: 0px 10px;
     position: relative;
 }
 
 header {
     padding: 10px 0px;
     font-size: 1.5rem;
-    background-color: var(--color-secundario);
     position: sticky;
     top: 0px;
     opacity: 1;
     z-index: 100;
     border-bottom: 1px solid rgb(0, 0, 0);
+    background-image: linear-gradient(to bottom, rgba(140, 140, 255, 1), rgba(140, 140, 255, 0.5));
+    backdrop-filter: blur(4px);
 }
 
 nav {
@@ -58,6 +58,8 @@ nav ul li a {
     color: rgb(0, 0, 0);
     border-radius: 5px;
     transition: 0.25s all;
+    cursor: pointer;
+    user-select: none;
 }
 
 nav ul li a:hover {
@@ -77,7 +79,7 @@ h1 {
 }
 
 .div-sobreMi {
-    padding-bottom: 20px;
+    padding: 20px 0px;
     display: flex;
     flex-direction: column;
 }
@@ -184,7 +186,7 @@ h2 {
 .proyecto-enlaces a:hover {
     background-color: rgb(200, 200, 255);
     outline: 1px solid rgb(100, 100, 255);
-} 
+}
 
 .htmlContent {
     display: flex;
@@ -301,9 +303,68 @@ h2 {
     border-radius: 50%;
 }
 
+#seccionTecnologias {
+    padding: 20px 0px;
+}
+
+#seccionTecnologias div h2 {
+    margin-bottom: 0px;
+}
+
+#seccionTecnologias div h3 {
+    margin: 20px 0px 10px 0px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: var(--box-shador-titulo)
+}
+
+.classTec {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.aTecnologias {
+    padding: 5px;
+    width: 82px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.aTecnologias:hover {
+    background-color: rgb(86, 86, 139);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.aTecnologias div {
+    width: 60px;
+    height: 60px;
+}
+
+.aTecnologias div img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s;
+}
+
+.aTecnologias:hover div img {
+    transform: scale(1.1);
+}
+
+.aTecnologias p {
+    margin-top: 1px;
+}
+
 footer {
-    /* margin-top: 10px; */
-    /* width: 100%; */
     display: flex;
     justify-content: space-evenly;
     background-color: var(--color-secundario)
