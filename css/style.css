@@ -10,7 +10,10 @@
 
 :root {
     --color-secundario: rgb(140, 140, 255);
-    --box-shador-titulo: 0px 0px 1px rgb(0, 0, 255)
+    --box-shador-titulo: 0px 0px 1px rgb(0, 0, 255);
+    --altura-header: 45px;
+    --ancho-boton-navBar: calc(var(--altura-header) - 20px);
+    --ancho-navBar-responsive: 75vw;
 }
 
 html {
@@ -22,7 +25,7 @@ html {
     color: rgb(170, 0, 0);
     font-size: 0.75rem;
     position: fixed;
-    left: 1vw;
+    right: 1vw;
     top: 1vh;
 }
 
@@ -32,8 +35,10 @@ main {
 }
 
 header {
-    padding: 10px 0px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: sticky;
     top: 0px;
     opacity: 1;
@@ -41,6 +46,11 @@ header {
     border-bottom: 1px solid rgb(0, 0, 0);
     background-image: linear-gradient(to bottom, rgba(140, 140, 255, 1), rgba(140, 140, 255, 0.5));
     backdrop-filter: blur(4px);
+    height: var(--altura-header);
+}
+
+#botonNavBar {
+    display: none;
 }
 
 nav {
@@ -52,7 +62,7 @@ nav ul {
     list-style: none;
 }
 
-nav ul li a {
+nav ul li {
     padding: 5px;
     text-decoration: none;
     color: rgb(0, 0, 0);
@@ -62,7 +72,7 @@ nav ul li a {
     user-select: none;
 }
 
-nav ul li a:hover {
+nav ul li:hover {
     background-color: rgb(100, 100, 255);
     outline: 1px solid rgb(0, 0, 0);
 }
@@ -253,6 +263,7 @@ h2 {
     left: 1px;
     display: flex;
     font-size: 1.2rem;
+    pointer-events: none;
 }
 
 .container-LetrasTextArea {
@@ -389,7 +400,80 @@ footer div a p {
     color: rgb(0, 0, 0);
 }
 
+.navVisible {
+    left: 0px;
+}
+
+.rotarHorario {
+    transform: translate(0px, calc(var(--ancho-boton-navBar)/2)) rotate(45deg) scale(1.41421356237);
+}
+
+.desaparecer {
+    transform: scale(0);
+}
+
+.rotarAntiHorario {
+    transform: translate(0px, calc(-1*var(--ancho-boton-navBar)/2)) rotate(-45deg) scale(1.41421356237);
+}
+
 @media screen and (max-width: 768px){
+    #botonNavBar {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: var(--ancho-boton-navBar);
+        width: var(--ancho-boton-navBar);
+        cursor: pointer;
+        user-select: none;
+    }
+
+    #botonNavBar div {
+        transition: all 0.2s;
+    }
+
+    nav {
+        flex-direction: column;
+        border: 1px solid rgb(0, 0, 0);
+        height: 200px;
+        width: var(--ancho-navBar-responsive);
+        position: absolute;
+        top: var(--altura-header);
+        left: calc(-1*var(--ancho-navBar-responsive));
+        background-color: var(--color-secundario);
+        transition: all 0.2s;
+    }
+
+    nav ul li {
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 0px;
+    }
+    
+    nav ul li a:hover {
+        background-color: rgb(100, 100, 255);
+        outline: 1px solid rgb(0, 0, 0);
+    }
+
+    .fondo {
+        height: calc(100vh - var(--ancho-boton-navBar));
+        width: 100vw;
+        position: fixed;
+        top: var(--altura-header);
+        left: -100vw;
+        backdrop-filter: blur(4px);
+        transition: all 0.2s;
+    }
+
+    .verFondo {
+        left: 0px;
+    }
+
+    #botonNavBar div {
+        height: 0px;
+        outline: 1px solid rgb(0, 0, 0);
+    }
+
     h1 {
         font-size: 1.75rem;
     }

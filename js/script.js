@@ -151,3 +151,31 @@ arrayTecnologias.forEach(tecnologia => {
         `
     }
 })
+
+const botonNavBar = document.getElementById("botonNavBar")
+const nav = document.querySelector("nav")
+const divFondo = document.querySelector(".fondo")
+
+const removerNavBar = () => {
+    nav.classList.remove("navVisible")
+    botonNavBar.children[0].classList.remove("rotarHorario")
+    botonNavBar.children[1].classList.remove("desaparecer")
+    botonNavBar.children[2].classList.remove("rotarAntiHorario")
+    divFondo.classList.remove("verFondo")
+}
+
+botonNavBar.addEventListener("click", () => { // Animo la navbar responsive
+    if (!nav.classList.contains("navVisible")) {
+        nav.classList.add("navVisible")
+        botonNavBar.children[0].classList.add("rotarHorario")
+        botonNavBar.children[1].classList.add("desaparecer")
+        botonNavBar.children[2].classList.add("rotarAntiHorario")
+        divFondo.classList.add("verFondo") // Agrego un fondo difuminado
+    } else {
+        removerNavBar()
+    }
+})
+
+divFondo.addEventListener("click", () => { // Cuando se hace click sobre el fondo difuminado, se va la nav
+    removerNavBar()
+})
