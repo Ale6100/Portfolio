@@ -113,13 +113,13 @@ formContacto.addEventListener("submit", async (e) => {
 
 const [ aSobreMi, destinoSobreMi ] = document.querySelectorAll(".classSobreMi")
 const [ aSeccionProyectos, destinoSeccionProyectos ] = document.querySelectorAll(".classSeccionProyectos")
-const [ aSeccionContacto, destinoSeccionContacto ] = document.querySelectorAll(".classSeccionContacto")
 const [ aSeccionTecnologias, destinoSeccionTecnologias ] = document.querySelectorAll(".classSeccionTecnologias")
+const [ aSeccionContacto, destinoSeccionContacto ] = document.querySelectorAll(".classSeccionContacto")
 
 scrollTo(aSobreMi, destinoSobreMi)
 scrollTo(aSeccionProyectos, destinoSeccionProyectos)
-scrollTo(aSeccionContacto, destinoSeccionContacto)
 scrollTo(aSeccionTecnologias, destinoSeccionTecnologias)
+scrollTo(aSeccionContacto, destinoSeccionContacto)
 
 const tecnologias = document.getElementById("principalesTecnologias")
 const tecnologiasSecundarias = document.getElementById("tecnologiasSecundarias")

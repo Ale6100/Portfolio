@@ -56,13 +56,6 @@ const tecnologias = [
         link: "https://nodejs.org/"
     },
     {
-        title: "Python",
-        img: "https://img.icons8.com/color/100/000000/python--v1.png",
-        priority: true,
-        alt: "Python icon",
-        link: "https://www.python.org/"
-    },
-    {
         title: "Git",
         img: "https://img.icons8.com/color/100/null/git.png",
         priority: true,
@@ -75,6 +68,13 @@ const tecnologias = [
         priority: true,
         alt: "GitHub icon",
         link: "https://github.com/"
+    },
+    {
+        title: "Python",
+        img: "https://img.icons8.com/color/100/000000/python--v1.png",
+        priority: false,
+        alt: "Python icon",
+        link: "https://www.python.org/"
     },
     {
         title: "EJS",

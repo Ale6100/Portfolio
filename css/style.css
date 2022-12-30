@@ -63,18 +63,16 @@ nav ul {
 }
 
 nav ul li {
-    padding: 5px;
-    text-decoration: none;
+    padding: 3px;
     color: rgb(0, 0, 0);
-    border-radius: 5px;
     transition: 0.25s all;
     cursor: pointer;
     user-select: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
 nav ul li:hover {
-    background-color: rgb(100, 100, 255);
-    outline: 1px solid rgb(0, 0, 0);
+    border-bottom: 2px solid rgba(0, 0, 0, 1);
 }
 
 h1 {
@@ -102,6 +100,11 @@ h1 {
 .contenedor-detalles-sobremi p {
     margin-bottom: 10px;
     font-size: 1.1rem;
+}
+
+.contenedor-detalles-sobremi p a {
+    color: rgb(0, 0, 255);
+    text-decoration: none;
 }
 
 #seccionProyectos {
@@ -449,11 +452,6 @@ footer div a p {
         font-size: 1rem;
         border-radius: 0px;
     }
-    
-    nav ul li a:hover {
-        background-color: rgb(100, 100, 255);
-        outline: 1px solid rgb(0, 0, 0);
-    }
 
     .fondo {
         height: calc(100vh - var(--ancho-boton-navBar));
@@ -462,6 +460,7 @@ footer div a p {
         top: var(--altura-header);
         left: -100vw;
         backdrop-filter: blur(4px);
+        filter: brightness(90%);
         transition: all 0.2s;
     }
 

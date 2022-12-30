@@ -6,7 +6,6 @@ const waitFor = (time) => { // Hace que tu código asincrónico espere el tiempo
 const subirLetras = (contPalabraHijos, htmlInput) => {
     for (let i=0; i<contPalabraHijos.length; i++) {
         contPalabraHijos[i].classList.add("letrasArriba")
-        htmlInput.style.setProperty("border", "0px solid rgb(0, 0, 255)")
         htmlInput.style.setProperty("border-bottom", "2px solid rgb(0, 0, 255)")
     }
 }
@@ -33,7 +32,6 @@ const animacionInput = (htmlInput, htmlContPalabra, stringPalabra) => { // Activ
         if (!htmlInput.value.trim()) {
             for (let i=0; i<contPalabraHijos.length; i++) {
                 contPalabraHijos[i].classList.remove("letrasArriba")
-                htmlInput.style.setProperty("border", "0px solid rgb(0, 0, 0)")
                 htmlInput.style.setProperty("border-bottom", "2px solid rgb(0, 0, 0)")
                 if (i !== 0) htmlInput.parentNode.style.setProperty("margin-top", "0px")
             }
@@ -64,7 +62,6 @@ const animacionTextArea = (htmlInput, htmlContPalabra, stringPalabra) => { // An
         if (!htmlInput.value.trim()) {
             for (let i=0; i<contPalabraHijos.length; i++) {
                 contPalabraHijos[i].classList.remove("letrasArriba")
-                htmlInput.style.setProperty("border", "0px solid rgb(0, 0, 0)")
                 htmlInput.style.setProperty("border-bottom", "2px solid rgb(0, 0, 0)")
                 if (i !== 0) htmlInput.parentNode.style.setProperty("margin-top", "0px")
             }
