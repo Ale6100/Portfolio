@@ -21,6 +21,13 @@ const tecnologias = [
         link: "https://sass-lang.com/"
     },
     {
+        title: "Tailwindcss",
+        img: "https://img.icons8.com/color/48/null/tailwindcss.png",
+        priority: true,
+        alt: "Tailwindcss icon",
+        link: "https://tailwindcss.com/"
+    },
+    {
         title: "JavaScript",
         img: "https://img.icons8.com/color/100/null/javascript--v1.png",
         priority: true,

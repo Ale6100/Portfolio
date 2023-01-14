@@ -53,12 +53,9 @@ header {
     display: none;
 }
 
-nav {
+nav ul {
     display: flex;
     justify-content: space-evenly;
-}
-
-nav ul {
     list-style: none;
 }
 
@@ -435,7 +432,7 @@ footer div a p {
         transition: all 0.2s;
     }
 
-    nav {
+    nav ul {
         flex-direction: column;
         border: 1px solid rgb(0, 0, 0);
         height: 200px;

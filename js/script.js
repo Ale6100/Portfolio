@@ -90,19 +90,22 @@ animacionTextArea(Mensaje, contMensaje, stringMensaje)
 
 const formContacto = document.getElementById("contenedorContacto")
 
-formContacto.setAttribute("action", "https://formspree.io/f/mdojqjky")
-
 formContacto.addEventListener("submit", async (e) => {
     e.preventDefault()
     const form = new FormData(formContacto)
-    const response = await fetch(formContacto.action, {
+    
+    const obj = {}
+    form.forEach((value, key) => obj[key] = value)
+
+    const response = await fetch("https://servidor-backend-personal-ap.netlify.app/.netlify/functions/api/SendMail", {
         method: "POST",
-        body: form,
+        body: JSON.stringify(obj),
         headers: {
             "Accept": "application/json"
         }
-    })
-    if (response.ok) {
+    }).then(res => res.json())
+    
+    if (response.status === "sucess") {
         formContacto.reset()
         Swal.fire({
             icon: 'success',
@@ -153,11 +156,11 @@ arrayTecnologias.forEach(tecnologia => {
 })
 
 const botonNavBar = document.getElementById("botonNavBar")
-const nav = document.querySelector("nav")
+const ul = document.querySelector("nav ul")
 const divFondo = document.querySelector(".fondo")
 
 const removerNavBar = () => {
-    nav.classList.remove("navVisible")
+    ul.classList.remove("navVisible")
     botonNavBar.children[0].classList.remove("rotarHorario")
     botonNavBar.children[1].classList.remove("desaparecer")
     botonNavBar.children[2].classList.remove("rotarAntiHorario")
@@ -165,8 +168,8 @@ const removerNavBar = () => {
 }
 
 botonNavBar.addEventListener("click", () => { // Animo la navbar responsive
-    if (!nav.classList.contains("navVisible")) {
-        nav.classList.add("navVisible")
+    if (!ul.classList.contains("navVisible")) {
+        ul.classList.add("navVisible")
         botonNavBar.children[0].classList.add("rotarHorario")
         botonNavBar.children[1].classList.add("desaparecer")
         botonNavBar.children[2].classList.add("rotarAntiHorario")
