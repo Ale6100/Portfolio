@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply bg-slate-200
+  }
+
+  h1, h2 {
+    @apply text-3xl
+  }
+
+  h3 {
+    @apply text-2xl
+  }
+
+  .customLi {
+    @apply m-1 transition duration-300 select-none border-b-2 cursor-pointer;
+  }
+
+  .customBotonNavBarDiv {
+    @apply transition-all duration-200 h-0 outline outline-1;
+  }
+
+  footer div a {
+    @apply my-1 p-1 no-underline flex flex-col items-center border-2 border-black rounded bg-white
+  }
+
+  footer div a p {
+    @apply m-0 inline-block font-semibold
+  }
+
+  @media (min-width: 768px) {
+    footer div a {
+      @apply transition-all duration-500 hover:bg-gray-400
+    }
+  }
+
+  @media not all and (min-width: 768px) {
+    .customLi {
+      @apply w-full text-base
+    }
+
+    h1, h2 {
+      @apply text-2xl
+    }
+
+    h3 {
+      @apply text-xl
+    }
+
+    footer div a {
+      @apply my-1 mx-0 p-1
+    }
+  
+    footer div a p {
+      @apply hidden
+    }
+  }
+}
+
+header {
+  background-image: linear-gradient(to bottom, rgba(37, 99, 235, 1), rgba(191, 219, 254, 0.5));
+  backdrop-filter: blur(3px);
+}
+
+.bgBlack {
+  background-color: rgb(0, 0, 0);
+}
+
+.bgGreen {
+  background-color: rgb(22, 163, 74);
+}
+
+.htmlContent {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    width: 200px;
+}
+
+:root {
+  --box-shadow-titulo: 0px 0px 1px rgb(0, 0, 255);
+  --altura-header: 2.75rem;
+  --ancho-boton-navBar: calc(var(--altura-header) - 1.25rem);
+  --ancho-navBar-responsive: 75vw;
+}
+
+.customLi {
+  border-color: rgba(0, 0, 0, 0);
+}
+
+.customLi:hover {
+  border-color: rgba(50, 50, 50);
+}
+
+h1, h2, h3 {
+  text-shadow: var(--box-shadow-titulo);
+}

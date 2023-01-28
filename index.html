@@ -1,132 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Google tag (gtag.js) | Google Analytics-->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MZS7TW7RXK"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MZS7TW7RXK');
-    </script>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="https://img.icons8.com/plumpy/24/000000/portfolio.png" type="image/x-icon">
     <title>Portfolio | Alejandro Portaluppi</title>
-</head>
-<body>
-    <header>
-        <p class="noTerminado">Portfolio no terminado</p>
-        <div id="botonNavBar">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <nav>
-            <ul>
-                <li class="classSobreMi">Sobre mí</li>
-                <li class="classSeccionProyectos">Proyectos</li>
-                <li class="classSeccionTecnologias">Tecnologias</li>
-                <li class="classSeccionContacto">Contacto</li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="classSobreMi div-sobreMi">
-            <h1>Porfolio | Alejandro Portaluppi</h1>
-            <div id="contenedor-palabras"></div>
-            <div class="contenedor-detalles-sobremi">
-                <p>🎓 Soy desarrollador web titulado en el área Frontend. Actualmente me encuentro aprendiendo tecnologías Backend para poder tener conocimiento de un Stack completo en el área de la programación que más me interesa</p>
-                <p>🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
-                <p>🔧 Cuento con amplias herramientas para resolver problemas utilizando la lógica gracias a mi experiencia en la carrera de Ciencias Físicas en la UBA, cursos de programación y constante interés por aprender nuevas tecnologías</p>
-                <p>📌 Aspiro insertarme en el mundo laboral guiado por el trabajo en equipo y el autoaprendizaje</p>
-                <p>🗒️ Para más info puedes ver mi <a href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank">Linkedin</a> o mi <a href="./utils/CV_Alejandro_Portaluppi.pdf" target="_blank">CV</a></p>
-            </div>
-        </section>
-        <section id="seccionProyectos" class="separacionSeccion classSeccionProyectos">
-            <div>
-                <h2>Proyectos personales</h2>
-            </div>
-
-            <div id="contenedorProyectos"></div>
-        </section>
-
-        <section id="seccionTecnologias" class="separacionSeccion classSeccionTecnologias">
-            <div>
-                <h2>Principales tecnologías aprendidas</h2>
-            </div>
-
-            <div>
-                <h3>Primarias</h3>
-                <div id="principalesTecnologias" class="classTec"></div>
-            </div>
-
-            <div>
-                <h3>Secundarias</h3>
-                <div id="tecnologiasSecundarias" class="classTec"></div>
-            </div>
-        </section>
-
-        <section id="seccionContacto" class="separacionSeccion classSeccionContacto">
-            <div>
-                <h2>Contacto</h2>
-            </div>
-
-            <form id="contenedorContacto">
-                <label class="labelForm" for="Nombre">
-                    <input name="Nombre" type="text" id="Nombre" class="inputForm" required>
-                    <p id="container-nombre" class="container-Letras"></p>
-                </label>
-
-                <label class="labelForm" for="Email">
-                    <input name="Email" type="email" id="Email" class="inputForm" required>
-                    <p id="container-email" class="container-Letras"></p>
-                </label>
-
-                <label class="labelFormTextArea" for="Mensaje">
-                    <textarea name="Mensaje" id="Mensaje" class="textAreaForm" required></textarea>
-                    <p id="container-textArea" class="container-LetrasTextArea"></p>
-                </label>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-        <div id="contenedor-fondoColores"></div>
-    </main>
-
-    <footer>
-        <div>
-            <a class="hoverr" href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank">
-                <img src="https://img.icons8.com/fluency/48/000000/linkedin.png"/>
-                <p>Linkedin</p>
-            </a>
-        </div>
-        <div>
-            <a class="hoverr" href="https://github.com/Ale6100" target="_blank">
-                <img src="https://img.icons8.com/ios-glyphs/48/undefined/github.png" />
-                <p>GitHub</p>
-            </a>
-        </div>
-        <div>
-            <a class="hoverr "href="https://colab.research.google.com/drive/1e9pqVIkt6J1LK7uxsK_IE-i5rx4NJiME?usp=sharing"  target="_blank">
-                <img src="https://img.icons8.com/color/48/000000/python--v1.png"/>
-                <p>Python</p>
-            </a>
-        </div>
-        <div>
-            <a class="hoverr" href="https://www.youtube.com/channel/UCfgt4--XgLnHxYNDPOvYioA" target="_blank">
-                <img src="https://img.icons8.com/color/48/000000/youtube-play.png">
-                <p>YouTube</p>
-            </a>
-        </div>
-    </footer>
-
-    <div class="fondo"></div>
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="./js/script.js"></script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

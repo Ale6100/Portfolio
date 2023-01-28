@@ -84,6 +84,13 @@ const tecnologias = [
         link: "https://www.python.org/"
     },
     {
+        title: "Vite",
+        img: "https://vitejs.dev/logo.svg",
+        priority: false,
+        alt: "Vite icon",
+        link: "https://vitejs.dev/"
+    },
+    {
         title: "EJS",
         img: "./img/EjsIcon.webp",
         priority: false,
@@ -124,6 +131,13 @@ const tecnologias = [
         priority: false,
         alt: "Minimist icon",
         link: "https://www.npmjs.com/package/minimist"
+    },
+    {
+        title: "Nodemailer",
+        img: "https://nodemailer.com/nm_logo_200x136.png",
+        priority: false,
+        alt: "Nodemailer icon",
+        link: "https://nodemailer.com/"
     },
     {
         title: "Bootstrap",
