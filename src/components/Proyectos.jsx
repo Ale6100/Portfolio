@@ -52,7 +52,7 @@ const Proyectos = () => {
     }, );
 
     return (
-        <section id="seccionProyectos" className="scroolToProyectos py-5">
+        <section id="seccionProyectos" className="scroolToProyectos px-5">
             <div>
                 <h2 className="mb-5 text-center">Proyectos personales</h2>
             </div>

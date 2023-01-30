@@ -9,7 +9,7 @@ const Tecnologias = () => {
         setTecnologiasMontado(true)
     }, );
     return (
-        <section id="seccionTecnologias" className="scroolToTecnologias py-5">
+        <section id="seccionTecnologias" className="scroolToTecnologias my-10">
             <div>
                 <h2 className="text-center">Principales tecnologías aprendidas</h2>
             </div>

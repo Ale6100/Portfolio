@@ -89,8 +89,8 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
                 const casillero = document.getElementById(`fila-${i}-columna-${j}`)
-                casillero.classList.remove("negro")
-                casillero.classList.remove("verde")
+                casillero.classList.remove("bgBlack")
+                casillero.classList.remove("bgGreen")
             }
         }
     }
