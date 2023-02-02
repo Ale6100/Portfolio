@@ -4,7 +4,8 @@ import arrayLetras from "../utils/arrayLetras.js"
 import { waitFor, deCeroAN } from '../utils/utils.js';
 
 const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase, anchoEspacioVacío }) => {
-    const [montado, setMontado] = useState(false);
+    const [ montado, setMontado ] = useState(false);
+    const [ indiceActual, setIndiceActual ] = useState(null)
 
     const filaIndices = deCeroAN(cantidadVerticalDeCuadraditos)
     const colores = ["rgb(0, 0, 0)", "rgb(255, 0, 0)"]

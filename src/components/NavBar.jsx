@@ -65,29 +65,29 @@ const NavBar = () => {
         <>
         <header className="sticky z-50 h-12 top-0 w-full text-xl flex flex-col justify-center border-black border-b max-md:items-end">            
             <div id="botonNavBar" onClick={() => setNavBarRespVisible(!navBarRespVisible)} className='p-0 h-7 w-7 hidden max-md:flex mr-4 flex-col justify-between cursor-pointer select-none'>
-                <div className="customBotonNavBarDiv"></div>
-                <div className="customBotonNavBarDiv"></div>
-                <div className="customBotonNavBarDiv"></div>
+                <div className="transition-all duration-200 h-0 outline outline-1"></div>
+                <div className="transition-all duration-200 h-0 outline outline-1"></div>
+                <div className="transition-all duration-200 h-0 outline outline-1"></div>
             </div>
 
             <nav className="w-full max-md:hidden"> {/* Por problemas relacionados a tailwind tuve que separar las nav */}
                 <ul className="flex justify-evenly w-full h-full">
-                    <li className="scroolToSobreMi customLi">Sobre mí</li>
-                    <li className="scroolToProyectos customLi">Proyectos</li>
-                    <li className="scroolToTecnologias customLi">Tecnologias</li>
-                    <li className="scroolToContacto customLi">Contacto</li>
+                    <li className="scroolToSobreMi">Sobre mí</li>
+                    <li className="scroolToProyectos">Proyectos</li>
+                    <li className="scroolToTecnologias">Tecnologias</li>
+                    <li className="scroolToContacto">Contacto</li>
                 </ul>
             </nav>
         </header>
 
         <div id="fondoDifuminadoResponsive" onClick={() => setNavBarRespVisible(!navBarRespVisible)} className={`md:hidden fixed z-20 left-[120vw] w-[100vw] transition-all duration-200`}></div>
         
-        <nav className="w-full p-1 navResponsive md:hidden fixed z-30 left-[120vw] rounded-bl-md bg-blue-400 transition-all duration-200">
-            <ul className="flex justify-evenly w-full h-full flex-col">
-                <li className="scroolToSobreMi customLi">Sobre mí</li>
-                <li className="scroolToProyectos customLi">Proyectos</li>
-                <li className="scroolToTecnologias customLi">Tecnologias</li>
-                <li className="scroolToContacto customLi">Contacto</li>
+        <nav className="w-[33vw] right-[-100vw] p-1 navResponsive md:hidden fixed z-30 rounded-bl-md bg-blue-400 transition-all duration-200">
+            <ul className="flex justify-evenly w-full h-48 flex-col">
+                <li className="scroolToSobreMi">Sobre mí</li>
+                <li className="scroolToProyectos">Proyectos</li>
+                <li className="scroolToTecnologias">Tecnologias</li>
+                <li className="scroolToContacto">Contacto</li>
             </ul>
          </nav>
         </>

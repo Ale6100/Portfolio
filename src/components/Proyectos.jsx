@@ -70,7 +70,7 @@ const Proyectos = () => {
                             <img className={"absolute right-[5%] top-[5%] w-8 hover:brightness-105 pe-"+index} src="https://img.icons8.com/ios-filled/50/null/support.png" />
                         </div>
                 
-                        <p className="flex flex-col justify-center text-center h-11 bg-blue-400 font-semibold">{proyecto.descripcion}</p>
+                        <p className="p-1 flex flex-col justify-center text-center h-11 bg-blue-400 font-semibold">{proyecto.descripcion}</p>
                 
                         <div className="flex justify-evenly">
                             <a href={proyecto.linkSitio} className={`py-[1px] px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black ${proyecto.linkSitio.includes("chat") ? "tippyChat" : undefined}`} target="_blank">Visitar</a>

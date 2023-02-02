@@ -73,7 +73,7 @@ const Contacto = () => {
                     <textarea name="Mensaje" className="pt-1 px-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
                 </label>
 
-                <button type="submit" className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:border-black'>Enviar</button>
+                <button type="submit" className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:border-black active:bg-gray-200'>Enviar</button>
             </form>
         </section>
     );

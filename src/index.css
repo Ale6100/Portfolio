@@ -19,12 +19,8 @@
     @apply text-2xl
   }
 
-  .customLi {
-    @apply m-1 transition duration-300 select-none border-b-2 cursor-pointer;
-  }
-
-  .customBotonNavBarDiv {
-    @apply transition-all duration-200 h-0 outline outline-1;
+  nav ul li {
+    @apply m-1 pr-2 transition duration-300 select-none border-b-2 cursor-pointer text-right;
   }
 
   footer div a {
@@ -42,7 +38,7 @@
   }
 
   @media not all and (min-width: 768px) {
-    .customLi {
+    nav ul li {
       @apply w-full text-base
     }
 
@@ -92,11 +88,11 @@ header {
   --ancho-navBar-responsive: 75vw;
 }
 
-.customLi {
+nav ul li {
   border-color: rgba(0, 0, 0, 0);
 }
 
-.customLi:hover {
+nav ul li:hover {
   border-color: rgba(50, 50, 50);
 }
 
