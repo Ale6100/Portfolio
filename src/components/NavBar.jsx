@@ -31,7 +31,6 @@ const NavBar = () => {
         if (contactoMontado) activarScroll(".scroolToContacto")
 
         const fondoDifuminado = document.getElementById(`fondoDifuminadoResponsive`)
-        fondoDifuminado.style.setProperty("height", `${window.innerHeight - document.querySelector("header").offsetHeight}px`)
         fondoDifuminado.style.setProperty("backdrop-filter", "blur(3px)")
         fondoDifuminado.style.setProperty("filter", "brightness(75%)")
     }, [sobreMiMontado, proyectosMontado, tecnologiasMontado, contactoMontado]);
@@ -80,7 +79,7 @@ const NavBar = () => {
             </nav>
         </header>
 
-        <div id="fondoDifuminadoResponsive" onClick={() => setNavBarRespVisible(!navBarRespVisible)} className={`md:hidden fixed z-20 left-[120vw] w-[100vw] transition-all duration-200`}></div>
+        <div id="fondoDifuminadoResponsive" onClick={() => setNavBarRespVisible(!navBarRespVisible)} className={`md:hidden fixed z-20 left-[120vw] w-screen h-screen transition-all duration-200`}></div>
         
         <nav className="w-[33vw] right-[-100vw] p-1 navResponsive md:hidden fixed z-30 rounded-bl-md bg-blue-400 transition-all duration-200">
             <ul className="flex justify-evenly w-full h-48 flex-col">
@@ -89,7 +88,7 @@ const NavBar = () => {
                 <li className="scroolToTecnologias">Tecnologias</li>
                 <li className="scroolToContacto">Contacto</li>
             </ul>
-         </nav>
+        </nav>
         </>
     );
 }

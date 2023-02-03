@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { PersonalContext } from "./PersonalContext";
 import Toastify from 'toastify-js'
-import Swal from 'sweetalert2'
 import "toastify-js/src/toastify.css"
 
 const Contacto = () => {
@@ -13,6 +12,8 @@ const Contacto = () => {
 
     const sendMail = async (e) => {
         e.preventDefault()
+        
+        const buttonSubmit = e.target.elements.submit
         const form = new FormData(e.target)
     
         const obj = {}
@@ -30,6 +31,9 @@ const Contacto = () => {
             }
         }).showToast();
 
+        buttonSubmit.disabled = true
+        buttonSubmit.classList.remove("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
+        buttonSubmit.classList.add("bg-gray-500")
         const response = await fetch("https://servidor-backend-personal-ap.netlify.app/.netlify/functions/api/SendMail", {
             method: "POST",
             body: JSON.stringify(obj),
@@ -37,7 +41,10 @@ const Contacto = () => {
                 "Accept": "application/json"
             }
         }).then(res => res.json())
-        
+
+        buttonSubmit.disabled = false
+        buttonSubmit.classList.add("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
+        buttonSubmit.classList.remove("bg-gray-500")
         if (response.status === "sucess") {
             e.target.reset()
             Toastify({
@@ -73,7 +80,7 @@ const Contacto = () => {
                     <textarea name="Mensaje" className="pt-1 px-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
                 </label>
 
-                <button type="submit" className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:border-black active:bg-gray-200'>Enviar</button>
+                <button type="submit" name='submit' className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 cursor-pointer hover:bg-white hover:border-black active:bg-gray-200'>Enviar</button>
             </form>
         </section>
     );
