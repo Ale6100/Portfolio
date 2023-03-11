@@ -20,6 +20,10 @@
   }
 
   nav ul li {
+    @apply transition duration-300 select-none border-b-2 cursor-pointer;
+  }
+
+  .ulResponsive li {
     @apply m-1 pr-2 transition duration-300 select-none border-b-2 cursor-pointer text-right;
   }
 

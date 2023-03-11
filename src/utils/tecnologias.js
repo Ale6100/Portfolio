@@ -22,7 +22,7 @@ const tecnologias = [
     },
     {
         title: "Tailwindcss",
-        img: "https://img.icons8.com/color/48/null/tailwindcss.png",
+        img: "https://img.icons8.com/color/100/null/tailwindcss.png",
         priority: true,
         alt: "Tailwindcss icon",
         link: "https://tailwindcss.com/"
@@ -98,11 +98,12 @@ const tecnologias = [
         link: "https://ejs.co/"
     },
     {
-        title: "PassportJS",
-        img: "./img/PassportIcon.webp",
+        title: "jsonwebtoken",
+        img: "https://jwt.io/img/pic_logo.svg",
         priority: false,
-        alt: "PassportJS icon",
-        link: "https://www.npmjs.com/package/passport"
+        alt: "JSONWebToken icon",
+        link: "https://www.npmjs.com/package/jsonwebtoken",
+        fontSize: "text-sm"
     },
     {
         title: "Bcrypt.js",
@@ -133,11 +134,42 @@ const tecnologias = [
         link: "https://www.npmjs.com/package/minimist"
     },
     {
+        title: "Swagger UI Express",
+        img: "./img/swagger.JPG",
+        priority: false,
+        alt: "Swagger icon",
+        link: "https://www.npmjs.com/package/swagger-ui-express",
+        fontSize: "text-sm"
+    },
+    {
         title: "Nodemailer",
-        img: "https://nodemailer.com/nm_logo_200x136.png",
+        img: "./img/Nodemailer.png",
         priority: false,
         alt: "Nodemailer icon",
         link: "https://nodemailer.com/"
+    },
+    {
+        title: "Google Analytics",
+        img: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg",
+        priority: false,
+        alt: "Google Analytics icon",
+        link: "https://analytics.google.com/",
+        fontSize: "text-sm"
+    },
+    {
+        title: "Google Tag Manager",
+        img: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_tag_manager.svg",
+        priority: false,
+        alt: "Google Tag Manager icon",
+        link: "https://tagmanager.google.com/",
+        fontSize: "text-sm"
+    },
+    {
+        title: "Typescript",
+        img: "https://img.icons8.com/color/100/null/typescript.png",
+        priority: false,
+        alt: "Typescript icon",
+        link: "https://www.typescriptlang.org/",
     },
     {
         title: "Bootstrap",

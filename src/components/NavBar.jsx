@@ -4,7 +4,7 @@ import { PersonalContext } from "./PersonalContext";
 
 const activarScroll = (claseScroll) => { // Conecta las etiquetas de las nav con las de las secciones mediante un scroll animado
     const [ etiquetaEnlace1, etiquetaEnlace2, etiquetaDestino ] = document.querySelectorAll(claseScroll)
-    
+
     etiquetaEnlace1.addEventListener("click", () => {
         window.scrollTo({
             top: etiquetaDestino.offsetTop,
@@ -20,7 +20,7 @@ const activarScroll = (claseScroll) => { // Conecta las etiquetas de las nav con
 }
 
 const NavBar = () => {
-    const { sobreMiMontado, proyectosMontado, tecnologiasMontado, contactoMontado } = useContext(PersonalContext);
+    const { sobreMiMontado, proyectosMontado, tecnologiasMontado, misEstudios, experiencia, contactoMontado } = useContext(PersonalContext);
     
     const [ navBarRespVisible, setNavBarRespVisible ] = useState(false)
 
@@ -28,12 +28,14 @@ const NavBar = () => {
         if (sobreMiMontado) activarScroll(".scroolToSobreMi")
         if (proyectosMontado) activarScroll(".scroolToProyectos")
         if (tecnologiasMontado) activarScroll(".scroolToTecnologias")
+        if (misEstudios) activarScroll(".scroolToMisEstudios")
+        if (experiencia) activarScroll(".scroolToExperiencia")
         if (contactoMontado) activarScroll(".scroolToContacto")
 
         const fondoDifuminado = document.getElementById(`fondoDifuminadoResponsive`)
         fondoDifuminado.style.setProperty("backdrop-filter", "blur(3px)")
         fondoDifuminado.style.setProperty("filter", "brightness(75%)")
-    }, [sobreMiMontado, proyectosMontado, tecnologiasMontado, contactoMontado]);
+    }, [sobreMiMontado, proyectosMontado, tecnologiasMontado, misEstudios, experiencia, contactoMontado]);
 
     useEffect(() => { 
         const navBarResponsive = document.querySelector(".navResponsive");
@@ -70,10 +72,12 @@ const NavBar = () => {
             </div>
 
             <nav className="w-full max-md:hidden"> {/* Por problemas relacionados a tailwind tuve que separar las nav */}
-                <ul className="flex justify-evenly w-full h-full">
+                <ul className="flex justify-evenly w-full h-full text-center">
                     <li className="scroolToSobreMi">Sobre mí</li>
                     <li className="scroolToProyectos">Proyectos</li>
                     <li className="scroolToTecnologias">Tecnologias</li>
+                    <li className="scroolToMisEstudios">Estudios</li>
+                    <li className="scroolToExperiencia">Experiencia</li>
                     <li className="scroolToContacto">Contacto</li>
                 </ul>
             </nav>
@@ -81,11 +85,13 @@ const NavBar = () => {
 
         <div id="fondoDifuminadoResponsive" onClick={() => setNavBarRespVisible(!navBarRespVisible)} className={`md:hidden fixed z-20 left-[120vw] w-screen h-screen transition-all duration-200`}></div>
         
-        <nav className="w-[33vw] right-[-100vw] p-1 navResponsive md:hidden fixed z-30 rounded-bl-md bg-blue-400 transition-all duration-200">
-            <ul className="flex justify-evenly w-full h-48 flex-col">
+        <nav className="w-[33vw] right-[-100vw] p-1 navResponsive md:hidden fixed z-30 rounded-bl-md bg-blue-400 border-l-2 border-b-2 border-blue-600 transition-all duration-200">
+            <ul className="flex justify-evenly w-full h-56 flex-col ulResponsive">
                 <li className="scroolToSobreMi">Sobre mí</li>
                 <li className="scroolToProyectos">Proyectos</li>
                 <li className="scroolToTecnologias">Tecnologias</li>
+                <li className="scroolToMisEstudios">Estudios</li>
+                <li className="scroolToExperiencia">Experiencia</li>
                 <li className="scroolToContacto">Contacto</li>
             </ul>
         </nav>

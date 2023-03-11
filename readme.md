@@ -1,5 +1,21 @@
-# Portfolio (no terminado)
+# Mi Portfolio
 
-Bienvenido! Mi portfolio está recién iniciado así que te pido que tengas tolerancia hasta que lo complete. Eventualmente tendrá muchos más agregados (incluyendo un readme decente).
+Bienvenido! Esta es mi carta de presentación hacia tí donde te muestro algunos de mis proyectos personales, algunas de las tecnologías que manejo, mis estudios certificados, mi experiencia laboral en el mundo IT, y un formulario de contacto por si deseas comunicarte conmigo.
 
-Hasta entonces, puedes ver la versión más reciente subida a la web [aquí](https://portfolioalejandrop.netlify.app/).
+Utiliza la versión más reciénte subida a la web [aquí](https://portfolioalejandrop.netlify.app/).
+
+## Construido con 🛠️
+
+* CSS
+* JavaScript
+* [ReactJS](https://reactjs.org/)
+* [NodeJs](https://nodejs.org/)
+* [Tailwind](https://tailwindcss.com/)
+* [Vite](https://vitejs.dev/)
+* [toastify-js](https://www.npmjs.com/package/toastify-js)
+* [Sweet Alert 2](https://sweetalert2.github.io/)
+* [Tippy](https://atomiks.github.io/tippyjs/)
+
+## Autores ✒️
+
+* **Alejandro Portaluppi** - [LinkedIn](https://www.linkedin.com/in/alejandro-portaluppi/)

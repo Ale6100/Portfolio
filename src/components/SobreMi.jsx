@@ -10,7 +10,7 @@ const SobreMi = () => {
     const [ cantidadHorizontalDeCuadraditos, setCantidadHorizontalDeCuadraditos ] = useState(0)
     const [ cantidadVerticalDeCuadraditos, setCantidadVerticalDeCuadraditos ] = useState(0)
 
-    const frases = ["Full Stack Web Developer", "Backend Web Developer", "Frontend Web Developer", "HTML CSS JavaScript", "MongoDB ExpressJS ReactJS NodeJS", "Tailwind Bootstrap", "Autodidacta"] // Por ahora sólo se dibujan letras mayúsculas, con excepción de la ñ
+    const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB | ExpressJS | ReactJS | NodeJS", "Tailwind | Bootstrap", "Git | GitHub", "Autodidacta"] // Por ahora sólo se dibujan letras mayúsculas, con excepción de la ñ
     const anchoEspacioVacío = 3 // Cantidad de cuadraditos horizontales que representa un espacio vacío entre palabras
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const SobreMi = () => {
                 {montado ? <TableroPixelArt cantidadVerticalDeCuadraditos={cantidadVerticalDeCuadraditos} cantidadHorizontalDeCuadraditos={cantidadHorizontalDeCuadraditos} arrayLetras={arrayLetras} frases={frases} cantidadCuadraditosHorizontalesPorFrase={cantidadCuadraditosHorizontalesPorFraseState} anchoEspacioVacío={anchoEspacioVacío} /> : null}
             </div>
             <div className="p-3">
-                <p className="mb-3 text-lg max-md:text-base">🎓 Soy desarrollador web titulado en el área Frontend. Actualmente me encuentro aprendiendo tecnologías Backend para poder tener conocimiento de un Stack completo en el área de la programación que más me interesa</p>
+                <p className="mb-3 text-lg max-md:text-base">🎓 Soy desarrollador web titulado tanto en tecnologías Frontend como Backend. Actualmente me encuentro fortaleciendo mis conocimientos con proyectos personales y a la par formo parte de un equipo de trabajo donde nuestro principal objetivo actual es reunir experiencia</p>
                 <p className="mb-3 text-lg max-md:text-base">🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
                 <p className="mb-3 text-lg max-md:text-base">🔧 Cuento con amplias herramientas para resolver problemas utilizando la lógica gracias a mi experiencia en la carrera de Ciencias Físicas en la UBA, cursos de programación y constante interés por aprender nuevas tecnologías</p>
                 <p className="mb-3 text-lg max-md:text-base">📌 Aspiro insertarme en el mundo laboral guiado por el trabajo en equipo y el autoaprendizaje</p>
