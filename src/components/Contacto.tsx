@@ -4,13 +4,15 @@ import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
 const Contacto = () => {
-    const { setContactoMontado } = useContext(PersonalContext);
-    
+    const personalContext = useContext(PersonalContext);
+    if (!personalContext) return <></>
+    const { setContactoMontado } = personalContext
+
     useEffect(() => {
         setContactoMontado(true)
     }, );
 
-    const superTrim = (string) => {
+    const superTrim = (string: string) => {
         string = string.trim()
         while (string.includes("  ")) {
             string = string.replaceAll("  ", " ")
@@ -18,14 +20,14 @@ const Contacto = () => {
         return string
     }
     
-    const sendMail = async (e) => {
+    const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         
-        const buttonSubmit = e.target.elements.submit
-        const form = new FormData(e.target)
-    
-        const obj = {}
-        form.forEach((value, key) => obj[key] = superTrim(value))
+        const formTarget = e.target as HTMLFormElement;
+        const buttonSubmit = formTarget.elements.namedItem("submit") as HTMLInputElement;
+        const form = new FormData(formTarget)
+        const obj: { [key: string]: string } = {};
+        form.forEach((value: FormDataEntryValue, key: string) => obj[key] = superTrim(value as string))
 
         Toastify({
             text: "Espere por favor...",
@@ -54,7 +56,7 @@ const Contacto = () => {
         buttonSubmit.classList.add("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
         buttonSubmit.classList.remove("bg-gray-500")
         if (response.status === "sucess") {
-            e.target.reset()
+            formTarget.reset()
             Toastify({
                 text: "Mail enviado!",
                 duration: 3000,
@@ -76,7 +78,7 @@ const Contacto = () => {
                 <h2 className='mb-5 text-center'>Contacto</h2>
             </div>
 
-            <form onSubmit={sendMail} id="idFormContacto" className="mx-auto p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
+            <form onSubmit={ sendMail }  id="idFormContacto" className="mx-auto p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
                 <label>Nombre
                     <input name="Nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400 animate-input-border" required />
                 </label>

@@ -1,9 +1,11 @@
-import React, { useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import tecnologias from "../utils/tecnologias"
 import { PersonalContext } from "./PersonalContext";
 
 const Tecnologias = () => {
-    const { setTecnologiasMontado } = useContext(PersonalContext);
+    const personalContext = useContext(PersonalContext);
+    if (!personalContext) return <></>
+    const { setTecnologiasMontado } = personalContext
 
     useEffect(() => {
         setTecnologiasMontado(true)

@@ -6,7 +6,9 @@ import 'tippy.js/dist/tippy.css';
 import Toastify from "toastify-js"
 
 const Proyectos = () => {
-    const { setProyectosMontado } = useContext(PersonalContext);
+    const personalContext = useContext(PersonalContext);
+    if (!personalContext) return <></>
+    const { setProyectosMontado } = personalContext
 
     useEffect(() => {
         proyectos.forEach((proyecto, index) => {
@@ -52,7 +54,16 @@ const Proyectos = () => {
         setProyectosMontado(true)
     }, );
 
-    const sinSitio = (e, proyecto) => {
+    interface proyectoProps {
+        titulo: string,
+        img: string,
+        descripcion: string,
+        linkGitHub: string,
+        linkSitio: string,
+        herramientas: string[]
+    }
+
+    const sinSitio = (e: React.MouseEvent, proyecto: proyectoProps) => {
         if (proyecto.linkSitio === "") {
             e.preventDefault()
             Toastify({

@@ -1,9 +1,16 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
 import arrayLetras from "../utils/arrayLetras.js"
 import { waitFor, deCeroAN } from '../utils/utils.js';
 
-const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase, anchoEspacioVacío }) => {
+interface TableroPixelArtProps {
+    cantidadVerticalDeCuadraditos: number;
+    cantidadHorizontalDeCuadraditos: number;
+    frases: string[];
+    cantidadCuadraditosHorizontalesPorFrase: number[];
+    anchoEspacioVacio: number;
+}
+
+const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase, anchoEspacioVacio }: TableroPixelArtProps) => {   
     const [ montado, setMontado ] = useState(false);
 
     const filaIndices = deCeroAN(cantidadVerticalDeCuadraditos)
@@ -11,31 +18,32 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
     const tiempoDeVidaCuadradito = 5000 // Esta variable debe ser 10 veces más grande que la de abajo
     const tiempoDeVidaCuadraditoVerde = tiempoDeVidaCuadradito/10
 
-    const pintarCuadradito = (k, l, timeEnds, color) => { // Pinta el cuadradito con coordenadas (k, l)
+    const pintarCuadradito = (k: number, l: number, timeEnds: number, color: string) => { // Pinta el cuadradito con coordenadas (k, l)
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
                 if (i===l && j===k) { 
                     const casillero = document.getElementById(`fila-${i}-columna-${j}`)
-                    
-                    if (color === "rgb(0, 0, 0)") {
-                        casillero.classList.add("bgBlack")
-                        setTimeout(() => {
-                            casillero.classList.remove("bgBlack")
-                        }, timeEnds)
-                    } else {
-                        casillero.classList.add("bgGreen")
-                        casillero.classList.remove("bgBlack")
-                        setTimeout(() => {
-                            casillero.classList.remove("bgGreen")
+                    if (casillero) {
+                        if (color === "rgb(0, 0, 0)") {
                             casillero.classList.add("bgBlack")
-                        }, tiempoDeVidaCuadraditoVerde) // Tiempo de vida de los cuadraditos verdes
+                            setTimeout(() => {
+                                casillero.classList.remove("bgBlack")
+                            }, timeEnds)
+                        } else {
+                            casillero.classList.add("bgGreen")
+                            casillero.classList.remove("bgBlack")
+                            setTimeout(() => {
+                                casillero.classList.remove("bgGreen")
+                                casillero.classList.add("bgBlack")
+                            }, tiempoDeVidaCuadraditoVerde) // Tiempo de vida de los cuadraditos verdes
+                        }
                     }
                 }
             }
         }
     }
 
-    const pintarLetra = async (coordenadas, dx, color) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
+    const pintarLetra = async (coordenadas: any[], dx: number, color: string) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
         let contador = 0
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
@@ -49,7 +57,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         }
     }
 
-    const pintarFrase = async (frase, color) => { // Necesito las coordenadas de cada letra y el color con el que se va a pintar
+    const pintarFrase = async (frase: string, color: string) => { // Necesito las coordenadas de cada letra y el color con el que se va a pintar
         let j = 0
         while (true) {
             if (frases[j] !== frase) {
@@ -59,20 +67,22 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
             }
         }
         
-        let anchoAcumulado = parseInt((cantidadHorizontalDeCuadraditos - cantidadCuadraditosHorizontalesPorFrase[j])/2)
+        let anchoAcumulado = Math.floor((cantidadHorizontalDeCuadraditos - cantidadCuadraditosHorizontalesPorFrase[j])/2)
         for (let i=0; i<frase.length; i++) {
             if (arrayLetras.some(obj => obj.letra === frase[i].toLowerCase())) {
                 const letraPixeles = arrayLetras.find(obj => obj.letra === frase[i].toLowerCase())
-                await pintarLetra(letraPixeles.coordenadas, anchoAcumulado, color)
-                anchoAcumulado+=letraPixeles.ancho+1
+                if (letraPixeles) {
+                    await pintarLetra(letraPixeles.coordenadas, anchoAcumulado, color)
+                    anchoAcumulado+=letraPixeles.ancho+1
+                }
             }
             else {
-                anchoAcumulado += anchoEspacioVacío
+                anchoAcumulado += anchoEspacioVacio
             }
         }
     }
 
-    const animacionPintarFrase = async (frase, colores) => { // Pinta una frase varias veces con distintos colores
+    const animacionPintarFrase = async (frase: string, colores: string[]) => { // Pinta una frase varias veces con distintos colores
         for (let i=0; i<colores.length; i++) {
             await pintarFrase(frase, colores[i])
             if (i!=colores.length-1) {
@@ -89,13 +99,12 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
                 const casillero = document.getElementById(`fila-${i}-columna-${j}`)
-                casillero.classList.remove("bgBlack")
-                casillero.classList.remove("bgGreen")
+                casillero?.classList.remove("bgBlack", "bgGreen")
             }
         }
     }
 
-    const animacion = async (frases, colores) => { // Muestro todas las frases disponibles
+    const animacion = async (frases: string[], colores: string[]) => { // Muestro todas las frases disponibles
         while (true) {
             for (let i=0; i<frases.length; i++) { 
                 const indiceRandom = Math.floor(Math.random()*frases.length)
@@ -110,7 +119,12 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         setMontado(true)
     }, [montado]);
 
-    const Fila = ({ i, cantidadHorizontalDeCuadraditos }) => {
+    interface FilaProps {
+        i: number,
+        cantidadHorizontalDeCuadraditos: number
+    }
+
+    const Fila = ({ i, cantidadHorizontalDeCuadraditos }: FilaProps) => {
         const columnaIndices = deCeroAN(cantidadHorizontalDeCuadraditos)
 
         return (

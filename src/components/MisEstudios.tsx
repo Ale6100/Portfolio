@@ -3,8 +3,10 @@ import { PersonalContext } from './PersonalContext';
 import estudios from '../utils/estudios';
 
 const MisEstudios = () => {
-    const { setMisEstudios } = useContext(PersonalContext);
-    
+    const personalContext = useContext(PersonalContext);
+    if (!personalContext) return <></>
+    const { setMisEstudios } = personalContext
+
     useEffect(() => {
         setMisEstudios(true)
     }, );

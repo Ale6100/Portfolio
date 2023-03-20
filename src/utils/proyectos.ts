@@ -32,14 +32,6 @@ const proyectos = [
         herramientas: ["HTML", "CSS", "Bootstrap", "SASS", "NodeJs"]
     },
     {
-        titulo: 'Sala de chat',
-        img: "./img/salaDeChat.webp",
-        descripcion: "Chat grupal utilizando websocket",
-        linkGitHub: "https://github.com/Ale6100/Chat-js.git",
-        linkSitio: "https://chat-js-ale.onrender.com/",
-        herramientas: ["HTML", "CSS", "JavaScript", "MongoDB", "Socket.io", "Express", "NodeJs", "EJS", "Sweet Alert 2"]
-    },
-    {
         titulo: 'Simulador de plazo fijo',
         img: "./img/simuladorPlazoFijo.webp",
         descripcion: "No puedes perderte estas seis simulaciones",
@@ -48,20 +40,28 @@ const proyectos = [
         herramientas: ["HTML", "CSS", "JavaScript", "Chart.js", "MathJax", "Polyfill.io", "Sweet Alert 2", "Toastify"]
     },
     {
-        titulo: 'Asistente virtual',
-        img: "./img/asistenteVirtual.webp",
-        descripcion: "Utiliza este asistente virtual básico creado con JavaScript",
-        linkGitHub: "https://github.com/Ale6100/Asistente-Virtual-JS.git",
-        linkSitio: "https://asistentevirtual.netlify.app/",
-        herramientas: ["HTML", "CSS", "JavaScript", "Web Speech API"]
-    },
-    {
         titulo: 'Reproductor de videos',
         img: "./img/reproductorDeVideos.webp",
         descripcion: "Reproduce videos en la web con este sencillo código",
         linkGitHub: "https://github.com/Ale6100/Reproductor-de-videos.git",
         linkSitio: "https://reproductordevideos.netlify.app/",
         herramientas: ["CSS", "JavaScript", "ReactJS", "NodeJS", "Tailwind", "Vite", "Framer Motion", "Lodash"]
+    },
+    {
+        titulo: 'Sala de chat',
+        img: "./img/salaDeChat.webp",
+        descripcion: "Chat grupal utilizando websocket",
+        linkGitHub: "https://github.com/Ale6100/Chat-js.git",
+        linkSitio: "https://chat-js-ale.onrender.com/",
+        herramientas: ["HTML", "CSS", "JavaScript", "MongoDB", "Socket.io", "Express", "NodeJs", "EJS", "Sweet Alert 2"]
+    },
+    {
+        titulo: 'Asistente virtual',
+        img: "./img/asistenteVirtual.webp",
+        descripcion: "Utiliza este asistente virtual básico creado con JavaScript",
+        linkGitHub: "https://github.com/Ale6100/Asistente-Virtual-JS.git",
+        linkSitio: "https://asistentevirtual.netlify.app/",
+        herramientas: ["HTML", "CSS", "JavaScript", "Web Speech API"]
     }
 ]
 

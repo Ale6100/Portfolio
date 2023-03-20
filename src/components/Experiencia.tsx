@@ -1,10 +1,12 @@
-import React, { useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import experiencia from '../utils/experiencia';
 import { PersonalContext } from './PersonalContext';
 
 const Experiencia = () => {
-    const { setExperiencia } = useContext(PersonalContext);
-    
+    const personalContext = useContext(PersonalContext);
+    if (!personalContext) return <></>
+    const { setExperiencia } = personalContext
+
     useEffect(() => {
         setExperiencia(true)
     }, );

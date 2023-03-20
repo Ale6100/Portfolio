@@ -1,8 +1,26 @@
 import React, { createContext, useState } from "react";
 
-export const PersonalContext = createContext()
+interface PersonalContextValue {
+    sobreMiMontado: boolean;
+    setSobreMiMontado: React.Dispatch<React.SetStateAction<boolean>>;
+    proyectosMontado: boolean;
+    setProyectosMontado: React.Dispatch<React.SetStateAction<boolean>>;
+    tecnologiasMontado: boolean;
+    setTecnologiasMontado: React.Dispatch<React.SetStateAction<boolean>>;
+    misEstudios: boolean;
+    setMisEstudios: React.Dispatch<React.SetStateAction<boolean>>;
+    experiencia: boolean;
+    setExperiencia: React.Dispatch<React.SetStateAction<boolean>>;
+    contactoMontado: boolean;
+    setContactoMontado: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const PersonalContextProvider = ({ children }) => {
+export const PersonalContext = createContext<PersonalContextValue | undefined>(undefined);
+interface PersonalContextProviderProps {
+    children: React.ReactNode;
+}
+
+const PersonalContextProvider = ({ children }: PersonalContextProviderProps) => {
     const [sobreMiMontado, setSobreMiMontado] = useState(false); // Estado que representa si el componente SobreMi está montado
     const [proyectosMontado, setProyectosMontado] = useState(false);
     const [tecnologiasMontado, setTecnologiasMontado] = useState(false);

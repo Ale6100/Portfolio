@@ -1,9 +1,8 @@
-import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 import { PersonalContext } from "./PersonalContext";
 
-const activarScroll = (claseScroll) => { // Conecta las etiquetas de las nav con las de las secciones mediante un scroll animado
-    const [ etiquetaEnlace1, etiquetaEnlace2, etiquetaDestino ] = document.querySelectorAll(claseScroll)
+const activarScroll = (claseScroll: string): void => { // Conecta las etiquetas de las nav con las de las secciones mediante un scroll animado
+    const [ etiquetaEnlace1, etiquetaEnlace2, etiquetaDestino ] = document.querySelectorAll(claseScroll) as unknown as [HTMLElement, HTMLElement, HTMLElement]
 
     etiquetaEnlace1.addEventListener("click", () => {
         window.scrollTo({
@@ -20,7 +19,10 @@ const activarScroll = (claseScroll) => { // Conecta las etiquetas de las nav con
 }
 
 const NavBar = () => {
-    const { sobreMiMontado, proyectosMontado, tecnologiasMontado, misEstudios, experiencia, contactoMontado } = useContext(PersonalContext);
+    const personalContext = useContext(PersonalContext);
+    
+    if (!personalContext) return <></> // No es algo que normalmente haría, pero es para que Typescript no se queje
+    const { sobreMiMontado, proyectosMontado, tecnologiasMontado, misEstudios, experiencia, contactoMontado } = personalContext
     
     const [ navBarRespVisible, setNavBarRespVisible ] = useState(false)
 
@@ -33,31 +35,33 @@ const NavBar = () => {
         if (contactoMontado) activarScroll(".scroolToContacto")
 
         const fondoDifuminado = document.getElementById(`fondoDifuminadoResponsive`)
-        fondoDifuminado.style.setProperty("backdrop-filter", "blur(3px)")
-        fondoDifuminado.style.setProperty("filter", "brightness(75%)")
+        fondoDifuminado?.style.setProperty("backdrop-filter", "blur(3px)")
+        fondoDifuminado?.style.setProperty("filter", "brightness(75%)")
     }, [sobreMiMontado, proyectosMontado, tecnologiasMontado, misEstudios, experiencia, contactoMontado]);
 
     useEffect(() => { 
-        const navBarResponsive = document.querySelector(".navResponsive");
+        const navBarResponsive = document.querySelector(".navResponsive") as HTMLElement
         const fondoDifuminado = document.getElementById(`fondoDifuminadoResponsive`)
         const botonNavBar = document.getElementById("botonNavBar")
-        const anchoBotonNavBar = botonNavBar.offsetWidth
+
+        if (!botonNavBar || !fondoDifuminado) return;
+        const anchoBotonNavBar = botonNavBar?.offsetWidth
 
         if (navBarRespVisible) { // Comportamiento de la "navbar responsive", fondo difuminado, y el botón cuando dicha navbar es visible o no
             navBarResponsive.style.setProperty("transform", "translateX(-100vw)") // Hacemos que la navbar pequeña y el fondo se vean
-            fondoDifuminado.style.setProperty("transform", "translateX(-120vw)")
+            fondoDifuminado.style.setProperty("transform", "translateX(-120vw)");
 
-            botonNavBar.children[0].style.setProperty("transform", `translate(0vw, ${Math.round(anchoBotonNavBar)/2}px) rotate(45deg) scale(1.41421356237)`) // Hacemos aparecer la X
-            botonNavBar.children[1].style.setProperty("transform", "scale(0)")
-            botonNavBar.children[2].style.setProperty("transform", `translate(0vw, ${Math.round(-anchoBotonNavBar)/2}px) rotate(-45deg) scale(1.41421356237)`)
+            (botonNavBar.children[0] as HTMLElement).style.setProperty("transform", `translate(0vw, ${Math.round(anchoBotonNavBar)/2}px) rotate(45deg) scale(1.41421356237)`); // Hacemos aparecer la X
+            (botonNavBar.children[1] as HTMLElement).style.setProperty("transform", "scale(0)");
+            (botonNavBar.children[2] as HTMLElement).style.setProperty("transform", `translate(0vw, ${Math.round(-anchoBotonNavBar)/2}px) rotate(-45deg) scale(1.41421356237)`);
         
         } else if (!navBarRespVisible) {
             navBarResponsive.style.setProperty("transform", "translateX(0vw)")
-            fondoDifuminado.style.setProperty("transform", "translateX(0vw)")
+            fondoDifuminado.style.setProperty("transform", "translateX(0vw)");
 
-            botonNavBar.children[0].style.setProperty("transform", `translate(0vw, 0px) rotate(0) scale(1)`)
-            botonNavBar.children[1].style.setProperty("transform", "scale(1)")
-            botonNavBar.children[2].style.setProperty("transform", `translate(0vw, 0px) rotate(0) scale(1)`)
+           (botonNavBar.children[0] as HTMLElement).style.setProperty("transform", `translate(0vw, 0px) rotate(0) scale(1)`);
+           (botonNavBar.children[1] as HTMLElement).style.setProperty("transform", "scale(1)");
+           (botonNavBar.children[2] as HTMLElement).style.setProperty("transform", `translate(0vw, 0px) rotate(0) scale(1)`);
         }
         
     }, [navBarRespVisible])
