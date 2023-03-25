@@ -28,7 +28,7 @@ const Experiencia = () => {
                     <p className='text-center'>Puesto: {exp.puesto}</p>
                     <p>Período: {exp.fechaInicio} - ACTUAL</p>
                     {exp.freelance && <p>Equipo de trabajo freelance</p>}
-                    <a href={exp.linkTrabajo} className="text-blue-900" target="_blank">Conocer más</a>
+                    <a href={exp.linkTrabajo} className="py-[1px] px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black" target="_blank">Conocer más</a>
                 </div>
             ))
             }

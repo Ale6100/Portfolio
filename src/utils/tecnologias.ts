@@ -77,6 +77,13 @@ const tecnologias = [
         link: "https://github.com/"
     },
     {
+        title: "Typescript",
+        img: "https://img.icons8.com/color/100/null/typescript.png",
+        priority: false,
+        alt: "Typescript icon",
+        link: "https://www.typescriptlang.org/",
+    },
+    {
         title: "Python",
         img: "https://img.icons8.com/color/100/000000/python--v1.png",
         priority: false,
@@ -89,64 +96,6 @@ const tecnologias = [
         priority: false,
         alt: "Vite icon",
         link: "https://vitejs.dev/"
-    },
-    {
-        title: "EJS",
-        img: "./img/EjsIcon.webp",
-        priority: false,
-        alt: "EJS icon",
-        link: "https://ejs.co/"
-    },
-    {
-        title: "jsonwebtoken",
-        img: "https://jwt.io/img/pic_logo.svg",
-        priority: false,
-        alt: "JSONWebToken icon",
-        link: "https://www.npmjs.com/package/jsonwebtoken",
-        fontSize: "text-sm"
-    },
-    {
-        title: "Bcrypt.js",
-        img: "https://img.icons8.com/ios-filled/100/null/expeditedssl.png",
-        priority: false,
-        alt: "Bcrypt.js icon",
-        link: "https://www.npmjs.com/package/bcryptjs"
-    },
-    {
-        title: "Socket.IO",
-        img: "https://socket.io/images/logo.svg",
-        priority: false,
-        alt: "Socket.IO icon",
-        link: "https://socket.io/"
-    },
-    {
-        title: "Dotenv",
-        img: "https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.svg",
-        priority: false,
-        alt: "Dotenv icon",
-        link: "https://www.npmjs.com/package/dotenv"
-    },
-    {
-        title: "Minimist",
-        img: "https://img.icons8.com/windows/100/null/New-production-order.png",
-        priority: false,
-        alt: "Minimist icon",
-        link: "https://www.npmjs.com/package/minimist"
-    },
-    {
-        title: "Swagger UI Express",
-        img: "./img/swagger.JPG",
-        priority: false,
-        alt: "Swagger icon",
-        link: "https://www.npmjs.com/package/swagger-ui-express",
-        fontSize: "text-sm"
-    },
-    {
-        title: "Nodemailer",
-        img: "./img/Nodemailer.png",
-        priority: false,
-        alt: "Nodemailer icon",
-        link: "https://nodemailer.com/"
     },
     {
         title: "Google Analytics",
@@ -165,11 +114,33 @@ const tecnologias = [
         fontSize: "text-sm"
     },
     {
-        title: "Typescript",
-        img: "https://img.icons8.com/color/100/null/typescript.png",
+        title: "MySQL",
+        img: "https://img.icons8.com/fluency/100/000000/mysql-logo.png",
         priority: false,
-        alt: "Typescript icon",
-        link: "https://www.typescriptlang.org/",
+        alt: "MySQL icon",
+        link: "https://www.mysql.com/"
+    },
+    {
+        title: "EJS",
+        img: "./img/EjsIcon.webp",
+        priority: false,
+        alt: "EJS icon",
+        link: "https://ejs.co/"
+    },
+    {
+        title: "jsonwebtoken",
+        img: "https://jwt.io/img/pic_logo.svg",
+        priority: false,
+        alt: "JSONWebToken icon",
+        link: "https://www.npmjs.com/package/jsonwebtoken",
+        fontSize: "text-sm"
+    },
+    {
+        title: "Nodemailer",
+        img: "./img/Nodemailer.webp",
+        priority: false,
+        alt: "Nodemailer icon",
+        link: "https://nodemailer.com/"
     },
     {
         title: "Bootstrap",

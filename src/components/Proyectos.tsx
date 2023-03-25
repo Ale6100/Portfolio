@@ -71,7 +71,7 @@ const Proyectos = () => {
                 duration: 10000,
                 destination: proyecto.linkGitHub,
                 newWindow: true,
-                close: true,
+                close: false,
                 gravity: "top",
                 position: "right",
                 stopOnFocus: true,
@@ -97,10 +97,10 @@ const Proyectos = () => {
                         
                         <div className="relative">
                             <div>
-                                <img className="hover:brightness-105 w-[272px] h-[155px] border-2 border-dashed border-black transition-all duration-500" src={proyecto.img} />
+                                <img className="hover:brightness-105 w-[272px] h-[155px] border-2 border-dashed border-black transition-all duration-500" src={proyecto.img} alt="Imagen proyecto"/>
                             </div>
                 
-                            <img className={"absolute right-[5%] top-[5%] w-8 hover:brightness-105 pe-"+index} src="https://img.icons8.com/ios-filled/50/null/support.png" />
+                            <img className={"absolute right-[5%] top-[5%] w-8 hover:brightness-105 pe-"+index} src="https://img.icons8.com/ios-filled/50/null/support.png" alt="Icono herramientas"/>
                         </div>
                 
                         <p className="p-1 flex flex-col justify-center text-center h-11 bg-blue-400 font-semibold">{proyecto.descripcion}</p>

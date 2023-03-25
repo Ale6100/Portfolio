@@ -45,7 +45,7 @@ const proyectos = [
         descripcion: "Reproduce videos en la web con este sencillo código",
         linkGitHub: "https://github.com/Ale6100/Reproductor-de-videos.git",
         linkSitio: "https://reproductordevideos.netlify.app/",
-        herramientas: ["CSS", "JavaScript", "ReactJS", "NodeJS", "Tailwind", "Vite", "Framer Motion", "Lodash"]
+        herramientas: ["CSS", "TypeScript", "ReactJS", "NodeJS", "Tailwind", "Vite", "Framer Motion", "Lodash"]
     },
     {
         titulo: 'Sala de chat',

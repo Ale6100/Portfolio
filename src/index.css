@@ -4,7 +4,7 @@
 
 @layer components {
   * {
-    @apply m-0 p-0 box-border;
+    @apply m-0 p-0;
   }
 
   body {
@@ -29,6 +29,10 @@
 
   footer div a {
     @apply my-1 p-1 no-underline flex flex-col items-center border-2 border-black rounded bg-white
+  }
+
+  footer div a img {
+    @apply w-12 h-12
   }
 
   footer div a p {

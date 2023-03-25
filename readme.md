@@ -13,7 +13,6 @@ Utiliza la versión más reciénte subida a la web [aquí](https://portfolioalej
 * [Tailwind](https://tailwindcss.com/)
 * [Vite](https://vitejs.dev/)
 * [toastify-js](https://www.npmjs.com/package/toastify-js)
-* [Sweet Alert 2](https://sweetalert2.github.io/)
 * [Tippy](https://atomiks.github.io/tippyjs/)
 
 ## Autores ✒️

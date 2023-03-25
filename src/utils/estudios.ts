@@ -24,7 +24,7 @@ const estudios = [
     {
         img: "Habilidades-para-el-trabajo.webp",
         titulo: "Habilidades para el trabajo y carrera de desarrollo web",
-        fontSize: "text-base",
+        fontSize: "text-sm",
         institucionLink: "https://fundacionempujar.org/",
         institucionNombre: "Fundación Empujar",
         finalizado: true,
