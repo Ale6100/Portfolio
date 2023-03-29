@@ -16,7 +16,7 @@
   }
   
   h2 {
-    @apply text-2xl bg-blue-300 w-96 p-1 rounded-tr-sm rounded-br-sm
+    @apply text-2xl bg-blue-300 w-96 py-1 pl-3 rounded-tr-sm rounded-br-sm
   }
 
   h3 {

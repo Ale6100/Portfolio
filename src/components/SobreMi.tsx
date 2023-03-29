@@ -58,7 +58,7 @@ const SobreMi = () => {
                     <p className="mb-3 text-lg max-md:text-base">🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
                     <p className="mb-3 text-lg max-md:text-base">🔧 Cuento con amplias herramientas para resolver problemas utilizando la lógica gracias a mi experiencia en la carrera de Ciencias Físicas en la UBA, cursos de programación y constante interés por aprender nuevas tecnologías</p>
                     <p className="mb-3 text-lg max-md:text-base">📌 Aspiro insertarme en el mundo laboral guiado por el trabajo en equipo y el autoaprendizaje</p>
-                    <p className="text-lg max-md:text-base">🗒️ Para más info puedes ver mi <a className="text-blue-900" href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank" rel="noopener">Linkedin</a> o mi <a className="text-blue-900" href="./utils/CV_Alejandro_Portaluppi.pdf" target="_blank">CV</a></p>
+                    <p className="text-lg max-md:text-base">🗒️ Para más información puedes ver mi <a className="text-blue-900" href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank" rel="noopener">Linkedin</a> o mi <a className="text-blue-900" href="./utils/CV_Alejandro_Portaluppi.pdf" target="_blank">CV</a></p>
                 </div>
             </div>
         </section>

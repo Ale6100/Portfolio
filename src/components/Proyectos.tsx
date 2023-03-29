@@ -83,7 +83,7 @@ const Proyectos = () => {
 
     return (
         <section className="scroolToProyectos border-l-2 border-blue-400 mt-14">
-            <h2 className='mb-5'>Proyectos personales</h2>
+            <h2 className='mb-5'>Principales proyectos personales</h2>
 
             <div id="contenedorProyectos" className="mt-3 flex justify-around flex-wrap gap-x-[1px] gap-y-4">
                 {proyectos.map((proyecto, index) => (
@@ -92,7 +92,7 @@ const Proyectos = () => {
                         
                         <div className="relative">
                             <div>
-                                <img className="hover:brightness-105 w-full h-[127px] border-2 border-dashed border-black transition-all duration-200" src={proyecto.img} alt="Imagen proyecto"/>
+                                <img className="hover:brightness-105 w-full h-[127px] border border-dashed border-black transition-all duration-200" src={proyecto.img} alt="Imagen proyecto"/>
                             </div>
                 
                             <img className={"absolute right-[5%] top-[5%] w-8 pe-"+index} src="https://cdn-icons-png.flaticon.com/512/453/453635.png" alt="Icono herramientas"/>

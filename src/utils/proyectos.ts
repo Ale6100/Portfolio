@@ -5,7 +5,7 @@ const proyectos = [
         descripcion: "Mi primer sitio web completo",
         linkGitHub: "https://github.com/Ale6100/Curso-backend.git",
         linkSitio: "",
-        herramientas: ["HTML", "CSS", "JavaScript", "Sweet Alert 2", "Toastify"]
+        herramientas: ["CSS", "JavaScript", "NodeJS", "MongoDB", "ExpressJS", "Bycrypt", "Cors", "Dotenv", "EJS", "Jsonwebtoken", "Minimist", "Multer", "Nodemailer", "Stripe", "Swagger", "Winston", "ReactJS", "Tailwind", "Vite", "Moment", "Toastify"]
     },
     {
         titulo: 'Juego "Buscagatos"',
