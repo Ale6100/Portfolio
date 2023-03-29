@@ -11,10 +11,8 @@ const Tecnologias = () => {
         setTecnologiasMontado(true)
     }, );
     return (
-        <section className="scroolToTecnologias my-10">
-            <div>
-                <h2 className="text-center">Principales tecnologías aprendidas</h2>
-            </div>
+        <section className="scroolToTecnologias mt-14 border-l-2 border-blue-400">
+            <h2>Principales tecnologías aprendidas</h2>
 
             <div>
                 <h3 className="mt-5 mb-3 text-center">Primarias</h3>

@@ -12,10 +12,8 @@ const Experiencia = () => {
     }, );
 
     return (
-        <section className="scroolToExperiencia my-10">
-            <div>
-                <h2 className='mb-5 text-center'>Experiencia laboral en el rubro IT</h2>
-            </div>
+        <section className="scroolToExperiencia mt-14 border-l-2 border-blue-400">
+            <h2 className='mb-5'>Experiencia laboral en el rubro IT</h2>
 
             <div className="flex justify-evenly flex-wrap gap-y-5 gap-x-1">
             {

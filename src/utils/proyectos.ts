@@ -16,20 +16,13 @@ const proyectos = [
         herramientas: ["HTML", "CSS", "JavaScript", "Sweet Alert 2", "Toastify"]
     },
     {
-        titulo: 'E-commerce con React',
-        img: "./img/spaceTravels.webp",
-        descripcion: "Proyecto Front End usando React",
-        linkGitHub: "https://github.com/Ale6100/Proyecto-React-Js.git",
-        linkSitio: "https://spacetravels.netlify.app/",
-        herramientas: ["HTML", "CSS", "JavaScript", "ReactJs", "NodeJs", "Firebase", "Sweet Alert 2", "Toastify", "React Icons", "React Router Dom", "Loaders - Uiball"]
-    },
-    {
-        titulo: "Maquetado de sitio web responsive",
-        img: "./img/Apoyo.webp",
-        descripcion: "Mi primer maquetado web",
-        linkGitHub: "https://github.com/Ale6100/Primer-sitio-web.git",
-        linkSitio: "https://apoyoestudios.netlify.app/",
-        herramientas: ["HTML", "CSS", "Bootstrap", "SASS", "NodeJs"]
+        titulo: 'Módulo en npm',
+        img: "./img/npm.webp",
+        descripcion: "Módulo para facilitar tus tareas en TypeScript y JavaScript",
+        linkGitHub: "",
+        linkSitio: "https://www.npmjs.com/package/codigos-utiles-ap",
+        herramientas: ["JavaScript", "TypeScript", "NodeJS"],
+        moduloNpm: true
     },
     {
         titulo: 'Simulador de plazo fijo',
@@ -53,7 +46,7 @@ const proyectos = [
         descripcion: "Chat grupal utilizando websocket",
         linkGitHub: "https://github.com/Ale6100/Chat-js.git",
         linkSitio: "https://chat-js-ale.onrender.com/",
-        herramientas: ["HTML", "CSS", "JavaScript", "MongoDB", "Socket.io", "Express", "NodeJs", "EJS", "Sweet Alert 2"]
+        herramientas: ["HTML", "CSS", "JavaScript", "MongoDB", "Socket.io", "Express", "NodeJS", "EJS", "Sweet Alert 2"]
     },
     {
         titulo: 'Asistente virtual',

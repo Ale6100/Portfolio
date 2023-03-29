@@ -9,7 +9,7 @@ Utiliza la versión más reciénte subida a la web [aquí](https://portfolioalej
 * CSS
 * [TypeScript](https://www.typescriptlang.org/)
 * [ReactJS](https://reactjs.org/)
-* [NodeJs](https://nodejs.org/)
+* [NodeJS](https://nodejs.org/)
 * [Tailwind](https://tailwindcss.com/)
 * [Vite](https://vitejs.dev/)
 * [toastify-js](https://www.npmjs.com/package/toastify-js)

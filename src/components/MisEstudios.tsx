@@ -12,10 +12,8 @@ const MisEstudios = () => {
     }, );
     
     return (
-        <section className="scroolToMisEstudios my-10">
-            <div>
-                <h2 className='mb-5 text-center'>Mis estudios</h2>
-            </div>
+        <section className="scroolToMisEstudios mt-14 border-l-2 border-blue-400">
+            <h2 className='mb-5'>Mis estudios</h2>
 
             <div className="flex justify-evenly flex-wrap gap-y-5 gap-x-1">
                 {

@@ -73,26 +73,26 @@ const Contacto = () => {
     }
 
     return (
-        <section className="scroolToContacto my-5">
-            <div>
-                <h2 className='mb-5 text-center'>Contacto</h2>
+        <section className="scroolToContacto mt-14 mb-5 border-l-2 border-blue-400">
+            <h2 className='mb-5'>Contacto</h2>
+
+            <div className='mx-1'>
+                <form onSubmit={ sendMail } id="idFormContacto" className="mx-auto m-1 p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
+                    <label>Nombre
+                        <input name="Nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400 animate-input-border" required />
+                    </label>
+
+                    <label className="my-5">Email
+                        <input name="Email" type="email"className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
+                    </label>
+
+                    <label className="mb-3">Mensaje
+                        <textarea name="Mensaje" className="p-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
+                    </label>
+
+                    <button type="submit" name='submit' className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 cursor-pointer hover:bg-white hover:border-black active:bg-gray-200'>Enviar</button>
+                </form>
             </div>
-
-            <form onSubmit={ sendMail }  id="idFormContacto" className="mx-auto p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
-                <label>Nombre
-                    <input name="Nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400 animate-input-border" required />
-                </label>
-
-                <label className="my-5">Email
-                    <input name="Email" type="email"className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
-                </label>
-
-                <label className="mb-3">Mensaje
-                    <textarea name="Mensaje" className="p-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
-                </label>
-
-                <button type="submit" name='submit' className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 cursor-pointer hover:bg-white hover:border-black active:bg-gray-200'>Enviar</button>
-            </form>
         </section>
     );
 }
