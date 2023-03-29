@@ -12,67 +12,23 @@
   }
 
   h1 {
-    @apply text-3xl
+    @apply text-3xl max-md:text-2xl
   }
   
   h2 {
-    @apply text-2xl bg-blue-300 w-96 py-1 pl-3 rounded-tr-sm rounded-br-sm
+    @apply text-2xl bg-blue-300 w-96 py-1 pl-3 rounded-tr-sm rounded-br-sm max-md:text-xl max-sm:w-72 max-sm:text-lg
   }
 
   h3 {
-    @apply text-2xl
+    @apply text-2xl max-md:text-xl
   }
 
   nav ul li {
-    @apply transition duration-300 select-none border-b-2 cursor-pointer;
+    @apply transition duration-300 select-none border-b-2 cursor-pointer max-md:w-full max-md:text-base;
   }
 
   .ulResponsive li {
     @apply m-1 pr-2 transition duration-300 select-none border-b-2 cursor-pointer text-right;
-  }
-
-  footer div a {
-    @apply my-1 p-1 no-underline flex flex-col items-center border-2 border-black rounded bg-white
-  }
-
-  footer div a img {
-    @apply w-12 h-12
-  }
-
-  footer div a p {
-    @apply m-0 inline-block font-semibold
-  }
-
-  @media (min-width: 768px) {
-    footer div a {
-      @apply transition-all duration-500 hover:bg-gray-400
-    }
-  }
-
-  @media not all and (min-width: 768px) {
-    nav ul li {
-      @apply w-full text-base
-    }
-
-    h1 {
-      @apply text-2xl
-    }
-
-    h2 {
-      @apply text-xl
-    }
-
-    h3 {
-      @apply text-xl
-    }
-
-    footer div a {
-      @apply my-1 mx-0 p-1
-    }
-  
-    footer div a p {
-      @apply hidden
-    }
   }
 }
 
