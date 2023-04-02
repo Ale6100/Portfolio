@@ -15,6 +15,6 @@ Utiliza la versión más reciénte subida a la web [aquí](https://portfolioalej
 * [toastify-js](https://www.npmjs.com/package/toastify-js)
 * [Tippy](https://atomiks.github.io/tippyjs/)
 
-## Autores ✒️
+## Autor ✒️
 
 * **Alejandro Portaluppi** - [LinkedIn](https://www.linkedin.com/in/alejandro-portaluppi/)

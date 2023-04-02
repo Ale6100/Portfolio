@@ -100,14 +100,11 @@ const Proyectos = () => {
                 
                         <p className="flex flex-col justify-center text-center h-11 bg-blue-400 font-semibold text-sm">{proyecto.descripcion}</p>
                         <div className="flex justify-evenly">
-                            
                             {
-                                proyecto.moduloNpm ? <a href={proyecto.linkSitio} className="py-[1px] px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black" target="_blank">Visitar</a>
-                                : proyecto.linkSitio === "" ? <button type='button' className='py-[1px] disabled px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black' onClick={ () => sinSitio(proyecto) }>Visitar</button>
-                                : <a href={proyecto.linkSitio} className={`py-[1px] disabled px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black ${proyecto.linkSitio.includes("chat") && "tippyChat"}`} target="_blank">Visitar</a>
+                            proyecto.linkSitio === "" ? <button type='button' className='py-[1px] disabled px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black' onClick={ () => sinSitio(proyecto) }>Visitar</button>
+                            : <a href={proyecto.linkSitio} className={`py-[1px] disabled px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black ${proyecto.linkSitio.includes("chat") && "tippyChat"}`} target="_blank">Visitar</a>
                             }
-                            
-                            { proyecto.moduloNpm || <a href={proyecto.linkGitHub} className="py-[1px] px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a> }
+                            <a href={proyecto.linkGitHub} className="py-[1px] px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a>
                         </div>
                     </div>
                 ))}

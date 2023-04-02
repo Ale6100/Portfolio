@@ -19,10 +19,9 @@ const proyectos = [
         titulo: 'Módulo en npm',
         img: "./img/npm.webp",
         descripcion: "Módulo para facilitar tus tareas en TypeScript y JavaScript",
-        linkGitHub: "",
+        linkGitHub: "https://github.com/Ale6100/codigos-utiles-ap.git",
         linkSitio: "https://www.npmjs.com/package/codigos-utiles-ap",
-        herramientas: ["JavaScript", "TypeScript", "NodeJS"],
-        moduloNpm: true
+        herramientas: ["JavaScript", "TypeScript", "NodeJS"]
     },
     {
         titulo: 'Simulador de plazo fijo',

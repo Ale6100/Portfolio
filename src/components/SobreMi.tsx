@@ -48,7 +48,7 @@ const SobreMi = () => {
             <h1 className="text-center">Porfolio | Alejandro Portaluppi</h1>
             
             <div id="contenedor-palabras" className='my-5'>
-                { montado && <TableroPixelArt cantidadVerticalDeCuadraditos={cantidadVerticalDeCuadraditos} cantidadHorizontalDeCuadraditos={cantidadHorizontalDeCuadraditos} frases={frases} cantidadCuadraditosHorizontalesPorFrase={cantidadCuadraditosHorizontalesPorFraseState} anchoEspacioVacio={anchoEspacioVacio} /> }
+                { montado && <TableroPixelArt {...{ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase: cantidadCuadraditosHorizontalesPorFraseState, anchoEspacioVacio }} /> }
             </div>
             
             <div className='border-l-2 border-blue-400'>

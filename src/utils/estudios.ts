@@ -39,30 +39,6 @@ const estudios = [
         certificado: "https://www.coderhouse.com/certificados/63400c49908d9e000ef3edde"
     },
     {
-        img: "reactjs.webp",
-        titulo: "React Js",
-        institucionLink: "https://www.coderhouse.com/",
-        institucionNombre: "Coderhouse",
-        finalizado: true,
-        certificado: "https://www.coderhouse.com/certificados/63400c49908d9e000ef3eddb"
-    },
-    {
-        img: "javascript.webp",
-        titulo: "JavaScript",
-        institucionLink: "https://www.coderhouse.com/",
-        institucionNombre: "Coderhouse",
-        finalizado: true,
-        certificado: "https://www.coderhouse.com/certificados/631638b46b3877001aa4ef37"
-    },
-    {
-        img: "desarrollo-web.webp",
-        titulo: "Desarrollo Web",
-        institucionLink: "https://www.coderhouse.com/",
-        institucionNombre: "Coderhouse",
-        finalizado: true,
-        certificado: "https://www.coderhouse.com/certificados/62efdbd5cbdcf20714915554"
-    },
-    {
         img: "taller_python_exactas.webp",
         titulo: "Taller de Python",
         institucionLink: "https://exactas.uba.ar/",
