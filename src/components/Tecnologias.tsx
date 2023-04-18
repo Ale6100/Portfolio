@@ -16,7 +16,7 @@ const Tecnologias = () => {
 
             <div>
                 <h3 className="mt-5 mb-3 text-center">Primarias</h3>
-                <div id="principalesTecnologias" className="flex justify-evenly flex-wrap gap-1">
+                <div id="principalesTecnologias" className="flex justify-evenly flex-wrap gap-x-1 gap-y-2">
                     {
                         tecnologias.map((tecnologia, index) => (
                             (tecnologia.priority) && (
@@ -37,7 +37,7 @@ const Tecnologias = () => {
 
             <div>
                 <h3 className="mt-5 mb-3 text-center">Secundarias</h3>
-                <div id="tecnologiasSecundarias" className="flex justify-evenly flex-wrap gap-1">
+                <div id="tecnologiasSecundarias" className="flex justify-evenly flex-wrap gap-x-1 gap-y-2">
                     {
                         tecnologias.map((tecnologia, index) => (
                             (!tecnologia.priority) && (

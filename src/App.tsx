@@ -1,4 +1,3 @@
-import './App.css'
 import PersonalContextProvider from "./components/PersonalContext";
 import NavBar from './components/NavBar'
 import SobreMi from './components/SobreMi'
@@ -13,7 +12,7 @@ function App() {
     return (
         <PersonalContextProvider>
             <NavBar />
-            <main className="px-3 relative">
+            <main className="px-3 mx-auto relative max-w-5xl">
                 <SobreMi />
                 <Proyectos />
                 <Tecnologias />

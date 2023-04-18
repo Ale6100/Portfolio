@@ -63,6 +63,13 @@ const tecnologias = [
         link: "https://nodejs.org/"
     },
     {
+        title: "Python",
+        img: "https://img.icons8.com/color/100/000000/python--v1.png",
+        priority: true,
+        alt: "Python icon",
+        link: "https://www.python.org/"
+    },
+    {
         title: "Git",
         img: "https://img.icons8.com/color/100/null/git.png",
         priority: true,
@@ -82,13 +89,6 @@ const tecnologias = [
         priority: false,
         alt: "Typescript icon",
         link: "https://www.typescriptlang.org/",
-    },
-    {
-        title: "Python",
-        img: "https://img.icons8.com/color/100/000000/python--v1.png",
-        priority: false,
-        alt: "Python icon",
-        link: "https://www.python.org/"
     },
     {
         title: "Vite",
@@ -114,11 +114,11 @@ const tecnologias = [
         fontSize: "text-sm"
     },
     {
-        title: "MySQL",
-        img: "https://img.icons8.com/fluency/100/000000/mysql-logo.png",
+        title: "SQL",
+        img: "https://cdn-icons-png.flaticon.com/512/4492/4492311.png",
         priority: false,
-        alt: "MySQL icon",
-        link: "https://www.mysql.com/"
+        alt: "SQL icon",
+        link: "https://support.microsoft.com/es-es/office/access-sql-conceptos-b%C3%A1sicos-vocabulario-y-sintaxis-444d0303-cde1-424e-9a74-e8dc3e460671#:~:text=las%20consultas%3A%20UNION-,%C2%BFQu%C3%A9%20es%20SQL%3F,SQL%20para%20trabajar%20con%20datos."
     },
     {
         title: "EJS",

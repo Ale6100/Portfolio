@@ -22,12 +22,6 @@ const redes = [
         src: "https://img.icons8.com/color/48/000000/youtube-play.png",
         alt: "YouTube icon",
         p: "YouTube"
-    },
-    {
-        href: "https://wa.me/+5491139470383",
-        src: "https://img.icons8.com/color/48/000000/whatsapp--v1.png",
-        alt: "WhatsApp icon",
-        p: "WhatsApp"
     }
 ]
 

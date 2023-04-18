@@ -45,7 +45,7 @@ const SobreMi = () => {
 
     return (
         <section className="scroolToSobreMi mt-5 flex flex-col">
-            <h1 className="text-center">Porfolio | Alejandro Portaluppi</h1>
+            <h1 className="text-center">Portfolio | Alejandro Portaluppi</h1>
             
             <div id="contenedor-palabras" className='my-5'>
                 { montado && <TableroPixelArt {...{ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase: cantidadCuadraditosHorizontalesPorFraseState, anchoEspacioVacio }} /> }
@@ -54,11 +54,11 @@ const SobreMi = () => {
             <div className='border-l-2 border-blue-400'>
                 <h2>Sobre mí</h2>
                 <div className="p-3">
-                    <p className="mb-3 text-lg max-md:text-base">🎓 Soy desarrollador web titulado tanto en tecnologías Frontend como Backend. Actualmente me encuentro fortaleciendo mis conocimientos con proyectos personales y a la par formo parte de un equipo de trabajo donde nuestro principal objetivo actual es reunir experiencia</p>
+                    <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web titulado en tecnologías Frontend y Backend. Formo parte de un equipo de trabajo donde nuestro principal objetivo es reunir experiencia</p>
                     <p className="mb-3 text-lg max-md:text-base">🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
                     <p className="mb-3 text-lg max-md:text-base">🔧 Cuento con amplias herramientas para resolver problemas utilizando la lógica gracias a mi experiencia en la carrera de Ciencias Físicas en la UBA, cursos de programación y constante interés por aprender nuevas tecnologías</p>
                     <p className="mb-3 text-lg max-md:text-base">📌 Aspiro insertarme en el mundo laboral guiado por el trabajo en equipo y el autoaprendizaje</p>
-                    <p className="text-lg max-md:text-base">🗒️ Para más información puedes ver mi <a className="text-blue-900" href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank" rel="noopener">Linkedin</a> o mi <a className="text-blue-900" href="./utils/CV_Alejandro_Portaluppi.pdf" target="_blank">CV</a></p>
+                    <p className="text-lg max-md:text-base">🗒️ Para más información puedes ver mi <a className="text-blue-900 hover:text-blue-500" href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank" rel="noopener">Linkedin</a> o mi <a className="text-blue-900 hover:text-blue-500" href="./utils/CV_Alejandro_Portaluppi.pdf" target="_blank">CV</a></p>
                 </div>
             </div>
         </section>

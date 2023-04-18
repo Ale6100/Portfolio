@@ -12,7 +12,7 @@
   }
 
   h1 {
-    @apply text-3xl max-md:text-2xl
+    @apply text-4xl max-md:text-2xl
   }
   
   h2 {
