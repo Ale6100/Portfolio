@@ -4,8 +4,7 @@ const experiencia = [
         nombre: "Devs Ants",
         puesto: "Backend Developer",
         fechaInicio: "01/11/2022",
-        freelance: true,
-        linkTrabajo: "https://www.fiverr.com/devsants?public_mode=true"
+        freelance: true
     }
 ]
 

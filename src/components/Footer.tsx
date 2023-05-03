@@ -13,9 +13,9 @@ const redes = [
     },
     {
         href: "https://colab.research.google.com/drive/1e9pqVIkt6J1LK7uxsK_IE-i5rx4NJiME?usp=sharing",
-        src: "https://img.icons8.com/color/48/000000/python--v1.png",
-        alt: "Python icon",
-        p: "Python"
+        src: "https://img.icons8.com/color/48/000000/google-colab.png",
+        alt: "Google Colab icon",
+        p: "Colab"
     },
     {
         href: "https://www.youtube.com/channel/UCfgt4--XgLnHxYNDPOvYioA",

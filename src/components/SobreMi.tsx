@@ -54,7 +54,7 @@ const SobreMi = () => {
             <div className='border-l-2 border-blue-400'>
                 <h2>Sobre mí</h2>
                 <div className="p-3">
-                    <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web titulado en tecnologías Frontend y Backend. Formo parte de un equipo de trabajo donde nuestro principal objetivo es reunir experiencia</p>
+                    <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web de 23 años titulado en tecnologías Frontend y Backend. Formo parte de un equipo de trabajo donde nuestro principal objetivo es reunir experiencia</p>
                     <p className="mb-3 text-lg max-md:text-base">🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
                     <p className="mb-3 text-lg max-md:text-base">🔧 Cuento con amplias herramientas para resolver problemas utilizando la lógica gracias a mi experiencia en la carrera de Ciencias Físicas en la UBA, cursos de programación y constante interés por aprender nuevas tecnologías</p>
                     <p className="mb-3 text-lg max-md:text-base">📌 Aspiro insertarme en el mundo laboral guiado por el trabajo en equipo y el autoaprendizaje</p>
