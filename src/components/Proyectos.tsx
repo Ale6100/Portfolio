@@ -57,7 +57,6 @@ const Proyectos = () => {
     interface proyectoProps {
         titulo: string,
         img: string,
-        descripcion: string,
         linkGitHub: string,
         linkSitio: string,
         herramientas: string[]
@@ -98,13 +97,12 @@ const Proyectos = () => {
                             <img className={"absolute right-[5%] top-[5%] w-8 pe-"+index} src="https://cdn-icons-png.flaticon.com/512/453/453635.png" alt="Icono herramientas"/>
                         </div>
                 
-                        <p className="flex flex-col justify-center text-center h-11 bg-blue-400 font-semibold text-sm">{proyecto.descripcion}</p>
-                        <div className="my-1 flex justify-evenly">
+                        <div className="flex">
                             {
-                            proyecto.linkSitio === "" ? <button type='button' className='py-[1px] disabled px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black' onClick={ () => sinSitio(proyecto) }>Visitar</button>
-                            : <a href={proyecto.linkSitio} className={`py-[1px] disabled px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black ${proyecto.linkSitio.includes("chat") && "tippyChat"}`} target="_blank">Visitar</a>
+                            proyecto.linkSitio === "" ? <button type='button' className='py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black' onClick={ () => sinSitio(proyecto) }>Visitar</button>
+                            : <a href={proyecto.linkSitio} className={`py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black ${proyecto.linkSitio.includes("chat") && "tippyChat"}`} target="_blank">Visitar</a>
                             }
-                            <a href={proyecto.linkGitHub} className="py-[1px] px-3 border-2 border-gray-600 rounded-sm bg-gray-300 hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a>
+                            <a href={proyecto.linkGitHub} className="py-[1px] w-1/2 h-full px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a>
                         </div>
                     </div>
                 ))}

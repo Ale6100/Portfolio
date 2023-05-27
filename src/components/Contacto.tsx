@@ -55,7 +55,7 @@ const Contacto = () => {
         buttonSubmit.disabled = false
         buttonSubmit.classList.add("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
         buttonSubmit.classList.remove("bg-gray-500")
-        if (response.status === "sucess") {
+        if (response.status === "success") {
             formTarget.reset()
             Toastify({
                 text: "Mail enviado!",
@@ -69,7 +69,19 @@ const Contacto = () => {
                 },
                 className: "sendMail"
             }).showToast();
-        } 
+        } else if (response.status === "error") { // No muestro cuál es el error porque no tengo interés que sea público. Lo conozco yo por el lado del backend
+            Toastify({
+                text: "Error inesperado. Si deseas comunicarte conmigo por favor contáctate a la dirección de mail alejandro_portaluppi@outlook.com",
+                duration: 10000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                    background: "linear-gradient(to right, rgba(155, 50, 50, 1), rgba(0, 0, 0, 0.9))",
+                }
+            }).showToast();
+        }
     }
 
     return (

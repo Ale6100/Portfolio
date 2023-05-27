@@ -3,46 +3,46 @@
 @tailwind utilities;
 
 @layer components {
-  * {
-    @apply m-0 p-0;
-  }
+    * {
+        @apply m-0 p-0;
+    }
 
-  body {
-    @apply bg-slate-200
-  }
+    body {
+        @apply bg-slate-200
+    }
 
-  h1 {
-    @apply text-4xl max-md:text-2xl
-  }
-  
-  h2 {
-    @apply text-2xl bg-blue-300 w-96 py-1 pl-3 rounded-tr-sm rounded-br-sm max-md:text-xl max-sm:w-72 max-sm:text-lg
-  }
+    h1 {
+        @apply text-4xl max-md:text-2xl
+    }
+    
+    h2 {
+        @apply text-2xl bg-blue-300 w-96 py-1 pl-3 rounded-tr-sm rounded-br-sm max-md:text-xl max-sm:w-72 max-sm:text-lg
+    }
 
-  h3 {
-    @apply text-2xl max-md:text-xl
-  }
+    h3 {
+        @apply text-2xl max-md:text-xl
+    }
 
-  nav ul li {
-    @apply transition duration-300 select-none border-b-2 cursor-pointer max-md:w-full max-md:text-base;
-  }
+    nav ul li {
+        @apply transition duration-300 select-none border-b-2 cursor-pointer max-md:w-full max-md:text-base;
+    }
 
-  .ulResponsive li {
-    @apply m-1 pr-2 transition duration-300 select-none border-b-2 cursor-pointer text-right;
-  }
+    .ulResponsive li {
+        @apply m-1 pr-2 transition duration-300 select-none border-b-2 cursor-pointer text-right;
+    }
 }
 
 header {
-  background-image: linear-gradient(to bottom, rgba(37, 99, 235, 0.75), rgba(191, 219, 254, 0.25));
-  backdrop-filter: blur(3px);
+    background-image: linear-gradient(to bottom, rgba(37, 99, 235, 0.75), rgba(191, 219, 254, 0.25));
+    backdrop-filter: blur(3px);
 }
 
 .bgBlack {
-  background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
 }
 
 .bgGreen {
-  background-color: rgb(22, 163, 74);
+    background-color: rgb(22, 163, 74);
 }
 
 .htmlContent {
@@ -54,20 +54,20 @@ header {
 }
 
 :root {
-  --box-shadow-titulo: 0px 0px 1px rgb(0, 0, 255);
-  --altura-header: 2.75rem;
-  --ancho-boton-navBar: calc(var(--altura-header) - 1.25rem);
-  --ancho-navBar-responsive: 75vw;
+    --box-shadow-titulo: 0px 0px 1px rgb(0, 0, 255);
+    --altura-header: 2.75rem;
+    --ancho-boton-navBar: calc(var(--altura-header) - 1.25rem);
+    --ancho-navBar-responsive: 75vw;
 }
 
 nav ul li {
-  border-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
 }
 
 nav ul li:hover {
-  border-color: rgba(50, 50, 50);
+    border-color: rgba(50, 50, 50);
 }
 
 h1, h2, h3 {
-  text-shadow: var(--box-shadow-titulo);
+    text-shadow: var(--box-shadow-titulo);
 }
