@@ -12,7 +12,7 @@ const Contacto = () => {
         setContactoMontado(true)
     }, );
 
-    const superTrim = (string: string) => {
+    const superTrim = (string: string): string => {
         string = string.trim()
         while (string.includes("  ")) {
             string = string.replaceAll("  ", " ")
@@ -26,6 +26,7 @@ const Contacto = () => {
         const formTarget = e.target as HTMLFormElement;
         const buttonSubmit = formTarget.elements.namedItem("submit") as HTMLInputElement;
         const form = new FormData(formTarget)
+        
         const obj: { [key: string]: string } = {};
         form.forEach((value: FormDataEntryValue, key: string) => obj[key] = superTrim(value as string))
 
@@ -44,17 +45,43 @@ const Contacto = () => {
         buttonSubmit.disabled = true
         buttonSubmit.classList.remove("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
         buttonSubmit.classList.add("bg-gray-500")
-        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/SendMail`, {
+
+        interface configInterface {
+            from: string;
+            to: string;
+            subject: string;
+            html: string;
+            tokenGralB: string;
+        }
+
+        const config: configInterface = { // Estas son las especificaciones que solicito en https://github.com/Ale6100/backend-personal.git#endpoints-%EF%B8%8F
+            from: obj.email,
+            to: "alejandro_portaluppi@outlook.com",
+            subject: `Portfolio | ${obj.nombre}`,
+            html: `
+            <div>
+                <h1>Nuevo mail enviado desde el <a href="https://portfolioalejandrop.netlify.app/">portfolio</a></h1>
+                <p>Email: ${obj.email}</p>
+                <p>Nombre: ${obj.nombre}</p>
+                <p>Mensaje:</p>
+                <p>${obj.mensaje}</p>
+            </div>
+            `,
+            tokenGralB: `${import.meta.env.VITE_TOKEN_GRAL}`
+        }
+
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/mail`, {
             method: "POST",
-            body: JSON.stringify(obj),
+            body: JSON.stringify(config),
             headers: {
-                "Accept": "application/json"
+                "Content-Type": "application/json",
             }
         }).then(res => res.json())
 
         buttonSubmit.disabled = false
         buttonSubmit.classList.add("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
         buttonSubmit.classList.remove("bg-gray-500")
+        
         if (response.status === "success") {
             formTarget.reset()
             Toastify({
@@ -69,9 +96,10 @@ const Contacto = () => {
                 },
                 className: "sendMail"
             }).showToast();
+
         } else if (response.status === "error") { // No muestro cuál es el error porque no tengo interés que sea público. Lo conozco yo por el lado del backend
             Toastify({
-                text: "Error inesperado. Si deseas comunicarte conmigo por favor contáctate a la dirección de mail alejandro_portaluppi@outlook.com",
+                text: "Servidor en mantenimiento. Si deseas comunicarte conmigo por favor contáctate a la dirección de mail alejandro_portaluppi@outlook.com",
                 duration: 10000,
                 close: true,
                 gravity: "top",
@@ -91,15 +119,15 @@ const Contacto = () => {
             <div className='mx-1'>
                 <form onSubmit={ sendMail } id="idFormContacto" className="mx-auto m-1 p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
                     <label>Nombre
-                        <input name="Nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400 animate-input-border" required />
+                        <input name="nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400 animate-input-border" required />
                     </label>
 
                     <label className="my-5">Email
-                        <input name="Email" type="email"className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
+                        <input name="email" type="email"className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
                     </label>
 
                     <label className="mb-3">Mensaje
-                        <textarea name="Mensaje" className="p-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
+                        <textarea name="mensaje" className="p-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
                     </label>
 
                     <button type="submit" name='submit' className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 cursor-pointer hover:bg-white hover:border-black active:bg-gray-200'>Enviar</button>
