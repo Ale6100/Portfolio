@@ -51,7 +51,6 @@ const Contacto = () => {
             to: string;
             subject: string;
             html: string;
-            tokenGralB: string;
         }
 
         const config: configInterface = { // Estas son las especificaciones que solicito en https://github.com/Ale6100/backend-personal.git#endpoints-%EF%B8%8F
@@ -66,8 +65,7 @@ const Contacto = () => {
                 <p>Mensaje:</p>
                 <p>${obj.mensaje}</p>
             </div>
-            `,
-            tokenGralB: `${import.meta.env.VITE_TOKEN_GRAL}`
+            `
         }
 
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/mail`, {
@@ -75,6 +73,7 @@ const Contacto = () => {
             body: JSON.stringify(config),
             headers: {
                 "Content-Type": "application/json",
+                Authorization: `Bearer ${import.meta.env.VITE_TOKEN_GRAL}`
             }
         }).then(res => res.json())
 
