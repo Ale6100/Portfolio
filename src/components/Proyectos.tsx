@@ -98,10 +98,7 @@ const Proyectos = () => {
                         </div>
                 
                         <div className="flex">
-                            {
-                            proyecto.linkSitio === "" ? <button type='button' className='py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black' onClick={ () => sinSitio(proyecto) }>Visitar</button>
-                            : <a href={proyecto.linkSitio} className={`py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black ${proyecto.linkSitio.includes("chat") && "tippyChat"}`} target="_blank">Visitar</a>
-                            }
+                            <a href={proyecto.linkSitio} className={`py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black ${proyecto.linkSitio.includes("chat") && "tippyChat"}`} target="_blank">Visitar</a>
                             <a href={proyecto.linkGitHub} className="py-[1px] w-1/2 h-full px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a>
                         </div>
                     </div>

@@ -3,7 +3,7 @@ const proyectos = [
         titulo: 'Proyecto Full Stack',
         img: "./img/proyecto_full.webp",
         linkGitHub: "https://github.com/Ale6100/Curso-backend.git",
-        linkSitio: "",
+        linkSitio: "https://proyectocompleto.netlify.app/",
         herramientas: ["CSS", "JavaScript", "NodeJS", "MongoDB", "ExpressJS", "Bycrypt", "Cors", "Dotenv", "EJS", "Jsonwebtoken", "Minimist", "Multer", "Nodemailer", "Stripe", "Swagger", "Winston", "ReactJS", "Tailwind", "Vite", "Moment", "Toastify"]
     },
     {

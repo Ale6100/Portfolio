@@ -68,6 +68,20 @@ const Contacto = () => {
             `
         }
 
+        const toleranceTime = setTimeout(() => { // Define seis segundos de tolerancia de espera hasta que se efectúe el envío del mail. Si pasa ese tiempo, aparece un mensaje pidiendo disculpas
+            Toastify({
+                text: "Disculpa la demora. El servidor gratuito donde está alojado el backend suele tener retrasos",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                stopOnFocus: true,
+                style: {
+                    background: "linear-gradient(to right, rgb(100, 100, 100), rgb(200, 200, 200))",
+                }
+            }).showToast();
+        }, 6000);
+
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/mail`, {
             method: "POST",
             body: JSON.stringify(config),
@@ -76,6 +90,8 @@ const Contacto = () => {
                 Authorization: `Bearer ${import.meta.env.VITE_TOKEN_GRAL}`
             }
         }).then(res => res.json())
+
+        clearTimeout(toleranceTime)
 
         buttonSubmit.disabled = false
         buttonSubmit.classList.add("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
