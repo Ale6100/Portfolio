@@ -10,15 +10,17 @@ interface TableroPixelArtProps {
     anchoEspacioVacio: number;
 }
 
+type Color = `rgb(${number}, ${number}, ${number})`
+
 const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase, anchoEspacioVacio }: TableroPixelArtProps) => {   
     const [ montado, setMontado ] = useState(false);
 
     const filaIndices = deCeroAN(cantidadVerticalDeCuadraditos)
-    const colores = ["rgb(0, 0, 0)", "rgb(255, 0, 0)"]
+    const colores: Color[] = ["rgb(0, 0, 0)", "rgb(255, 0, 0)"]
     const tiempoDeVidaCuadradito = 5000 // Esta variable debe ser 10 veces más grande que la de abajo
     const tiempoDeVidaCuadraditoVerde = tiempoDeVidaCuadradito/10
 
-    const pintarCuadradito = (k: number, l: number, timeEnds: number, color: string) => { // Pinta el cuadradito con coordenadas (k, l)
+    const pintarCuadradito = (k: number, l: number, timeEnds: number, color: Color) => { // Pinta el cuadradito con coordenadas (k, l)
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
                 if (i===l && j===k) { 
@@ -43,7 +45,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         }
     }
 
-    const pintarLetra = async (coordenadas: any[], dx: number, color: string) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
+    const pintarLetra = async (coordenadas: any[], dx: number, color: Color) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
         let contador = 0
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
@@ -57,7 +59,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         }
     }
 
-    const pintarFrase = async (frase: string, color: string) => { // Necesito las coordenadas de cada letra y el color con el que se va a pintar
+    const pintarFrase = async (frase: string, color: Color) => { // Necesito las coordenadas de cada letra y el color con el que se va a pintar
         let j = 0
         while (true) {
             if (frases[j] !== frase) {
@@ -82,7 +84,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         }
     }
 
-    const animacionPintarFrase = async (frase: string, colores: string[]) => { // Pinta una frase varias veces con distintos colores
+    const animacionPintarFrase = async (frase: string, colores: Color[]) => { // Pinta una frase varias veces con distintos colores
         for (let i=0; i<colores.length; i++) {
             await pintarFrase(frase, colores[i])
             if (i!=colores.length-1) {
@@ -104,7 +106,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         }
     }
 
-    const animacion = async (frases: string[], colores: string[]) => { // Muestro todas las frases disponibles
+    const animacion = async (frases: string[], colores: Color[]) => { // Muestro todas las frases disponibles
         while (true) {
             for (let i=0; i<frases.length; i++) { 
                 const indiceRandom = Math.floor(Math.random()*frases.length)

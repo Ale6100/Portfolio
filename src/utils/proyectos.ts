@@ -4,7 +4,7 @@ const proyectos = [
         img: "./img/proyecto_full.webp",
         linkGitHub: "https://github.com/Ale6100/Curso-backend.git",
         linkSitio: "https://proyectocompleto.netlify.app/",
-        herramientas: ["CSS", "JavaScript", "NodeJS", "MongoDB", "ExpressJS", "Bycrypt", "Cors", "Dotenv", "EJS", "Jsonwebtoken", "Minimist", "Multer", "Nodemailer", "Stripe", "Swagger", "Winston", "ReactJS", "Tailwind", "Vite", "Moment", "Toastify"]
+        herramientas: ["CSS", "JavaScript", "TypeScript", "NodeJS", "MongoDB", "ExpressJS", "Bycrypt", "Cors", "Dotenv", "EJS", "Jsonwebtoken", "Minimist", "Multer", "Nodemailer", "Stripe", "Swagger", "Winston", "ReactJS", "Tailwind", "Vite", "Moment", "Toastify"]
     },
     {
         titulo: 'Juego "Buscagatos"',
@@ -38,8 +38,8 @@ const proyectos = [
         titulo: 'Sala de chat',
         img: "./img/salaDeChat.webp",
         linkGitHub: "https://github.com/Ale6100/Chat-js.git",
-        linkSitio: "https://chat-js-ale.onrender.com/",
-        herramientas: ["HTML", "CSS", "JavaScript", "MongoDB", "Socket.io", "Express", "NodeJS", "EJS", "Sweet Alert 2"]
+        linkSitio: "https://chat-ts.netlify.app/",
+        herramientas: ["CSS", "TypeScript", "JavaScript", "MongoDB", "Socket.io", "Express", "NodeJS", "EJS", "dotenv", "winston", "cors", "ReactJS", "Vite", "Tailwind", "Toastify", "Sweet Alert 2"]
     },
     {
         titulo: 'Asistente virtual',

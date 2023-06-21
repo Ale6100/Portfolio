@@ -24,15 +24,18 @@ const Contacto = () => {
         e.preventDefault()
         
         const formTarget = e.target as HTMLFormElement;
-        const buttonSubmit = formTarget.elements.namedItem("submit") as HTMLInputElement;
+        const buttonSubmit = formTarget.elements.namedItem("submit")
+
+        if (!(buttonSubmit instanceof HTMLButtonElement)) return null
+
         const form = new FormData(formTarget)
         
         const obj: { [key: string]: string } = {};
         form.forEach((value: FormDataEntryValue, key: string) => obj[key] = superTrim(value as string))
-
+        
         Toastify({
             text: "Espere por favor...",
-            duration: 3000,
+            duration: 6000,
             close: true,
             gravity: "top",
             position: "right",
@@ -77,7 +80,7 @@ const Contacto = () => {
                 position: "right",
                 stopOnFocus: true,
                 style: {
-                    background: "linear-gradient(to right, rgb(100, 100, 100), rgb(200, 200, 200))",
+                    background: "linear-gradient(to right, rgb(100, 100, 100), rgba(125, 125, 125, 0.9))",
                 }
             }).showToast();
         }, 6000);

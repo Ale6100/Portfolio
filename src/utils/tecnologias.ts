@@ -35,6 +35,13 @@ const tecnologias = [
         link: "https://www.javascript.com/"
     },
     {
+        title: "Typescript",
+        img: "https://img.icons8.com/color/100/null/typescript.png",
+        priority: true,
+        alt: "Typescript icon",
+        link: "https://www.typescriptlang.org/",
+    },
+    {
         title: "MongoDB",
         img: "https://img.icons8.com/color/100/null/mongodb.png",
         priority: true,
@@ -63,13 +70,6 @@ const tecnologias = [
         link: "https://nodejs.org/"
     },
     {
-        title: "Python",
-        img: "https://img.icons8.com/color/100/000000/python--v1.png",
-        priority: true,
-        alt: "Python icon",
-        link: "https://www.python.org/"
-    },
-    {
         title: "Git",
         img: "https://img.icons8.com/color/100/null/git.png",
         priority: true,
@@ -84,11 +84,11 @@ const tecnologias = [
         link: "https://github.com/"
     },
     {
-        title: "Typescript",
-        img: "https://img.icons8.com/color/100/null/typescript.png",
+        title: "Python",
+        img: "https://img.icons8.com/color/100/000000/python--v1.png",
         priority: false,
-        alt: "Typescript icon",
-        link: "https://www.typescriptlang.org/",
+        alt: "Python icon",
+        link: "https://www.python.org/"
     },
     {
         title: "Vite",
