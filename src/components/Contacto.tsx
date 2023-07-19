@@ -73,7 +73,7 @@ const Contacto = () => {
 
         const toleranceTime = setTimeout(() => { // Define seis segundos de tolerancia de espera hasta que se efectúe el envío del mail. Si pasa ese tiempo, aparece un mensaje pidiendo disculpas
             Toastify({
-                text: "Disculpa la demora. El servidor gratuito donde está alojado el backend suele tener retrasos",
+                text: "Disculpa la demora. El servidor gratuito donde está alojado el backend se suspende por inactividad",
                 duration: 3000,
                 close: true,
                 gravity: "top",

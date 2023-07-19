@@ -1,6 +1,6 @@
 const estudios = [
     {
-        titulo: "Licenciatura en Ciencias Físicas",
+        titulo: "Licenciatura en Ciencias de la Computación",
         institucionLink: "https://exactas.uba.ar/",
         institucionNombre: "Facultad de Ciencias Exactas y Naturales",
         finalizado: false

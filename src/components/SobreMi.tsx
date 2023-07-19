@@ -13,7 +13,7 @@ const SobreMi = () => {
     const [ cantidadHorizontalDeCuadraditos, setCantidadHorizontalDeCuadraditos ] = useState(0)
     const [ cantidadVerticalDeCuadraditos, setCantidadVerticalDeCuadraditos ] = useState(0)
 
-    const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB | ExpressJS | ReactJS | NodeJS", "Tailwind | Bootstrap", "Git | GitHub", "Autodidacta"] // Por ahora sólo se dibujan letras mayúsculas (menos de la ñ) y el caracter |
+    const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB | ExpressJS | ReactJS | NodeJS", "Tailwind | Bootstrap", "Git | GitHub", "Autodidacta", "PHP SQL"] // Por ahora sólo se dibujan letras mayúsculas (menos de la ñ) y el caracter |
     const anchoEspacioVacio = 3 // Cantidad de cuadraditos horizontales que representa un espacio vacío entre palabras
 
     useEffect(() => {
@@ -54,10 +54,10 @@ const SobreMi = () => {
             <div className='border-l-2 border-blue-400'>
                 <h2>Sobre mí</h2>
                 <div className="p-3">
-                    <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web de 23 años titulado en tecnologías Frontend y Backend. Formo parte de un equipo de trabajo donde nuestro principal objetivo es reunir experiencia</p>
-                    <p className="mb-3 text-lg max-md:text-base">🔧 Inicié siendo un estudiante de Física en la UBA donde entre otras cosas aprendí lógica, matemática y programación, lo que me animó a ser quien soy ahora, un Desarrollador Web Full Stack con constante interés por aprender nuevas tecnologías</p>
+                    <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web de 23 años titulado en tecnologías Frontend y Backend</p>
+                    <p className="mb-3 text-lg max-md:text-base">🔧 Comencé como estudiante de Física en la UBA donde aprendí lógica, matemática y programación. Estos conocimientos me llevaron a descubrir mi pasión por la programación y me animaron a cambiar mi carrera a Ciencias de la Computación. Ahora soy un Desarrollador Web Full Stack con un constante interés por aprender nuevas tecnologías</p>
                     <p className="mb-3 text-lg max-md:text-base">🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
-                    <p className="mb-3 text-lg max-md:text-base">📌 Aspiro insertarme en el mundo laboral guiado por el trabajo en equipo y el autoaprendizaje</p>
+                    <p className="mb-3 text-lg max-md:text-base">📌 Actualmente estoy trabajando en el mundo IT, lo que me permite seguir desarrollándome en el puesto</p>
                     <p className="text-lg max-md:text-base">🗒️ Para más información puedes ver mi <a className="text-blue-900 hover:text-blue-500" href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank" rel="noopener">Linkedin</a> o mi <a className="text-blue-900 hover:text-blue-500" href="./utils/CV_Alejandro_Portaluppi.pdf" target="_blank">CV</a></p>
                 </div>
             </div>
