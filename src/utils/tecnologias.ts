@@ -63,6 +63,27 @@ const tecnologias = [
         link: "https://reactjs.org/"
     },
     {
+        title: "Yii 2",
+        img: "./img/yii.svg",
+        priority: true,
+        alt: "Yii 2 icon",
+        link: "https://www.yiiframework.com/"
+    },
+    {
+        title: "PHP",
+        img: "./img/php.svg",
+        priority: true,
+        alt: "PHP icon",
+        link: "https://www.php.net/"
+    },
+    {
+        title: "XAMPP",
+        img: "./img/xampp.svg",
+        priority: true,
+        alt: "XAMPP icon",
+        link: "https://www.apachefriends.org/"
+    },
+    {
         title: "NodeJS",
         img: "https://img.icons8.com/color/100/null/nodejs.png",
         priority: true,
