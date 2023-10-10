@@ -18,13 +18,13 @@ const Experiencia = () => {
             <div className="flex justify-evenly flex-wrap gap-y-5 gap-x-1">
             {
             experiencia.map((exp, i) => (
-                <div key={i} className='border-2 border-black rounded-sm flex flex-col justify-evenly h-96 w-60 items-center'>
-                    <div className='h-48'>
+                <div key={i} className='border-2 border-black rounded-sm flex flex-col justify-evenly h-80 w-56 items-center'>
+                    <div className='h-40'>
                         <img src={exp.img ? `/img/${exp.img}` : "https://cdn-icons-png.flaticon.com/512/189/189792.png"} alt="Imagen Certificado" className='w-full h-full rounded-sm' />
                     </div>
                     <p className={`font-semibold text-lg text-center`}>{exp.nombre}</p>
                     <p className='text-center'>Puesto: {exp.puesto}</p>
-                    <p>Período: {exp.fechaInicio} - ACTUAL</p>
+                    <p className='text-sm'>Período: {exp.fechaInicio} - { exp.fechaFin ?? "ACTUAL"}</p>
                     {exp.freelance && <p>Equipo de trabajo freelance</p>}
                 </div>
             ))

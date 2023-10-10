@@ -9,7 +9,10 @@ const Tecnologias = () => {
 
     useEffect(() => {
         setTecnologiasMontado(true)
-    }, );
+    }, []);
+
+    const indexLimite = 14
+
     return (
         <section className="scroolToTecnologias mt-14 border-l-2 border-blue-400">
             <h2>Principales tecnologías aprendidas</h2>
@@ -19,7 +22,7 @@ const Tecnologias = () => {
                 <div id="principalesTecnologias" className="flex justify-evenly flex-wrap gap-x-1 gap-y-2">
                     {
                         tecnologias.map((tecnologia, index) => (
-                            (tecnologia.priority) && (
+                            (index <= indexLimite) && (
                                 <div key={index}>
                                     <a className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
                                         <div className="w-16 h-16">
@@ -40,7 +43,7 @@ const Tecnologias = () => {
                 <div id="tecnologiasSecundarias" className="flex justify-evenly flex-wrap gap-x-1 gap-y-2">
                     {
                         tecnologias.map((tecnologia, index) => (
-                            (!tecnologia.priority) && (
+                            (index > indexLimite) && (
                                 <div key={index}>
                                     <a className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
                                         <div className="w-16 h-16">
@@ -50,7 +53,6 @@ const Tecnologias = () => {
                                         <p className={`${tecnologia.fontSize} text-center`}>{tecnologia.title}</p>
                                     </a>
                                 </div>
-                                
                             )
                         ))
                     }

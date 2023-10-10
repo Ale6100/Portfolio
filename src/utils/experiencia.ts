@@ -11,6 +11,7 @@ const experiencia = [
         nombre: "Devs Ants",
         puesto: "Backend Developer",
         fechaInicio: "01/11/2022",
+        fechaFin: "31/12/2023",
         freelance: true
     }
 ]

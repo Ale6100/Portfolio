@@ -13,7 +13,7 @@ const SobreMi = () => {
     const [ cantidadHorizontalDeCuadraditos, setCantidadHorizontalDeCuadraditos ] = useState(0)
     const [ cantidadVerticalDeCuadraditos, setCantidadVerticalDeCuadraditos ] = useState(0)
 
-    const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB | ExpressJS | ReactJS | NodeJS", "Tailwind | Bootstrap", "Git | GitHub", "Autodidacta", "PHP | SQL", 'Yii 2'] // Por ahora sólo se dibujan letras mayúsculas (menos de la ñ) y el caracter |
+    const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB | ExpressJS | ReactJS | NodeJS", "Tailwind | Bootstrap", "Git | GitHub", "Autodidacta", 'Yii 2 | PHP | Xampp'] // Por ahora sólo se dibujan letras mayúsculas (menos de la ñ) y el caracter |
     const anchoEspacioVacio = 3 // Cantidad de cuadraditos horizontales que representa un espacio vacío entre palabras
 
     useEffect(() => {
