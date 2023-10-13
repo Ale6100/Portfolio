@@ -31,8 +31,8 @@ const Footer = () => {
             {
             redes.map(red => (
             <div key={red.p}>
-                <a href={red.href} target="_blank" rel="noopener" className="my-1 p-1 no-underline flex flex-col items-center border border-black rounded bg-white md:transition-all md:duration-500 md:hover:bg-gray-400 max-md:my-1 max-md:mx-0 max-md:p-1">
-                    <img src={red.src} alt={red.alt} className="w-12 h-12"/>
+                <a href={red.href} target="_blank" rel="noopener noreferrer" className="my-1 p-1 no-underline flex flex-col items-center border border-black rounded bg-white md:transition-all md:duration-500 md:hover:bg-gray-400 max-md:my-1 max-md:mx-0 max-md:p-1">
+                    <img loading="lazy" src={red.src} alt={red.alt} className="w-12 h-12"/>
                     <p className="m-0 inline-block font-semibold max-md:hidden">{red.p}</p>
                 </a>
             </div>

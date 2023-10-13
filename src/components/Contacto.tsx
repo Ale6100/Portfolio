@@ -74,7 +74,7 @@ const Contacto = () => {
         const toleranceTime = setTimeout(() => { // Define un tiempo de tolerancia de espera hasta que se efectúe el envío del mail. Si pasa ese tiempo, aparece un mensaje pidiendo disculpas
             Toastify({
                 text: "Disculpa la demora. El servidor gratuito donde está alojado el backend se suspende por inactividad",
-                duration: 3000,
+                duration: 4000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -98,7 +98,7 @@ const Contacto = () => {
                 
                 return await response.json();                
             } catch (error) {
-                throw error
+                throw new Error(`${error}`)
             }
         }
 
@@ -163,7 +163,7 @@ const Contacto = () => {
     }
 
     return (
-        <section className="scroolToContacto mt-14 mb-5 border-l-2 border-blue-400">
+        <section className="scrollToContacto mt-14 mb-5 border-l-2 border-blue-400">
             <h2 className='mb-5'>Contacto</h2>
 
             <div className='mx-1'>

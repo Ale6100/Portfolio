@@ -38,7 +38,7 @@ const Proyectos = () => {
     }, );
 
     return (
-        <section className="scroolToProyectos border-l-2 border-blue-400 mt-14">
+        <section className="scrollToProyectos border-l-2 border-blue-400 mt-14">
             <h2 className='mb-5'>Principales proyectos personales</h2>
 
             <div id="contenedorProyectos" className="flex justify-around flex-wrap gap-x-[1px] gap-y-4">
@@ -55,8 +55,8 @@ const Proyectos = () => {
                         </div>
                 
                         <div className="flex">
-                            <a href={proyecto.linkSitio} className="py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">Visitar</a>
-                            <a href={proyecto.linkGitHub} className="py-[1px] w-1/2 h-full px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a>
+                            <a rel="noopener noreferrer" href={proyecto.linkSitio} className="py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">Visitar</a>
+                            <a rel="noopener noreferrer" href={proyecto.linkGitHub} className="py-[1px] w-1/2 h-full px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a>
                         </div>
                     </div>
                 ))}

@@ -1,6 +1,6 @@
 const proyectos = [
     {
-        titulo: 'Proyecto Full Stack',
+        titulo: 'E-commerce',
         img: "./img/proyecto_full.webp",
         linkGitHub: "https://github.com/Ale6100/Curso-backend.git",
         linkSitio: "https://proyectocompleto.netlify.app/",

@@ -14,7 +14,7 @@ const Tecnologias = () => {
     const indexLimite = 14
 
     return (
-        <section className="scroolToTecnologias mt-14 border-l-2 border-blue-400">
+        <section className="scrollToTecnologias mt-14 border-l-2 border-blue-400">
             <h2>Principales tecnologías aprendidas</h2>
 
             <div>
@@ -24,9 +24,9 @@ const Tecnologias = () => {
                         tecnologias.map((tecnologia, index) => (
                             (index <= indexLimite) && (
                                 <div key={index}>
-                                    <a className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
+                                    <a rel="noopener noreferrer" className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
                                         <div className="w-16 h-16">
-                                            <img className="w-full h-full transition-all duration-200" src={tecnologia.img} alt={tecnologia.alt} />
+                                            <img loading='lazy' className="w-full h-full transition-all duration-200" src={tecnologia.img} alt={tecnologia.alt} />
                                         </div>
                                         
                                         <p>{tecnologia.title}</p>
@@ -45,9 +45,9 @@ const Tecnologias = () => {
                         tecnologias.map((tecnologia, index) => (
                             (index > indexLimite) && (
                                 <div key={index}>
-                                    <a className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
+                                    <a rel="noopener noreferrer" className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
                                         <div className="w-16 h-16">
-                                            <img className="w-full h-full text transition-all duration-200" src={tecnologia.img} alt={tecnologia.alt} />
+                                            <img loading='lazy' className="w-full h-full text transition-all duration-200" src={tecnologia.img} alt={tecnologia.alt} />
                                         </div>
                                         
                                         <p className={`${tecnologia.fontSize} text-center`}>{tecnologia.title}</p>

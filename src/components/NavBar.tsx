@@ -27,12 +27,12 @@ const NavBar = () => {
     const [ navBarRespVisible, setNavBarRespVisible ] = useState(false)
 
     useEffect(() => { // Activa los scroll, pero antes debe asegurarse de que las secciones existan
-        if (sobreMiMontado) activarScroll(".scroolToSobreMi")
-        if (proyectosMontado) activarScroll(".scroolToProyectos")
-        if (tecnologiasMontado) activarScroll(".scroolToTecnologias")
-        if (misEstudios) activarScroll(".scroolToMisEstudios")
-        if (experiencia) activarScroll(".scroolToExperiencia")
-        if (contactoMontado) activarScroll(".scroolToContacto")
+        if (sobreMiMontado) activarScroll(".scrollToSobreMi")
+        if (proyectosMontado) activarScroll(".scrollToProyectos")
+        if (tecnologiasMontado) activarScroll(".scrollToTecnologias")
+        if (misEstudios) activarScroll(".scrollToMisEstudios")
+        if (experiencia) activarScroll(".scrollToExperiencia")
+        if (contactoMontado) activarScroll(".scrollToContacto")
 
         const fondoDifuminado = document.getElementById(`fondoDifuminadoResponsive`)
         fondoDifuminado?.style.setProperty("backdrop-filter", "blur(3px)")
@@ -77,12 +77,12 @@ const NavBar = () => {
 
             <nav className="w-full max-md:hidden"> {/* Por problemas relacionados a tailwind tuve que separar las nav */}
                 <ul className="flex justify-evenly w-full h-full text-center">
-                    <li className="scroolToSobreMi">Sobre mí</li>
-                    <li className="scroolToProyectos">Proyectos</li>
-                    <li className="scroolToTecnologias">Tecnologias</li>
-                    <li className="scroolToMisEstudios">Estudios</li>
-                    <li className="scroolToExperiencia">Experiencia</li>
-                    <li className="scroolToContacto">Contacto</li>
+                    <li className="scrollToSobreMi">Sobre mí</li>
+                    <li className="scrollToProyectos">Proyectos</li>
+                    <li className="scrollToTecnologias">Tecnologias</li>
+                    <li className="scrollToMisEstudios">Estudios</li>
+                    <li className="scrollToExperiencia">Experiencia</li>
+                    <li className="scrollToContacto">Contacto</li>
                 </ul>
             </nav>
         </header>
@@ -91,12 +91,12 @@ const NavBar = () => {
         
         <nav className="w-[33vw] right-[-100vw] p-1 navResponsive md:hidden fixed z-30 rounded-bl-md bg-blue-400 border-l-2 border-b-2 border-blue-600 transition-all duration-200">
             <ul className="flex justify-evenly w-full h-56 flex-col ulResponsive">
-                <li className="scroolToSobreMi">Sobre mí</li>
-                <li className="scroolToProyectos">Proyectos</li>
-                <li className="scroolToTecnologias">Tecnologias</li>
-                <li className="scroolToMisEstudios">Estudios</li>
-                <li className="scroolToExperiencia">Experiencia</li>
-                <li className="scroolToContacto">Contacto</li>
+                <li className="scrollToSobreMi">Sobre mí</li>
+                <li className="scrollToProyectos">Proyectos</li>
+                <li className="scrollToTecnologias">Tecnologias</li>
+                <li className="scrollToMisEstudios">Estudios</li>
+                <li className="scrollToExperiencia">Experiencia</li>
+                <li className="scrollToContacto">Contacto</li>
             </ul>
         </nav>
         </>
