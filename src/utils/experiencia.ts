@@ -4,6 +4,7 @@ const experiencia = [
         nombre: "Universidad Nacional de Hurlingham",
         puesto: "Desarrollador Junior",
         fechaInicio: "01/07/2023",
+        fechaFin: "01/10/2023",
         freelance: false
     },
     {
