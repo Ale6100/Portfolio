@@ -7,7 +7,7 @@ const proyectos = [
         herramientas: ["HTML", "CSS", "JavaScript", "TypeScript", "NodeJS", "MongoDB", "ExpressJS", "Bycrypt", "Cors", "cookie-parser", "Dotenv", "EJS", "Jsonwebtoken", "Minimist", "Multer", "Nodemailer", "Stripe", "Swagger", "Winston", "ReactJS", "Tailwind", "Vite", "Moment", "Toastify", "copyfiles"]
     },
     {
-        titulo: 'Juego "Buscagatos"',
+        titulo: "Juego Buscagatos",
         img: "./img/Buscagatos.webp",
         linkGitHub: "https://github.com/Ale6100/Buscagatos_primer_juego_JS.git",
         linkSitio: "https://buscagatos.netlify.app/",
@@ -49,11 +49,11 @@ const proyectos = [
         herramientas: ["HTML", "CSS", "JavaScript", "TypeScript", "ReactJS", "NodeJs", "Tailwind", "Vite", "react-router-dom", "react-toastify", "sweetalert2", "mongoose", "ExpressJS", "cookie-parser", "cors", "dotenv", "jsonwebtoken", "bcrypt", "winston"]
     },
     {
-        titulo: 'Asistente virtual',
-        img: "./img/asistenteVirtual.webp",
-        linkGitHub: "https://github.com/Ale6100/Asistente-Virtual-JS.git",
-        linkSitio: "https://asistentevirtual.netlify.app/",
-        herramientas: ["HTML", "CSS", "JavaScript", "Web Speech API"]
+        titulo: "Juego Lucy",
+        img: "./img/juegoLucy.webp",
+        linkGitHub: "https://github.com/Ale6100/Lucy.git",
+        linkSitio: "https://lucy-ia.netlify.app/",
+        herramientas: ["HTML", "CSS", "JavaScript", "TypeScript", "ReactJS", "NodeJS", "Tailwind", "Vite", "react-router-dom"]
     }
 ]
 

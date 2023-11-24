@@ -1,17 +1,8 @@
-import React, { useEffect, useContext } from 'react';
-import { PersonalContext } from "./PersonalContext";
+import React from 'react';
 import Toastify from 'toastify-js'
 import "toastify-js/src/toastify.css"
 
 const Contacto = () => {
-    const personalContext = useContext(PersonalContext);
-    if (!personalContext) return <></>
-    const { setContactoMontado } = personalContext
-
-    useEffect(() => {
-        setContactoMontado(true)
-    }, );
-
     const superTrim = (string: string): string => {
         string = string.trim()
         while (string.includes("  ")) {
@@ -163,8 +154,8 @@ const Contacto = () => {
     }
 
     return (
-        <section className="scrollToContacto mt-14 mb-5 border-l-2 border-blue-400">
-            <h2 className='mb-5'>Contacto</h2>
+        <section className="mt-14 mb-5 border-l-2 border-blue-400">
+            <h2 id="contacto" className='mb-5'>Contacto</h2>
 
             <div className='mx-1'>
                 <form onSubmit={ sendMail } id="idFormContacto" className="mx-auto m-1 p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">

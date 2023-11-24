@@ -4,7 +4,7 @@
 
 @layer components {
     * {
-        @apply m-0 p-0;
+        @apply m-0 p-0 scroll-smooth scroll-mt-12;
     }
 
     body {
@@ -34,7 +34,15 @@
 
 header {
     background-image: linear-gradient(to bottom, rgba(37, 99, 235, 0.75), rgba(191, 219, 254, 0.25));
+}
+
+.header-responsive-container {
     backdrop-filter: blur(3px);
+}
+
+.custom-blur {
+    backdrop-filter: blur(3px);
+    filter: brightness(75%);
 }
 
 .bgBlack {
@@ -70,4 +78,11 @@ nav ul li:hover {
 
 h1, h2, h3 {
     text-shadow: var(--box-shadow-titulo);
+}
+
+@media screen and (min-width: 768px) {
+    .nav-tv-blur {
+        height: 100%;
+        backdrop-filter: blur(3px);
+    }
 }

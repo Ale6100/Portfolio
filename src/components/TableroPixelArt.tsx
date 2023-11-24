@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import arrayLetras from "../utils/arrayLetras.js"
 import { waitFor, deCeroAN } from '../utils/utils.js';
+import { letrasTypes } from '../types/types.js';
 
 interface TableroPixelArtProps {
     cantidadVerticalDeCuadraditos: number;
@@ -45,14 +46,14 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         }
     }
 
-    const pintarLetra = async (coordenadas: any[], dx: number, color: Color) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
+    const pintarLetra = async (coordenadas: letrasTypes["coordenadas"], dx: number, color: Color) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
         let contador = 0
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
                 for (let z=0; z<coordenadas.length; z++) {
                     if (coordenadas[z].x === j && coordenadas[z].y === i) {
                         pintarCuadradito(j+dx, i, tiempoDeVidaCuadradito, color)
-                        contador++
+                        contador += contador
                     }
                 }
             }
@@ -61,6 +62,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
 
     const pintarFrase = async (frase: string, color: Color) => { // Necesito las coordenadas de cada letra y el color con el que se va a pintar
         let j = 0
+        // eslint-disable-next-line
         while (true) {
             if (frases[j] !== frase) {
                 j++
@@ -107,6 +109,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
     }
 
     const animacion = async (frases: string[], colores: Color[]) => { // Muestro todas las frases disponibles
+        // eslint-disable-next-line
         while (true) {
             for (let i=0; i<frases.length; i++) { 
                 const indiceRandom = Math.floor(Math.random()*frases.length)
@@ -119,6 +122,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
     useEffect(() => {
         if (montado) animacion(frases, colores)
         setMontado(true)
+        // eslint-disable-next-line
     }, [montado]);
 
     interface FilaProps {

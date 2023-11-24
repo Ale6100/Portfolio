@@ -1,21 +1,11 @@
-import { useEffect, useContext } from 'react';
 import tecnologias from "../utils/tecnologias"
-import { PersonalContext } from "./PersonalContext";
 
 const Tecnologias = () => {
-    const personalContext = useContext(PersonalContext);
-    if (!personalContext) return <></>
-    const { setTecnologiasMontado } = personalContext
-
-    useEffect(() => {
-        setTecnologiasMontado(true)
-    }, []);
-
     const indexLimite = 14
 
     return (
-        <section className="scrollToTecnologias mt-14 border-l-2 border-blue-400">
-            <h2>Principales tecnologías aprendidas</h2>
+        <section className="mt-14 border-l-2 border-blue-400">
+            <h2 id="tecnologias">Principales tecnologías aprendidas</h2>
 
             <div>
                 <h3 className="mt-5 mb-3 text-center">Primarias</h3>

@@ -1,19 +1,9 @@
-import { useEffect, useContext } from 'react';
 import experiencia from '../utils/experiencia';
-import { PersonalContext } from './PersonalContext';
 
 const Experiencia = () => {
-    const personalContext = useContext(PersonalContext);
-    if (!personalContext) return <></>
-    const { setExperiencia } = personalContext
-
-    useEffect(() => {
-        setExperiencia(true)
-    }, );
-
     return (
-        <section className="scrollToExperiencia mt-14 border-l-2 border-blue-400">
-            <h2 className='mb-5'>Experiencia laboral en el rubro IT</h2>
+        <section className="mt-14 border-l-2 border-blue-400">
+            <h2 id="experiencia" className='mb-5'>Experiencia laboral en el rubro IT</h2>
 
             <div className="flex justify-evenly flex-wrap gap-y-5 gap-x-1">
             {

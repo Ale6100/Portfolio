@@ -1,14 +1,9 @@
-import { useEffect, useContext } from 'react';
+import { useEffect } from 'react';
 import proyectos from "../utils/proyectos"
-import { PersonalContext } from "./PersonalContext";
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 
 const Proyectos = () => {
-    const personalContext = useContext(PersonalContext);
-    if (!personalContext) return <></>
-    const { setProyectosMontado } = personalContext
-
     useEffect(() => {
         proyectos.forEach((proyecto, index) => {
             let htmlContent = ""
@@ -33,13 +28,11 @@ const Proyectos = () => {
                 trigger: 'mouseenter focus',
             });
         })
-
-        setProyectosMontado(true)
     }, );
 
     return (
-        <section className="scrollToProyectos border-l-2 border-blue-400 mt-14">
-            <h2 className='mb-5'>Principales proyectos personales</h2>
+        <section className="border-l-2 border-blue-400 mt-14">
+            <h2 id="proyectos" className='mb-5'>Principales proyectos personales</h2>
 
             <div id="contenedorProyectos" className="flex justify-around flex-wrap gap-x-[1px] gap-y-4">
                 {proyectos.map((proyecto, index) => (

@@ -1,4 +1,6 @@
-const arrayLetras = [
+import { letrasTypes } from "../types/types"
+
+const arrayLetras: letrasTypes[] = [
     {
         letra: "a",
         ancho: 4,

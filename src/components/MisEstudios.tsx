@@ -1,19 +1,9 @@
-import React, { useEffect, useContext } from 'react';
-import { PersonalContext } from './PersonalContext';
 import estudios from '../utils/estudios';
 
-const MisEstudios = () => {
-    const personalContext = useContext(PersonalContext);
-    if (!personalContext) return <></>
-    const { setMisEstudios } = personalContext
-
-    useEffect(() => {
-        setMisEstudios(true)
-    }, );
-    
+const MisEstudios = () => {    
     return (
-        <section className="scrollToMisEstudios mt-14 border-l-2 border-blue-400">
-            <h2 className='mb-5'>Mis estudios</h2>
+        <section className="mt-14 border-l-2 border-blue-400">
+            <h2 id="estudios" className='mb-5'>Mis estudios</h2>
 
             <div className="flex justify-evenly flex-wrap gap-y-5 gap-x-1">
                 {

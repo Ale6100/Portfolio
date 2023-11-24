@@ -1,106 +1,66 @@
-import { useState, useEffect, useContext } from 'react';
-import { PersonalContext } from "./PersonalContext";
-
-const activarScroll = (claseScroll: string): void => { // Conecta las etiquetas de las nav con las de las secciones mediante un scroll animado
-    const [ etiquetaEnlace1, etiquetaEnlace2, etiquetaDestino ] = document.querySelectorAll(claseScroll) as unknown as [HTMLElement, HTMLElement, HTMLElement]
-
-    etiquetaEnlace1.addEventListener("click", () => {
-        window.scrollTo({
-            top: etiquetaDestino.offsetTop,
-            behavior: "smooth"
-        })
-    })
-    etiquetaEnlace2.addEventListener("click", () => {
-        window.scrollTo({
-            top: etiquetaDestino.offsetTop,
-            behavior: "smooth"
-        })
-    })
-}
+import { useEffect, useRef, useState } from "react"
 
 const NavBar = () => {
-    const personalContext = useContext(PersonalContext);
-    
-    if (!personalContext) return <></> // No es algo que normalmente haría, pero es para que Typescript no se queje
-    const { sobreMiMontado, proyectosMontado, tecnologiasMontado, misEstudios, experiencia, contactoMontado } = personalContext
-    
     const [ navBarRespVisible, setNavBarRespVisible ] = useState(false)
 
-    useEffect(() => { // Activa los scroll, pero antes debe asegurarse de que las secciones existan
-        if (sobreMiMontado) activarScroll(".scrollToSobreMi")
-        if (proyectosMontado) activarScroll(".scrollToProyectos")
-        if (tecnologiasMontado) activarScroll(".scrollToTecnologias")
-        if (misEstudios) activarScroll(".scrollToMisEstudios")
-        if (experiencia) activarScroll(".scrollToExperiencia")
-        if (contactoMontado) activarScroll(".scrollToContacto")
+    const buttonRef = useRef<HTMLDivElement>(null);
 
-        const fondoDifuminado = document.getElementById(`fondoDifuminadoResponsive`)
-        fondoDifuminado?.style.setProperty("backdrop-filter", "blur(3px)")
-        fondoDifuminado?.style.setProperty("filter", "brightness(75%)")
-    }, [sobreMiMontado, proyectosMontado, tecnologiasMontado, misEstudios, experiencia, contactoMontado]);
-
-    useEffect(() => { 
-        const navBarResponsive = document.querySelector(".navResponsive") as HTMLElement
-        const fondoDifuminado = document.getElementById(`fondoDifuminadoResponsive`)
-        const botonNavBar = document.getElementById("botonNavBar")
-
-        if (!botonNavBar || !fondoDifuminado) return;
-        const anchoBotonNavBar = botonNavBar?.offsetWidth
-
-        if (navBarRespVisible) { // Comportamiento de la "navbar responsive", fondo difuminado, y el botón cuando dicha navbar es visible o no
-            navBarResponsive.style.setProperty("transform", "translateX(-100vw)") // Hacemos que la navbar pequeña y el fondo se vean
-            fondoDifuminado.style.setProperty("transform", "translateX(-120vw)");
-
-            (botonNavBar.children[0] as HTMLElement).style.setProperty("transform", `translate(0vw, ${Math.round(anchoBotonNavBar)/2}px) rotate(45deg) scale(1.41421356237)`); // Hacemos aparecer la X
-            (botonNavBar.children[1] as HTMLElement).style.setProperty("transform", "scale(0)");
-            (botonNavBar.children[2] as HTMLElement).style.setProperty("transform", `translate(0vw, ${Math.round(-anchoBotonNavBar)/2}px) rotate(-45deg) scale(1.41421356237)`);
+    useEffect(() => {
+        const divContainer = buttonRef.current;
         
-        } else if (!navBarRespVisible) {
-            navBarResponsive.style.setProperty("transform", "translateX(0vw)")
-            fondoDifuminado.style.setProperty("transform", "translateX(0vw)");
+        const div1 = divContainer?.children[0]
+        const div2 = divContainer?.children[1]
+        const div3 = divContainer?.children[2]
 
-           (botonNavBar.children[0] as HTMLElement).style.setProperty("transform", `translate(0vw, 0px) rotate(0) scale(1)`);
-           (botonNavBar.children[1] as HTMLElement).style.setProperty("transform", "scale(1)");
-           (botonNavBar.children[2] as HTMLElement).style.setProperty("transform", `translate(0vw, 0px) rotate(0) scale(1)`);
-        }
+        if (!div1 || !div2 || !div3) return;
         
+        if (navBarRespVisible) {
+            div1.classList.replace("rotate-0", "rotate-45")
+            div1.classList.replace("scale-1", "scale-[1.41421356237]")
+            div1.classList.replace("translate-y-0", "translate-y-[14px]")
+
+            div2.classList.replace("scale-1", "scale-0")
+
+            div3.classList.replace("rotate-0", "-rotate-45")
+            div3.classList.replace("scale-1", "scale-[1.41421356237]")
+            div3.classList.replace("translate-y-0", "translate-y-[-14px]")
+        } else {
+            div1.classList.replace("rotate-45", "rotate-0")
+            div1.classList.replace("scale-[1.41421356237]", "scale-1")
+            div1.classList.replace("translate-y-[14px]", "translate-y-0")
+
+            div2.classList.replace("scale-0", "scale-1")
+            
+            div3.classList.replace("-rotate-45", "rotate-0")
+            div3.classList.replace("scale-[1.41421356237]", "scale-1")
+            div3.classList.replace("translate-y-[-14px]", "translate-y-0")
+        }        
     }, [navBarRespVisible])
-
+    
     return (
-        <>
-        <header className="sticky z-50 h-12 top-0 w-full text-xl flex flex-col justify-center border-black border-b max-md:items-end">            
-            <div id="botonNavBar" onClick={() => setNavBarRespVisible(!navBarRespVisible)} className='p-0 h-7 w-7 hidden max-md:flex mr-4 flex-col justify-between cursor-pointer select-none'>
-                <div className="transition-all duration-200 h-0 outline outline-1"></div>
-                <div className="transition-all duration-200 h-0 outline outline-1"></div>
-                <div className="transition-all duration-200 h-0 outline outline-1"></div>
-            </div>
-
-            <nav className="w-full max-md:hidden"> {/* Por problemas relacionados a tailwind tuve que separar las nav */}
-                <ul className="flex justify-evenly w-full h-full text-center">
-                    <li className="scrollToSobreMi">Sobre mí</li>
-                    <li className="scrollToProyectos">Proyectos</li>
-                    <li className="scrollToTecnologias">Tecnologias</li>
-                    <li className="scrollToMisEstudios">Estudios</li>
-                    <li className="scrollToExperiencia">Experiencia</li>
-                    <li className="scrollToContacto">Contacto</li>
+        <header className="sticky z-30 top-0 h-12 text-xl flex flex-col justify-center border-black border-b max-md:items-end max-md:flex-row">
+            <nav className={`nav-tv-blur max-md:top-12 max-md:fixed max-md:z-40 max-md:w-[33vw] ${navBarRespVisible ? "max-md:right-0" : "max-md:right-[100vw]"} max-md:p-1 max-md:rounded-bl-md max-md:border-b-2 max-md:border-l-2 max-md:border-blue-600 max-md:bg-blue-400 transition-all duration-200`}>
+                <ul className="h-full items-center flex justify-evenly text-center max-md:h-56 max-md:flex-col max-md:ulResponsive">
+                    <li><a href="#sobreMi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#tecnologias">Tecnologías</a></li>
+                    <li><a href="#estudios">Estudios</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
-        </header>
 
-        <div id="fondoDifuminadoResponsive" onClick={() => setNavBarRespVisible(!navBarRespVisible)} className={`md:hidden fixed z-20 left-[120vw] w-screen h-screen transition-all duration-200`}></div>
-        
-        <nav className="w-[33vw] right-[-100vw] p-1 navResponsive md:hidden fixed z-30 rounded-bl-md bg-blue-400 border-l-2 border-b-2 border-blue-600 transition-all duration-200">
-            <ul className="flex justify-evenly w-full h-56 flex-col ulResponsive">
-                <li className="scrollToSobreMi">Sobre mí</li>
-                <li className="scrollToProyectos">Proyectos</li>
-                <li className="scrollToTecnologias">Tecnologias</li>
-                <li className="scrollToMisEstudios">Estudios</li>
-                <li className="scrollToExperiencia">Experiencia</li>
-                <li className="scrollToContacto">Contacto</li>
-            </ul>
-        </nav>
-        </>
-    );
+            <div className={`custom-blur md:hidden top-12 z-30 fixed ${navBarRespVisible ? "right-0" : "right-[100vw]"} w-screen h-screen transition-all duration-200`}></div>
+
+            <div className="header-responsive-container flex-1 h-full flex justify-end items-center md:hidden">
+                <div ref={buttonRef} onClick={() => setNavBarRespVisible(!navBarRespVisible)} className='p-0 z-30 h-7 w-7 hidden max-md:flex mr-4 flex-col justify-between cursor-pointer select-none'>
+                    <div className="transition-all duration-200 h-0 outline outline-1 rotate-0 scale-1 translate-y-0"></div>
+                    <div className="transition-all duration-200 h-0 outline outline-1 scale-1"></div>
+                    <div className="transition-all duration-200 h-0 outline outline-1 rotate-0 scale-1 translate-y-0"></div>
+                </div>
+            </div>
+        </header>
+    )
 }
 
-export default NavBar;
+export default NavBar
