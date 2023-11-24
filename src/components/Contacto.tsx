@@ -158,9 +158,9 @@ const Contacto = () => {
             <h2 id="contacto" className='mb-5'>Contacto</h2>
 
             <div className='mx-1'>
-                <form onSubmit={ sendMail } id="idFormContacto" className="mx-auto m-1 p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
+                <form onSubmit={ sendMail } className="mx-auto m-1 p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
                     <label>Nombre
-                        <input name="nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400 animate-input-border" required />
+                        <input name="nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
                     </label>
 
                     <label className="my-5">Email

@@ -6,6 +6,7 @@ import MisEstudios from './components/MisEstudios';
 import Experiencia from './components/Experiencia';
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
+import Pulse from './components/Pulse';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <Contacto />
         </main>
         <Footer />
+        <Pulse />
         </>
     )
 }

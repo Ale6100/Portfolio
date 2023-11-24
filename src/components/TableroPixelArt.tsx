@@ -47,13 +47,11 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
     }
 
     const pintarLetra = async (coordenadas: letrasTypes["coordenadas"], dx: number, color: Color) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
-        let contador = 0
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
                 for (let z=0; z<coordenadas.length; z++) {
                     if (coordenadas[z].x === j && coordenadas[z].y === i) {
                         pintarCuadradito(j+dx, i, tiempoDeVidaCuadradito, color)
-                        contador += contador
                     }
                 }
             }
