@@ -10,20 +10,20 @@ const Contacto = () => {
         }
         return string
     }
-    
+
     const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        
+
         const formTarget = e.target as HTMLFormElement;
         const buttonSubmit = formTarget.elements.namedItem("submit")
 
         if (!(buttonSubmit instanceof HTMLButtonElement)) return null
 
         const form = new FormData(formTarget)
-        
+
         const obj: { [key: string]: string } = {};
         form.forEach((value: FormDataEntryValue, key: string) => obj[key] = superTrim(value as string))
-        
+
         Toastify({
             text: "Espere por favor...",
             duration: 6000,
@@ -76,51 +76,21 @@ const Contacto = () => {
             }).showToast();
         }, 6000);
 
-        const sendMail = async (url: string) => {
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    body: JSON.stringify(config),
-                    headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${import.meta.env.VITE_TOKEN_GRAL}`
-                    }
-                });
-                
-                return await response.json();                
-            } catch (error) {
-                throw new Error(`${error}`)
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/mail`, {
+            method: "POST",
+            body: JSON.stringify(config),
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${import.meta.env.VITE_TOKEN_GRAL}`
             }
-        }
-
-        let response
-        try { // Lo que hago acá es intentar enviar el mail con un backend personal subido a dos sitios gratuitos. El problema de estos sitios es que no siempre están disponibles
-            response = await sendMail(`${import.meta.env.VITE_BACKEND_URL1}/api/mail`);
-        } catch (err1) {
-            try {
-                response = await sendMail(`${import.meta.env.VITE_BACKEND_URL2}/api/mail`);
-            } catch (err2) {
-                Toastify({
-                    text: "Lo lamento, inténtalo de nuevo más tarde. Si deseas comunicarte conmigo por favor contáctate a la dirección de mail alejandro_portaluppi@outlook.com",
-                    duration: 5000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    stopOnFocus: true,
-                    style: {
-                        background: "linear-gradient(to right, rgba(155, 50, 50, 1), rgba(0, 0, 0, 0.9))",
-                        borderRadius: "2px"
-                    }
-                }).showToast();                
-            }
-        }
+        }).then(res => res.json());
 
         clearTimeout(toleranceTime)
 
         buttonSubmit.disabled = false
         buttonSubmit.classList.add("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
         buttonSubmit.classList.remove("bg-gray-500")
-        
+
         if (response.status === "success") {
             formTarget.reset()
             Toastify({
@@ -137,7 +107,7 @@ const Contacto = () => {
                 className: "sendMail"
             }).showToast();
 
-        } else if (response.status === "error") { // No muestro cuál es el error porque no tengo interés que sea público. Lo conozco yo por el lado del backend
+        } else { // No muestro cuál es el error porque no tengo interés que sea público. Lo conozco yo por el lado del backend
             Toastify({
                 text: "Servidor en mantenimiento. Si deseas comunicarte conmigo por favor contáctate a la dirección de mail alejandro_portaluppi@outlook.com",
                 duration: 10000,

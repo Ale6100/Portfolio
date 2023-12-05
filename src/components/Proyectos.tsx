@@ -10,7 +10,7 @@ const Proyectos = () => {
             proyecto.herramientas.forEach(h => {
                 htmlContent += `<p>${h}</p>`
             })
-        
+
             tippy(`.pe-${index}`, {
                 content: `<div class="htmlContent">${htmlContent}</div>`,
                 allowHTML: true,
@@ -37,16 +37,16 @@ const Proyectos = () => {
             <div id="contenedorProyectos" className="flex justify-around flex-wrap gap-x-[1px] gap-y-4">
                 {proyectos.map((proyecto, index) => (
                     <div className="w-[250px] flex flex-col justify-between border-2 border-black rounded-sm" key={index}>
-                        <p className="text-lg font-semibold flex flex-col justify-center text-center h-14 bg-blue-400">{proyecto.titulo}</p>
-                        
+                        <p className="text-lg font-semibold flex flex-col justify-center text-center h-14 bg-blue-400">{proyecto.title}</p>
+
                         <div className="relative">
                             <div>
                                 <img className="hover:brightness-105 w-full h-[127px] transition-all duration-200" src={proyecto.img} alt="Imagen proyecto"/>
                             </div>
-                
-                            <img className={"absolute right-[5%] top-[5%] w-8 pe-"+index} src="https://cdn-icons-png.flaticon.com/512/453/453635.png" alt="Icono herramientas"/>
+
+                            <img className={"absolute right-[5%] top-[5%] w-8 pe-"+index} src="./img/hammer.svg" alt="Icono herramientas"/>
                         </div>
-                
+
                         <div className="flex">
                             <a rel="noopener noreferrer" href={proyecto.linkSitio} className="py-[1px] w-1/2 h-full disabled px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">Visitar</a>
                             <a rel="noopener noreferrer" href={proyecto.linkGitHub} className="py-[1px] w-1/2 h-full px-3 text-center bg-blue-400 border-2 rounded-sm hover:bg-white hover:scale-105 hover:border-black" target="_blank">GitHub</a>

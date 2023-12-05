@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react"
-import { colorRandom, numeroAlAzar } from "../utils/utils"
+import { numeroAlAzar } from "../utils/utils"
 
 const timePulse = 30; // Tiempo en segundos entre el inicio de pulso y otro
 
@@ -13,7 +13,7 @@ const Pulse = () => { // Genera un pulso en un lugar random de la pantalla
             setPulso(pulso => !pulso)
         }, timePulse*1000/2)
     }, [])
-    
+
     useEffect(() => {
         const divPulso = pulsoRef.current
         if (!divPulso) return;
@@ -21,20 +21,19 @@ const Pulse = () => { // Genera un pulso en un lugar random de la pantalla
         if (pulso) {
             const randomTop = numeroAlAzar(0, 100);
             const randomLeft = numeroAlAzar(0, 100);
-            const colorBorderRandom = colorRandom();
             divPulso.style.setProperty("top", `${randomTop}%`)
             divPulso.style.setProperty("left", `${randomLeft}%`)
-            divPulso.style.setProperty("border", `1px solid ${colorBorderRandom}`)
+            divPulso.style.setProperty("border", `1px solid rgb(0, 0, 255)`)
             divPulso.classList.add("pulse")
-            
-        } else {            
+
+        } else {
             divPulso.classList.remove("pulse")
-        }        
+        }
     }, [pulso])
 
     return (
         <div className='fixed -z-30 top-0 h-screen w-screen'>
-            <div ref={pulsoRef} className="shadow-2xl shadow-slate-950 rounded-full absolute transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div ref={pulsoRef} className="bg-custom-pulse shadow-2xl rounded-full absolute transform -translate-x-1/2 -translate-y-1/2"></div>
         </div>
     )
 }

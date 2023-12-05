@@ -15,10 +15,3 @@ export const numeroAlAzar = (num1: number, num2: number): number => {
     const randomAmpliado = Math.random()*(num2-num1) //  Número al azar entre 0 y (num2-num1) (este último sin incluir)
     return num1 + randomAmpliado // Desplazo el rango para que inicie donde inicia el número más pequeño (num1)
 }
-
-export const colorRandom = (): `rgb(${number}, ${number}, ${number})` => {
-    const red = Math.floor(Math.random()*256)
-    const green = Math.floor(Math.random()*256)
-    const blue = Math.floor(Math.random()*256)
-    return `rgb(${red}, ${green}, ${blue})`
-}

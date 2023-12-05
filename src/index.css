@@ -14,7 +14,7 @@
     h1 {
         @apply text-4xl max-md:text-2xl
     }
-    
+
     h2 {
         @apply text-2xl bg-blue-300 w-96 py-1 pl-3 rounded-tr-sm rounded-br-sm max-md:text-xl max-sm:w-72 max-sm:text-lg
     }
@@ -78,7 +78,7 @@ h1, h2, h3 {
 }
 
 .pulse {
-    animation: pulse 2s both;
+    animation: pulse 2s backwards;
 }
 
 @keyframes pulse {
@@ -87,9 +87,14 @@ h1, h2, h3 {
         height: 0px;
     }
     100% {
-        width: 300vw;
-        height: 300vw;
+        width: 400vw;
+        height: 400vw;
     }
+}
+
+.bg-custom-pulse {
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 255, 1) 100%);
 }
 
 @media screen and (min-width: 768px) {
