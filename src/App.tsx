@@ -7,6 +7,8 @@ import Experiencia from './components/Experiencia';
 import Contacto from './components/Contacto'
 import Footer from './components/Footer'
 import Pulse from './components/Pulse';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
     return (
@@ -19,6 +21,7 @@ function App() {
             <MisEstudios />
             <Experiencia />
             <Contacto />
+            <ToastContainer />
         </main>
         <Footer />
         <Pulse />

@@ -1,6 +1,5 @@
 import React from 'react';
-import Toastify from 'toastify-js'
-import "toastify-js/src/toastify.css"
+import { loadingToast, sendToastUpdate } from '../utils/toast';
 
 const Contacto = () => {
     const superTrim = (string: string): string => {
@@ -14,7 +13,8 @@ const Contacto = () => {
     const sendMail = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        const formTarget = e.target as HTMLFormElement;
+        const formTarget = e.target;
+        if (!(formTarget instanceof HTMLFormElement)) return null
         const buttonSubmit = formTarget.elements.namedItem("submit")
 
         if (!(buttonSubmit instanceof HTMLButtonElement)) return null
@@ -23,18 +23,6 @@ const Contacto = () => {
 
         const obj: { [key: string]: string } = {};
         form.forEach((value: FormDataEntryValue, key: string) => obj[key] = superTrim(value as string))
-
-        Toastify({
-            text: "Espere por favor...",
-            duration: 6000,
-            close: true,
-            gravity: "top",
-            position: "right",
-            stopOnFocus: true,
-            style: {
-                background: "linear-gradient(to right, rgb(100, 100, 100), rgb(200, 200, 200))",
-            },
-        }).showToast();
 
         buttonSubmit.disabled = true
         buttonSubmit.classList.remove("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
@@ -62,19 +50,7 @@ const Contacto = () => {
             `
         }
 
-        const toleranceTime = setTimeout(() => { // Define un tiempo de tolerancia de espera hasta que se efectúe el envío del mail. Si pasa ese tiempo, aparece un mensaje pidiendo disculpas
-            Toastify({
-                text: "Disculpa la demora. El servidor gratuito donde está alojado el backend se suspende por inactividad",
-                duration: 4000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                stopOnFocus: true,
-                style: {
-                    background: "linear-gradient(to right, rgb(100, 100, 100), rgba(125, 125, 125, 0.9))",
-                }
-            }).showToast();
-        }, 6000);
+        const idToast = loadingToast("Enviando mail... Si notas que tarda mucho, considera que el servidor gratuito donde está alojado el backend se suspende por inactividad");
 
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/mail`, {
             method: "POST",
@@ -85,41 +61,16 @@ const Contacto = () => {
             }
         }).then(res => res.json());
 
-        clearTimeout(toleranceTime)
-
         buttonSubmit.disabled = false
         buttonSubmit.classList.add("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
         buttonSubmit.classList.remove("bg-gray-500")
 
         if (response.status === "success") {
             formTarget.reset()
-            Toastify({
-                text: "Mail enviado!",
-                duration: 3000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                stopOnFocus: true,
-                style: {
-                    background: "linear-gradient(to right, #00b09b, #96c93d)",
-                    borderRadius: "2px"
-                },
-                className: "sendMail"
-            }).showToast();
+            sendToastUpdate(idToast, "success", "Mail enviado!")
 
         } else { // No muestro cuál es el error porque no tengo interés que sea público. Lo conozco yo por el lado del backend
-            Toastify({
-                text: "Servidor en mantenimiento. Si deseas comunicarte conmigo por favor contáctate a la dirección de mail alejandro_portaluppi@outlook.com",
-                duration: 10000,
-                close: true,
-                gravity: "top",
-                position: "right",
-                stopOnFocus: true,
-                style: {
-                    background: "linear-gradient(to right, rgba(155, 50, 50, 1), rgba(0, 0, 0, 0.9))",
-                    borderRadius: "2px"
-                }
-            }).showToast();
+            sendToastUpdate(idToast, "error", "Servidor en mantenimiento. Si deseas comunicarte conmigo por favor contáctate a la dirección de mail alejandro_portaluppi@outlook.com")
         }
     }
 

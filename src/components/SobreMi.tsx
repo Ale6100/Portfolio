@@ -40,18 +40,18 @@ const SobreMi = () => {
     return (
         <section className="mt-5 flex flex-col">
             <h1 className="text-center">Portfolio | Alejandro Portaluppi</h1>
-            
+
             <div id="contenedor-palabras" className='my-5'>
                 { montado && <TableroPixelArt {...{ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase: cantidadCuadraditosHorizontalesPorFraseState, anchoEspacioVacio }} /> }
             </div>
-            
+
             <div className='border-l-2 border-blue-400'>
                 <h2 id="sobreMi">Sobre mí</h2>
                 <div className="p-3">
                     <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web de 23 años titulado en tecnologías Frontend y Backend</p>
                     <p className="mb-3 text-lg max-md:text-base">🔧 Comencé como estudiante de Física en la UBA donde aprendí lógica, matemática y programación. Estos conocimientos me llevaron a descubrir mi pasión por la programación y me animaron a cambiar mi carrera a Ciencias de la Computación. Ahora soy un Desarrollador Web Full Stack con un constante interés por aprender nuevas tecnologías</p>
                     <p className="mb-3 text-lg max-md:text-base">🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
-                    <p className="mb-3 text-lg max-md:text-base">📌 Actualmente estoy trabajando en el mundo IT, lo que me permite seguir desarrollándome en el puesto</p>
+                    <p className="mb-3 text-lg max-md:text-base">📌 Actualmente estoy trabajando en el rubro IT, lo que me permite seguir desarrollándome en el puesto</p>
                     <p className="text-lg max-md:text-base">🗒️ Para más información puedes ver mi <a className="text-blue-900 hover:text-blue-500" href="https://www.linkedin.com/in/alejandro-portaluppi/" target="_blank" rel="noopener noreferrer">Linkedin</a> o mi <a rel="noopener noreferrer" className="text-blue-900 hover:text-blue-500" href="./utils/CV_Alejandro_Portaluppi.pdf" target="_blank">CV</a></p>
                 </div>
             </div>

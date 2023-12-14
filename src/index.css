@@ -83,18 +83,16 @@ h1, h2, h3 {
 
 @keyframes pulse {
     0% {
-        width: 0px;
-        height: 0px;
+        transform: scale(0);
     }
     100% {
-        width: 400vw;
-        height: 400vw;
+        transform: scale(4);
     }
 }
 
 .bg-custom-pulse {
     background: rgb(255, 255, 255);
-    background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 255, 1) 100%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0) 60%, rgba(0, 0, 255, 1) 100%);
 }
 
 @media screen and (min-width: 768px) {

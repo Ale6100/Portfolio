@@ -25,7 +25,7 @@ const Proyectos = () => {
                 offset: [0, 15],
                 showOnCreate: false,
                 touch: ['hold', 500],
-                trigger: 'mouseenter focus',
+                trigger: 'mouseenter',
             });
         })
     }, );
