@@ -18,13 +18,13 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
 
     const filaIndices = deCeroAN(cantidadVerticalDeCuadraditos)
     const colores: Color[] = ["rgb(0, 0, 0)", "rgb(255, 0, 0)"]
-    const tiempoDeVidaCuadradito = 5000 // Esta variable debe ser 10 veces más grande que la de abajo
+    const tiempoDeVidaCuadradito = 4000 // Esta variable debe ser 10 veces más grande que la de abajo
     const tiempoDeVidaCuadraditoVerde = tiempoDeVidaCuadradito/10
 
     const pintarCuadradito = (k: number, l: number, timeEnds: number, color: Color) => { // Pinta el cuadradito con coordenadas (k, l)
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
-                if (i===l && j===k) { 
+                if (i===l && j===k) {
                     const casillero = document.getElementById(`fila-${i}-columna-${j}`)
                     if (casillero) {
                         if (color === "rgb(0, 0, 0)") {
@@ -68,7 +68,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
                 break
             }
         }
-        
+
         let anchoAcumulado = Math.floor((cantidadHorizontalDeCuadraditos - cantidadCuadraditosHorizontalesPorFrase[j])/2)
         for (let i=0; i<frase.length; i++) {
             if (arrayLetras.some(obj => obj.letra === frase[i].toLowerCase())) {
@@ -90,7 +90,7 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
             if (i!=colores.length-1) {
                 const timeSpaceEvenly = tiempoDeVidaCuadradito/2 - tiempoDeVidaCuadraditoVerde/2 // Tiempo hasta que aparece el cuadradito verde
                 await waitFor(timeSpaceEvenly)
-                
+
             } else {
                 await waitFor(tiempoDeVidaCuadradito*0.75)
             }
@@ -109,14 +109,14 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
     const animacion = async (frases: string[], colores: Color[]) => { // Muestro todas las frases disponibles
         // eslint-disable-next-line
         while (true) {
-            for (let i=0; i<frases.length; i++) { 
+            for (let i=0; i<frases.length; i++) {
                 const indiceRandom = Math.floor(Math.random()*frases.length)
                 await animacionPintarFrase(frases[indiceRandom], colores)
                 limpiarTabla()
             }
         }
     }
-    
+
     useEffect(() => {
         if (montado) animacion(frases, colores)
         setMontado(true)

@@ -1,7 +1,7 @@
 import tecnologias from "../utils/tecnologias"
 
 const Tecnologias = () => {
-    const indexLimite = 14
+    const indexLimite = 17
 
     return (
         <section className="mt-14 border-l-2 border-blue-400">
@@ -18,7 +18,7 @@ const Tecnologias = () => {
                                         <div className="w-16 h-16">
                                             <img loading='lazy' className="w-full h-full transition-all duration-200" src={tecnologia.img} alt={tecnologia.alt} />
                                         </div>
-                                        
+
                                         <p>{tecnologia.title}</p>
                                     </a>
                                 </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import arrayLetras from "../utils/arrayLetras.js"
 import TableroPixelArt from './TableroPixelArt';
-const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB | ExpressJS | ReactJS | NodeJS", "Tailwind | Bootstrap", "Git | GitHub", "Autodidacta", 'Yii | PHP | Xampp'] // Por ahora sólo se dibujan letras mayúsculas (menos de la ñ) y el caracter |
+const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB | ExpressJS | ReactJS | NodeJS", "Tailwind | Bootstrap", "Git | GitHub | GitLab", "Autodidacta", 'Yii | PHP | Xampp'] // Por ahora sólo se dibujan letras mayúsculas (menos de la ñ) y el caracter |
 
 const SobreMi = () => {
     const [ montado, setMontado ] = useState(false)
@@ -48,7 +48,7 @@ const SobreMi = () => {
             <div className='border-l-2 border-blue-400'>
                 <h2 id="sobreMi">Sobre mí</h2>
                 <div className="p-3">
-                    <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web de 23 años titulado en tecnologías Frontend y Backend</p>
+                    <p className="mb-3 text-lg max-md:text-base">🎓 Desarrollador Web de 24 años titulado en tecnologías Frontend y Backend</p>
                     <p className="mb-3 text-lg max-md:text-base">🔧 Comencé como estudiante de Física en la UBA donde aprendí lógica, matemática y programación. Estos conocimientos me llevaron a descubrir mi pasión por la programación y me animaron a cambiar mi carrera a Ciencias de la Computación. Ahora soy un Desarrollador Web Full Stack con un constante interés por aprender nuevas tecnologías</p>
                     <p className="mb-3 text-lg max-md:text-base">🤝 Quienes me conocen saben que estoy dispuesto a dar una mano a mis pares fomentando así el crecimiento profesional grupal</p>
                     <p className="mb-3 text-lg max-md:text-base">📌 Actualmente estoy trabajando en el rubro IT, lo que me permite seguir desarrollándome en el puesto</p>
