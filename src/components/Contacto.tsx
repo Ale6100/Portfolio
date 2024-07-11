@@ -75,21 +75,21 @@ const Contacto = () => {
     }
 
     return (
-        <section className="mt-14 mb-5 border-l-2 border-blue-400">
-            <h2 id="contacto" className='mb-5'>Contacto</h2>
+        <section className="mt-14 mb-5 border-l-2 border-blue-600">
+            <h2 id="contacto" className='mb-5 font-semibold'>Contacto</h2>
 
             <div className='mx-1'>
                 <form onSubmit={ sendMail } className="mx-auto m-1 p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
                     <label><p>Nombre</p>
-                        <input name="nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
+                        <input name="nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-600" required />
                     </label>
 
                     <label className="my-5"><p>Email</p>
-                        <input name="email" type="email"className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
+                        <input name="email" type="email"className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-600" required />
                     </label>
 
                     <label className="mb-3"><p>Mensaje</p>
-                        <textarea name="mensaje" className="p-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
+                        <textarea name="mensaje" className="p-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-600" required></textarea>
                     </label>
 
                     <button type="submit" name='submit' className='mx-auto w-60 max-sm:w-56 border-2 border-gray-600 rounded-sm bg-gray-300 cursor-pointer hover:bg-white hover:border-black active:bg-gray-200'>Enviar</button>

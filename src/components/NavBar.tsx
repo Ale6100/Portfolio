@@ -39,7 +39,7 @@ const NavBar = () => {
 
     return (
         <header className="sticky z-30 top-0 h-12 text-xl flex flex-col justify-center border-black border-b max-md:items-end max-md:flex-row">
-            <nav className={`nav-tv-blur max-md:top-12 max-md:fixed max-md:z-40 max-md:w-[33vw] ${navBarRespVisible ? "max-md:right-0" : "max-md:right-[100vw]"} max-md:p-1 max-md:rounded-bl-md max-md:border-b-2 max-md:border-l-2 max-md:border-blue-600 max-md:bg-blue-400 transition-all duration-200`}>
+            <nav className={`nav-tv-blur max-md:top-12 max-md:fixed max-md:z-40 max-md:w-[33vw] ${navBarRespVisible ? "max-md:right-0" : "max-md:right-[100vw]"} max-md:p-1 max-md:rounded-bl-md max-md:border-b-2 max-md:border-l-2 max-md:border-blue-600 max-md:bg-blue-600 transition-all duration-200`}>
                 <ul className="h-full items-center flex justify-evenly text-center max-md:h-56 max-md:flex-col max-md:ulResponsive">
                     <li><a href="#sobreMi">Sobre mí</a></li>
                     <li><a href="#proyectos">Proyectos</a></li>

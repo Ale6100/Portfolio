@@ -4,8 +4,8 @@ const Tecnologias = () => {
     const indexLimite = 16
 
     return (
-        <section className="mt-14 border-l-2 border-blue-400">
-            <h2 id="tecnologias">Principales tecnologías aprendidas</h2>
+        <section className="mt-14 border-l-2 border-blue-600">
+            <h2 id="tecnologias" className="font-semibold">Principales tecnologías</h2>
 
             <div>
                 <h3 className="mt-5 mb-3 text-center">Primarias</h3>

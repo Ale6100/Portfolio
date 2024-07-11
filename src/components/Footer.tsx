@@ -27,7 +27,7 @@ const redes = [
 
 const Footer = () => {
     return (
-        <footer className="flex justify-evenly bg-blue-400">
+        <footer className="flex justify-evenly bg-blue-600">
             {
             redes.map(red => (
             <div key={red.p}>
