@@ -7,13 +7,13 @@ const NavBar = () => {
 
     useEffect(() => {
         const divContainer = buttonRef.current;
-        
+
         const div1 = divContainer?.children[0]
         const div2 = divContainer?.children[1]
         const div3 = divContainer?.children[2]
 
         if (!div1 || !div2 || !div3) return;
-        
+
         if (navBarRespVisible) {
             div1.classList.replace("rotate-0", "rotate-45")
             div1.classList.replace("scale-1", "scale-[1.41421356237]")
@@ -30,13 +30,13 @@ const NavBar = () => {
             div1.classList.replace("translate-y-[14px]", "translate-y-0")
 
             div2.classList.replace("scale-0", "scale-1")
-            
+
             div3.classList.replace("-rotate-45", "rotate-0")
             div3.classList.replace("scale-[1.41421356237]", "scale-1")
             div3.classList.replace("translate-y-[-14px]", "translate-y-0")
-        }        
+        }
     }, [navBarRespVisible])
-    
+
     return (
         <header className="sticky z-30 top-0 h-12 text-xl flex flex-col justify-center border-black border-b max-md:items-end max-md:flex-row">
             <nav className={`nav-tv-blur max-md:top-12 max-md:fixed max-md:z-40 max-md:w-[33vw] ${navBarRespVisible ? "max-md:right-0" : "max-md:right-[100vw]"} max-md:p-1 max-md:rounded-bl-md max-md:border-b-2 max-md:border-l-2 max-md:border-blue-600 max-md:bg-blue-400 transition-all duration-200`}>

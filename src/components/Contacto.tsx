@@ -28,14 +28,14 @@ const Contacto = () => {
         buttonSubmit.classList.remove("cursor-pointer", "hover:bg-white", "hover:border-black", "active:bg-gray-200", "bg-gray-300")
         buttonSubmit.classList.add("bg-gray-500")
 
-        interface configInterface {
+        interface ConfigInterface {
             from: string;
             to: string;
             subject: string;
             html: string;
         }
 
-        const config: configInterface = { // Estas son las especificaciones que solicito en https://github.com/Ale6100/backend-personal.git#endpoints-%EF%B8%8F
+        const config: ConfigInterface = { // Estas son las especificaciones que solicito en https://github.com/Ale6100/backend-personal.git#endpoints-%EF%B8%8F
             from: obj.email,
             to: "alejandro_portaluppi@outlook.com",
             subject: `Portfolio | ${obj.nombre}`,
@@ -80,15 +80,15 @@ const Contacto = () => {
 
             <div className='mx-1'>
                 <form onSubmit={ sendMail } className="mx-auto m-1 p-5 max-w-5xl flex flex-col border-2 border-black rounded-sm">
-                    <label>Nombre
+                    <label><p>Nombre</p>
                         <input name="nombre" type="text" className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
                     </label>
 
-                    <label className="my-5">Email
+                    <label className="my-5"><p>Email</p>
                         <input name="email" type="email"className="p-1 border-b-2 border-black outline-none text-xl w-full hover:bg-slate-50 focus:border-blue-400" required />
                     </label>
 
-                    <label className="mb-3">Mensaje
+                    <label className="mb-3"><p>Mensaje</p>
                         <textarea name="mensaje" className="p-1 border-b-2 border-black outline-none text-xl w-full h-40 hover:bg-slate-50 focus:border-blue-400" required></textarea>
                     </label>
 

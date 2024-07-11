@@ -36,7 +36,7 @@ const Proyectos = () => {
 
             <div id="contenedorProyectos" className="flex justify-around flex-wrap gap-x-[1px] gap-y-4">
                 {proyectos.map((proyecto, index) => (
-                    <div className="w-[250px] flex flex-col justify-between border-2 border-black rounded-sm" key={index}>
+                    <div className="w-[250px] flex flex-col justify-between border-2 border-black rounded-sm" key={proyecto.id}>
                         <p className="text-lg font-semibold flex flex-col justify-center text-center h-14 bg-blue-400">{proyecto.title}</p>
 
                         <div className="relative">

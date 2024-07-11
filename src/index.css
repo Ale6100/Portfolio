@@ -86,7 +86,7 @@ h1, h2, h3 {
         transform: scale(0);
     }
     100% {
-        transform: scale(5); /* Tamaño del pulso */
+        transform: scale(6); /* Tamaño del pulso */
     }
 }
 
