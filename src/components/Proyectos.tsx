@@ -43,7 +43,7 @@ const Proyectos = () => {
                         <div className="p-4">
                             <h3 className="text-lg font-semibold mb-4 text-gray-800">{proyecto.title}</h3>
                             <div className="flex space-x-4">
-                                <a href={proyecto.linkSitio} className="flex-1 bg-blue-600 text-white py-2 px-4 rounded transition-all duration-300 hover:bg-blue-700 text-center"target="_blank" rel="noopener noreferrer">Visitar</a>
+                                <a href={proyecto.linkSitio} className="flex-1 text-white py-2 px-4 bg-blue-600 rounded transition-all duration-300 hover:bg-blue-700 text-center"target="_blank" rel="noopener noreferrer">Visitar</a>
                                 <a href={proyecto.linkGitHub} className="flex-1 bg-gray-200 text-gray-800 py-2 px-4 rounded transition-all duration-300 hover:bg-gray-300 text-center" target="_blank" rel="noopener noreferrer">GitHub</a>
                             </div>
                         </div>
