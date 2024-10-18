@@ -26,13 +26,6 @@ const tecnologias: tec[] = [
     },
     {
         id: numeroAlAzar(1, 10000),
-        title: "Sass",
-        img: "https://img.icons8.com/color/100/null/sass.png",
-        alt: "Bass icon",
-        link: "https://sass-lang.com/"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
         title: "Tailwindcss",
         img: "https://img.icons8.com/color/100/null/tailwindcss.png",
         alt: "Tailwindcss icon",
@@ -89,6 +82,13 @@ const tecnologias: tec[] = [
     },
     {
         id: numeroAlAzar(1, 10000),
+        title: "Vite",
+        img: "https://vitejs.dev/logo.svg",
+        alt: "Vite icon",
+        link: "https://vitejs.dev/"
+    },
+    {
+        id: numeroAlAzar(1, 10000),
         title: "NestJS",
         img: "https://img.icons8.com/color/100/null/nestjs.png",
         alt: "NestJS icon",
@@ -96,17 +96,24 @@ const tecnologias: tec[] = [
     },
     {
         id: numeroAlAzar(1, 10000),
+        title: "C#",
+        img: "./img/csharpLogo.webp",
+        alt: "C# icon",
+        link: "https://learn.microsoft.com/en-us/dotnet/csharp/"
+    },
+    {
+        id: numeroAlAzar(1, 10000),
+        title: "Entity Fw",
+        img: "./img/EntityFramework.webp",
+        alt: "Entity Framework icon",
+        link: "https://docs.microsoft.com/en-us/ef/"
+    },
+    {
+        id: numeroAlAzar(1, 10000),
         title: "PHP",
         img: "./img/php.svg",
         alt: "PHP icon",
         link: "https://www.php.net/"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "XAMPP",
-        img: "./img/xampp.svg",
-        alt: "XAMPP icon",
-        link: "https://www.apachefriends.org/"
     },
     {
         id: numeroAlAzar(1, 10000),
@@ -131,24 +138,17 @@ const tecnologias: tec[] = [
     },
     {
         id: numeroAlAzar(1, 10000),
+        title: "Docker",
+        img: "./img/docker.webp",
+        alt: "Docker icon",
+        link: "https://docs.docker.com/"
+    },
+    {
+        id: numeroAlAzar(1, 10000),
         title: "Python",
         img: "https://img.icons8.com/color/100/000000/python--v1.png",
         alt: "Python icon",
         link: "https://www.python.org/"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "Vite",
-        img: "https://vitejs.dev/logo.svg",
-        alt: "Vite icon",
-        link: "https://vitejs.dev/"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "C#",
-        img: "./img/csharpLogo.webp",
-        alt: "C# icon",
-        link: "https://learn.microsoft.com/en-us/dotnet/csharp/"
     },
     {
         id: numeroAlAzar(1, 10000),
@@ -159,41 +159,10 @@ const tecnologias: tec[] = [
     },
     {
         id: numeroAlAzar(1, 10000),
-        title: "Google Analytics",
-        img: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_analytics.svg",
-        alt: "Google Analytics icon",
-        link: "https://analytics.google.com/",
-        fontSize: "text-sm"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "Google Tag Manager",
-        img: "https://www.gstatic.com/analytics-suite/header/suite/v2/ic_tag_manager.svg",
-        alt: "Google Tag Manager icon",
-        link: "https://tagmanager.google.com/",
-        fontSize: "text-sm"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "EJS",
-        img: "./img/EjsIcon.webp",
-        alt: "EJS icon",
-        link: "https://ejs.co/"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "jsonwebtoken",
-        img: "https://jwt.io/img/pic_logo.svg",
-        alt: "JSONWebToken icon",
-        link: "https://www.npmjs.com/package/jsonwebtoken",
-        fontSize: "text-sm"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "Nodemailer",
-        img: "./img/Nodemailer.webp",
-        alt: "Nodemailer icon",
-        link: "https://nodemailer.com/"
+        title: "XAMPP",
+        img: "./img/xampp.svg",
+        alt: "XAMPP icon",
+        link: "https://www.apachefriends.org/"
     },
     {
         id: numeroAlAzar(1, 10000),
@@ -201,13 +170,6 @@ const tecnologias: tec[] = [
         img: "https://img.icons8.com/color/100/null/bootstrap.png",
         alt: "Bootstrap icon",
         link: "https://getbootstrap.com/"
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        title: "Firebase",
-        img: "https://img.icons8.com/color/100/null/firebase.png",
-        alt: "Firebase icon",
-        link: "https://firebase.google.com/"
     }
 ]
 

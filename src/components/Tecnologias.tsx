@@ -1,7 +1,7 @@
 import tecnologias from "../utils/tecnologias"
 
 const Tecnologias = () => {
-    const indexLimite = 16
+    const indexLimite = 17;
 
     return (
         <section className="mt-14 border-l-2 border-blue-600">
@@ -13,7 +13,7 @@ const Tecnologias = () => {
                     {
                         tecnologias.map((tecnologia, index) => (
                             (index <= indexLimite) && (
-                                <div key={index}>
+                                <div key={tecnologia.id}>
                                     <a rel="noopener noreferrer" className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
                                         <div className="w-16 h-16">
                                             <img loading='lazy' className="w-full h-full transition-all duration-200" src={tecnologia.img} alt={tecnologia.alt} />
@@ -34,7 +34,7 @@ const Tecnologias = () => {
                     {
                         tecnologias.map((tecnologia, index) => (
                             (index > indexLimite) && (
-                                <div key={index}>
+                                <div key={tecnologia.id}>
                                     <a rel="noopener noreferrer" className="py-1 w-[100px] h-28 flex flex-col justify-evenly items-center border-2 rounded-sm text-base transition-all duration-200 no-underline border-black hover:bg-white hover:scale-110" href={tecnologia.link} target="_blank">
                                         <div className="w-16 h-16">
                                             <img loading='lazy' className="w-full h-full text transition-all duration-200" src={tecnologia.img} alt={tecnologia.alt} />

@@ -15,8 +15,8 @@ const Contacto = () => {
 
         const formTarget = e.target;
         if (!(formTarget instanceof HTMLFormElement)) return null
-        const buttonSubmit = formTarget.elements.namedItem("submit")
 
+        const buttonSubmit = formTarget.elements.namedItem("submit")
         if (!(buttonSubmit instanceof HTMLButtonElement)) return null
 
         const form = new FormData(formTarget)
@@ -50,7 +50,7 @@ const Contacto = () => {
             `
         }
 
-        const idToast = loadingToast("Enviando mail... Si notas que tarda mucho, considera que el servidor gratuito donde está alojado el backend se suspende por inactividad");
+        const idToast = loadingToast("Enviando mail... Si notas que tarda mucho considera que el servidor gratuito donde está alojado el backend se suspende por inactividad");
 
         const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/mail`, {
             method: "POST",

@@ -19,7 +19,7 @@ Utiliza la versión más reciénte subida a la web [aquí](https://portfolioalej
 
 ## Autor ✒️
 
-| <img src="https://avatars.githubusercontent.com/u/107259761?v=4" width=50>|
-|:-:|
-| **Alejandro Portaluppi** |
-| <a href="https://github.com/Ale6100"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> <a href="https://www.linkedin.com/in/alejandro-portaluppi"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/></a> |
+| ![Alejandro Portaluppi](https://avatars.githubusercontent.com/u/107259761?size=50)
+|:-:
+| **Alejandro Portaluppi**
+|[![GitHub](https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ale6100) [![LinkedIn](https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alejandro-portaluppi)

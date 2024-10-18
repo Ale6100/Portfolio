@@ -5,7 +5,7 @@ const frases = ["Full Stack Web Developer", "HTML | CSS | JavaScript", "MongoDB 
 
 const SobreMi = () => {
     const [ montado, setMontado ] = useState(false)
-    const [ cantidadCuadraditosHorizontalesPorFraseState, setCantidadCuadraditosHorizontalesPorFrase] = useState<number[]>([])
+    const [ cantidadCuadraditosHorizontalesPorFraseState, setCantidadCuadraditosHorizontalesPorFraseState ] = useState<number[]>([])
     const [ cantidadHorizontalDeCuadraditos, setCantidadHorizontalDeCuadraditos ] = useState(0)
     const [ cantidadVerticalDeCuadraditos, setCantidadVerticalDeCuadraditos ] = useState(0)
 
@@ -34,7 +34,7 @@ const SobreMi = () => {
         setCantidadVerticalDeCuadraditos(Math.max(...cantCuadraditosVerticalesPorLetra))
 
         setMontado(true)
-        setCantidadCuadraditosHorizontalesPorFrase(cantidadCuadraditosHorizontalesPorFrase)
+        setCantidadCuadraditosHorizontalesPorFraseState(cantidadCuadraditosHorizontalesPorFrase)
     }, []);
 
     return (

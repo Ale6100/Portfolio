@@ -31,8 +31,8 @@ const Proyectos = () => {
                                     <p className="font-semibold mb-2 text-gray-800">Herramientas:</p>
                                     <ul className="list-disc pl-5">
                                         {
-                                        proyecto.herramientas.map((herramienta, idx) => (
-                                            <li key={idx} className="text-sm text-gray-600">{herramienta}</li>
+                                        proyecto.herramientas.map(herramienta => (
+                                            <li key={herramienta} className="text-sm text-gray-600">{herramienta}</li>
                                         ))
                                         }
                                     </ul>

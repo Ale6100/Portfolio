@@ -13,6 +13,23 @@ interface TableroPixelArtProps {
 
 type Color = `rgb(${number}, ${number}, ${number})`
 
+interface FilaProps {
+    i: number,
+    cantidadHorizontalDeCuadraditos: number
+}
+
+const Fila = ({ i, cantidadHorizontalDeCuadraditos }: FilaProps) => {
+    const columnaIndices = deCeroAN(cantidadHorizontalDeCuadraditos)
+
+    return (
+        <div className="flex justify-center">
+            {columnaIndices.map(j => (
+                <div key={j} id={`fila-${i}-columna-${j}`} className="p-0 w-1 h-1 duration-700 transition-all"></div>
+            ))}
+        </div>
+    )
+}
+
 const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCuadraditos, frases, cantidadCuadraditosHorizontalesPorFrase, anchoEspacioVacio }: TableroPixelArtProps) => {   
     const [ montado, setMontado ] = useState(false);
 
@@ -49,9 +66,9 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
     const pintarLetra = async (coordenadas: letrasTypes["coordenadas"], dx: number, color: Color) => { // Pinta una letra en las coordenadas de la letra indicada, según diga el arrayLetras y el espaciado horizontal dx indicado
         for (let i=0; i<cantidadVerticalDeCuadraditos; i++) {
             for (let j=0; j<cantidadHorizontalDeCuadraditos; j++) {
-                for (let z=0; z<coordenadas.length; z++) {
-                    if (coordenadas[z].x === j && coordenadas[z].y === i) {
-                        pintarCuadradito(j+dx, i, tiempoDeVidaCuadradito, color)
+                for (const coordenada of coordenadas) {
+                    if (coordenada.x === j && coordenada.y === i) {
+                        pintarCuadradito(j + dx, i, tiempoDeVidaCuadradito, color);
                     }
                 }
             }
@@ -70,15 +87,14 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         }
 
         let anchoAcumulado = Math.floor((cantidadHorizontalDeCuadraditos - cantidadCuadraditosHorizontalesPorFrase[j])/2)
-        for (let i=0; i<frase.length; i++) {
-            if (arrayLetras.some(obj => obj.letra === frase[i].toLowerCase())) {
-                const letraPixeles = arrayLetras.find(obj => obj.letra === frase[i].toLowerCase())
+        for (const letra of frase) {
+            if (arrayLetras.some(obj => obj.letra === letra.toLowerCase())) {
+                const letraPixeles = arrayLetras.find(obj => obj.letra === letra.toLowerCase())
                 if (letraPixeles) {
                     await pintarLetra(letraPixeles.coordenadas, anchoAcumulado, color)
-                    anchoAcumulado+=letraPixeles.ancho+1
+                    anchoAcumulado += letraPixeles.ancho + 1
                 }
-            }
-            else {
+            } else {
                 anchoAcumulado += anchoEspacioVacio
             }
         }
@@ -109,8 +125,8 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
     const animacion = async (frases: string[], colores: Color[]) => { // Muestro todas las frases disponibles
         // eslint-disable-next-line
         while (true) {
-            for (let i=0; i<frases.length; i++) {
-                const indiceRandom = Math.floor(Math.random()*frases.length)
+            for (const _ of frases) {
+                const indiceRandom = Math.floor(Math.random() * frases.length)
                 await animacionPintarFrase(frases[indiceRandom], colores)
                 limpiarTabla()
             }
@@ -123,26 +139,9 @@ const TableroPixelArt = ({ cantidadVerticalDeCuadraditos, cantidadHorizontalDeCu
         // eslint-disable-next-line
     }, [montado]);
 
-    interface FilaProps {
-        i: number,
-        cantidadHorizontalDeCuadraditos: number
-    }
-
-    const Fila = ({ i, cantidadHorizontalDeCuadraditos }: FilaProps) => {
-        const columnaIndices = deCeroAN(cantidadHorizontalDeCuadraditos)
-
-        return (
-            <div className="flex justify-center">
-                {columnaIndices.map((j) => (
-                    <div key={j} id={`fila-${i}-columna-${j}`} className="p-0 w-1 h-1 duration-700 transition-all"></div>
-                ))}
-            </div>
-        )
-    }
-
     return (
         <>
-            {filaIndices.map((i) => (
+            {filaIndices.map(i => (
                 <Fila key={i} i={i} cantidadHorizontalDeCuadraditos={cantidadHorizontalDeCuadraditos}/>
             ))}
         </>
