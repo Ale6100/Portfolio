@@ -20,7 +20,7 @@ const tecnologias: tec[] = [
     {
         id: numeroAlAzar(1, 10000),
         title: "CSS",
-        img: "https://img.icons8.com/color/100/null/css3.png",
+        img: "./img/cssLogo.svg",
         alt: "CSS icon",
         link: "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },

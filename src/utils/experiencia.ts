@@ -25,15 +25,6 @@ const experiencia: IExperiencia[] = [
         puesto: "Desarrollador Full Stack Junior",
         fechaInicio: "07/2023",
         fechaFin: "10/2023",
-    },
-    {
-        id: numeroAlAzar(1, 10000),
-        img: "DevsAnts.webp",
-        nombre: "Devs Ants",
-        puesto: "Backend Developer",
-        fechaInicio: "11/2022",
-        fechaFin: "07/2023",
-        freelance: true
     }
 ]
 
