@@ -13,6 +13,13 @@ interface IExperiencia {
 const experiencia: IExperiencia[] = [
     {
         id: numeroAlAzar(1, 10000),
+        img: "virtualisa_logo.webp",
+        nombre: "Virtualisa",
+        puesto: "Desarrollador Full Stack Junior",
+        fechaInicio: "03/2025",
+    },
+    {
+        id: numeroAlAzar(1, 10000),
         img: "minDef.webp",
         nombre: "Ministerio de Defensa",
         puesto: "Desarrollador Full Stack",
