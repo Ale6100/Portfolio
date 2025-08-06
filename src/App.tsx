@@ -25,6 +25,7 @@ function App() {
         </main>
         <Footer />
         <Pulse />
+        <a className='fixed bottom-[1vw] right-[1vw] hover:font-semibold text-sm max-md:text-xs hover:scale-105 hover:translate-x-[-0.25vw] transition-all duration-100' href="https://portfolioalejandrop.vercel.app/" target="_blank" rel="noopener noreferrer">Ver nueva versión no terminada</a>
         </>
     )
 }
