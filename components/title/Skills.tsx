@@ -44,10 +44,10 @@ export default function Skills() {
       })
       .to(split.chars, {
         delay: 3,
-        color: colorRandom({ max: 190 }),
+        color: colorRandom({ disableRed: 0 }),
         scale: 1.1,
         y: -8,
-        rotation: () => numeroAlAzar(-10, 10),
+        rotation: () => numeroAlAzar(-15, 15),
         ease: "back.out"
       })
       .to(split.chars, {
@@ -73,6 +73,6 @@ export default function Skills() {
   }, [skill]);
 
   return (
-    <p className='text-center text-base sm:text-lg' ref={skillRef}>{skill}</p>
+    <p className='text-center text-sm sm:text-lg' ref={skillRef}>{skill}</p>
   );
 }

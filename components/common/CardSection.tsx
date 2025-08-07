@@ -58,7 +58,7 @@ export default function CardSection({
           y: 0,
           scale: 1,
           opacity: 1,
-          duration: 0.5,
+          duration: 0.15,
           ease: "power2.out"
         }
       );
@@ -80,52 +80,38 @@ export default function CardSection({
           scaleY: 1,
           opacity: 1,
           rotationZ: 0,
-          duration: 0.4,
+          duration: 0.1,
           ease: "back.out(1.7)",
-          stagger: 0.08
+          stagger: 0.02
         },
-        "-=0.2"
+        "-=0.1"
       )
       .to(bars, {
-        scaleX: 1.1,
-        scaleY: 0.9,
-        duration: 0.15,
+        scaleX: 1.02,
+        scaleY: 0.98,
+        duration: 0.04,
         ease: "power2.out",
-        stagger: 0.03,
+        stagger: 0.01,
       })
       .to(bars, {
         scaleX: 1,
         scaleY: 1,
-        duration: 0.2,
+        duration: 0.05,
         ease: "elastic.out(1, 0.8)",
-        stagger: 0.04,
-      });
-
-      bars.forEach((bar, index) => {
-        gsap.to(bar, {
-          scaleY: 1.1,
-          duration: 1.5 + index * 0.3,
-          ease: "sine.inOut",
-          repeat: -1,
-          yoyo: true,
-          delay: index * 0.5
-        });
+        stagger: 0.01,
       });
     }
 
     if (contentElement) {
       tl.fromTo(contentElement,
-        initialState,
+        { y: 30, opacity: 0 },
         {
-          x: 0,
           y: 0,
-          scale: 1,
           opacity: 1,
-          duration: 0.5,
-          ease: "power2.out",
-          delay: titleElement ? 0.1 : 0
+          duration: 0.8,
+          ease: "power3.out"
         },
-        titleElement ? "-=0.3" : 0
+        "-=0.4"
       );
     }
 
@@ -182,20 +168,20 @@ export default function CardSection({
                 </CardTitle>
 
                 <div ref={decorativeRef} className="flex items-center gap-3">
-                  <div className="decorative-bar decorative-bar-1 h-1.5 w-16 relative overflow-hidden rounded-full bg-gradient-to-r from-primary via-primary to-primary/50 bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent translate-x-[-100%] animate-[shimmer_1.5s_ease-in-out_infinite]" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/30 to-transparent animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.5s]" />
+                  <div className="decorative-bar decorative-bar-1 h-1.5 w-16 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 via-blue-500 to-blue-500/50 bg-[length:200%_100%]">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/60 to-transparent translate-x-[-100%] animate-[shimmer_1.5s_ease-in-out_infinite]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.5s]" />
                   </div>
-                  <div className="decorative-bar decorative-bar-2 h-1 w-10 relative overflow-hidden rounded-full bg-gradient-to-r from-primary/70 via-primary/50 to-transparent bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.3s]" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/40 to-transparent animate-[shimmer_2.2s_ease-in-out_infinite] [animation-delay:0.8s]" />
+                  <div className="decorative-bar decorative-bar-2 h-1 w-10 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500/70 via-blue-500/50 to-transparent bg-[length:200%_100%]">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/50 to-transparent translate-x-[-100%] animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.3s]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent animate-[shimmer_2.2s_ease-in-out_infinite] [animation-delay:0.8s]" />
                   </div>
-                  <div className="decorative-bar decorative-bar-3 h-0.5 w-6 relative overflow-hidden rounded-full bg-gradient-to-r from-primary/50 via-primary/30 to-transparent opacity-80 bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/70 to-transparent translate-x-[-100%] animate-[shimmer_2.5s_ease-in-out_infinite] [animation-delay:0.6s]" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/50 to-transparent animate-[shimmer_2.8s_ease-in-out_infinite] [animation-delay:1.1s]" />
+                  <div className="decorative-bar decorative-bar-3 h-1 w-8 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500/50 via-blue-500/30 to-transparent opacity-80 bg-[length:200%_100%]">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/70 to-transparent translate-x-[-100%] animate-[shimmer_2.5s_ease-in-out_infinite] [animation-delay:0.6s]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-[shimmer_2.8s_ease-in-out_infinite] [animation-delay:1.1s]" />
                   </div>
-                  <div className="decorative-bar decorative-bar-4 h-0.5 w-3 relative overflow-hidden rounded-full bg-gradient-to-r from-primary/40 to-transparent opacity-60 bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 to-transparent translate-x-[-100%] animate-[shimmer_3s_ease-in-out_infinite] [animation-delay:0.9s]" />
+                  <div className="decorative-bar decorative-bar-4 h-0.5 w-4 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500/40 to-transparent opacity-60 bg-[length:200%_100%]">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/80 to-transparent translate-x-[-100%] animate-[shimmer_3s_ease-in-out_infinite] [animation-delay:0.9s]" />
                   </div>
                 </div>
               </>

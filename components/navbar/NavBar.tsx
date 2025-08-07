@@ -16,9 +16,9 @@ const navItems = [
     icon: User,
   },
   {
-    name: "Proyectos",
-    href: "#projects",
-    icon: FolderOpen,
+    name: "Experiencia",
+    href: "#experience",
+    icon: Briefcase,
   },
   {
     name: "Tecnologías",
@@ -31,9 +31,9 @@ const navItems = [
     icon: GraduationCap,
   },
   {
-    name: "Experiencia",
-    href: "#experience",
-    icon: Briefcase,
+    name: "Proyectos",
+    href: "#projects",
+    icon: FolderOpen,
   },
   {
     name: "Contacto",

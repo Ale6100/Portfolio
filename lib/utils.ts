@@ -10,9 +10,24 @@ export function cn(...inputs: ClassValue[]) {
  * @param {Object} options Opciones para generar el color
  * @param {number} options.min Valor mínimo para los componentes RGB (por defecto 0)
  * @param {number} options.max Valor máximo para los componentes RGB (por defecto 255)
+ * @param {number} options.disableRed Valor fijo para el componente rojo, anula la generación aleatoria
+ * @param {number} options.disableGreen Valor fijo para el componente verde, anula la generación aleatoria
+ * @param {number} options.disableBlue Valor fijo para el componente azul, anula la generación aleatoria
  * @returns {`rgb(${number}, ${number}, ${number})`} Retorna un string con el formato "rgb(red, green, blue)" donde red, green y blue son números enteros entre min y max
  */
-export const colorRandom = ({ min = 0, max = 255 }: { min?: number; max?: number } = {}): `rgb(${number}, ${number}, ${number})` => {
+export const colorRandom = ({
+  min = 0,
+  max = 255,
+  disableRed,
+  disableGreen,
+  disableBlue
+}: {
+  min?: number;
+  max?: number;
+  disableRed?: number;
+  disableGreen?: number;
+  disableBlue?: number;
+} = {}): `rgb(${number}, ${number}, ${number})` => {
   if (typeof min !== 'number' || isNaN(min) || min < 0 || min > 255) {
     throw new Error(`El valor mínimo debe ser un número entre 0 y 255. Se recibió ${min}`);
   }
@@ -23,9 +38,19 @@ export const colorRandom = ({ min = 0, max = 255 }: { min?: number; max?: number
     throw new Error(`El valor mínimo debe ser menor o igual al máximo. Se recibió min: ${min}, max: ${max}`);
   }
 
-  const red = Math.floor(Math.random() * (max - min + 1)) + min
-  const green = Math.floor(Math.random() * (max - min + 1)) + min
-  const blue = Math.floor(Math.random() * (max - min + 1)) + min
+  if (disableRed !== undefined && (typeof disableRed !== 'number' || isNaN(disableRed) || disableRed < 0 || disableRed > 255)) {
+    throw new Error(`disableRed debe ser un número entre 0 y 255. Se recibió ${disableRed}`);
+  }
+  if (disableGreen !== undefined && (typeof disableGreen !== 'number' || isNaN(disableGreen) || disableGreen < 0 || disableGreen > 255)) {
+    throw new Error(`disableGreen debe ser un número entre 0 y 255. Se recibió ${disableGreen}`);
+  }
+  if (disableBlue !== undefined && (typeof disableBlue !== 'number' || isNaN(disableBlue) || disableBlue < 0 || disableBlue > 255)) {
+    throw new Error(`disableBlue debe ser un número entre 0 y 255. Se recibió ${disableBlue}`);
+  }
+
+  const red = disableRed ?? Math.floor(Math.random() * (max - min + 1)) + min
+  const green = disableGreen ?? Math.floor(Math.random() * (max - min + 1)) + min
+  const blue = disableBlue ?? Math.floor(Math.random() * (max - min + 1)) + min
   return `rgb(${red}, ${green}, ${blue})`
 }
 
