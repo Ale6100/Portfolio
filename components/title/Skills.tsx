@@ -28,7 +28,7 @@ export default function Skills() {
 
     const timeline = gsap.timeline({
       defaults: {
-        stagger: 0.1,
+        stagger: 0.05,
       }
     });
 

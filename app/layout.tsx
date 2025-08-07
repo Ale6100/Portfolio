@@ -33,9 +33,12 @@ export default function RootLayout({
     <html lang="es">
       <head>
       </head>
-      <body className="antialiased bg-slate-100">
+      <body className="antialiased bg-gradient-to-br from-background via-background to-muted/20 min-h-screen">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,_theme(colors.primary.DEFAULT/0.03),transparent_50%),radial-gradient(circle_at_80%_20%,_theme(colors.accent.DEFAULT/0.03),transparent_50%),radial-gradient(circle_at_40%_40%,_theme(colors.muted.DEFAULT/0.03),transparent_50%)] pointer-events-none" />
         <NavBar />
-        {children}
+        <div className="relative pt-16 z-10">
+          {children}
+        </div>
       </body>
     </html>
   );

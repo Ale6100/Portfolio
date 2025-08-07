@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { SplitText } from 'gsap/all';
 import { useEffect, useRef } from 'react';
 import Skills from './Skills';
+import { numeroAlAzar } from '@/lib/utils';
 
 gsap.registerPlugin(SplitText);
 
@@ -16,34 +17,33 @@ export default function Title() {
     if (!titleRef.current) return;
 
     const split = new SplitText(titleRef.current, { type: "chars" });
-    const animations: gsap.core.Tween[] = [];
+    const timeline = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 0.33 });
 
-    split.chars.forEach((char: Element) => {
-      const randomX = (Math.random() - 0.5) * 250;
-      const randomY = (Math.random() - 0.5) * 250;
+    gsap.set(split.chars, {
+      x: () => numeroAlAzar(-200, 200),
+      y: () => numeroAlAzar(-200, 200),
+      opacity: 0,
+      scale: 0
+    });
 
-      const tween = gsap.fromTo(char,
-        {
-          x: randomX,
-          y: randomY,
-          opacity: 0,
-          scale: 0
-        },
-        {
-          x: 0,
-          y: 0,
-          opacity: 1,
-          scale: 1,
-          duration: Math.random() * 0.5 + 0.5,
-          ease: "back.out(1.7)"
-        }
-      );
-
-      animations.push(tween);
+    timeline.to(split.chars, {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      duration: () => numeroAlAzar(0.5, 1),
+      ease: "back.out(1.7)",
+      stagger: {
+        amount: 1,
+        from: "random"
+      },
+    })
+    .to(split.chars, {
+      delay: 60
     });
 
     return () => {
-      animations.forEach(tween => tween.kill());
+      timeline.kill();
       split.revert();
     };
   }, []);
