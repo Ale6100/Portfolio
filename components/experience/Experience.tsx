@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import experiencia from '@/lib/experience';
+import experiencia from '@/utils/experience';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,6 +87,7 @@ export default function Experience() {
                 src={`/img/experience/${exp.img}`}
                 alt={`Logo de ${exp.nombre}`}
                 fill
+                sizes="(max-width: 640px) 64px, (max-width: 768px) 48px, 64px"
                 className="object-contain transition-transform duration-300"
               />
             </div>

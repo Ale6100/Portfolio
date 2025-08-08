@@ -2,6 +2,8 @@
 
 import About from "@/components/about/About";
 import CardSection from "@/components/common/CardSection";
+import Contact from "@/components/contact/Contact";
+import Education from "@/components/education/Education";
 import Experience from "@/components/experience/Experience";
 import Technologies from "@/components/technologies/Technologies";
 import Title from "@/components/title/Title";
@@ -42,6 +44,29 @@ export default function Home() {
         <Technologies />
       </CardSection>
 
+      <CardSection
+        id="education"
+        title="Educación"
+        className="mb-10"
+      >
+        <Education />
+      </CardSection>
+
+      <CardSection
+        id="contact"
+        title="Contacto"
+        className="mb-10"
+      >
+        <Contact />
+      </CardSection>
+
+      <CardSection
+        id="projects"
+        title="Proyectos"
+        className="mb-10"
+      >
+        <p>Antiguamente mostraba acá mis proyectos personales, que son muchos, pero francamente quedaron algo anticuados para lo que puedo hacer actualmente. Eventualmente voy a crear nuevos que reflejen lo que sé actualmente, pero si aún así sentís curiosidad podés ver mi <Link className="text-blue-500 hover:underline" href="https://github.com/Ale6100" target="_blank" rel="noopener noreferrer">listado de proyectos principales en mi GitHub</Link>.</p>
+      </CardSection>
       {
         isProduction && <Link className='fixed bottom-[1vw] right-[1vw] hover:font-semibold text-sm max-md:text-xs hover:scale-105 hover:translate-x-[-0.25vw] transition-all duration-100' href="https://portfolioalejandrop.netlify.app/" target="_blank" rel="noopener noreferrer">Ver 1ra versión</Link>
       }

@@ -31,11 +31,6 @@ const navItems = [
     icon: GraduationCap,
   },
   {
-    name: "Proyectos",
-    href: "#projects",
-    icon: FolderOpen,
-  },
-  {
     name: "Contacto",
     href: "#contact",
     icon: Mail,

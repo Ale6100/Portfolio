@@ -1,7 +1,7 @@
 // components\technologies\Technologies.tsx
 
 import Image from 'next/image'
-import tecnologias from '@/lib/technologies'
+import tecnologias from '@/utils/technologies'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 

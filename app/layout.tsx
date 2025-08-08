@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
 import NavBar from "@/components/navbar/NavBar";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Portfolio | Alejandro Portaluppi",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <div className="relative pt-16 z-10">
           {children}
         </div>
+        <Toaster richColors theme='light' toastOptions={{}} position="top-right" closeButton/>
       </body>
     </html>
   );

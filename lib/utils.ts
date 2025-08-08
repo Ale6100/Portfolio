@@ -1,3 +1,7 @@
+// lib\utils.ts
+
+import { TypeResponse } from "@/types/fetch";
+import { errorResponse } from "@/utils/handleErrorResponses";
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
@@ -76,4 +80,21 @@ export const numeroAlAzar = (num1: number, num2: number): number => {
 export const elementoAlAzar = <T>(array: T[]): T => {
   if (!Array.isArray(array)) throw new TypeError(`elementoAlAzar debe recibir un array. Se ha recibido ${JSON.stringify(array)} (${typeof array})`)
   return array[Math.floor(Math.random()*array.length)]
+}
+
+/**
+ * Maneja una respuesta de API parseando su contenido JSON y retornando una respuesta tipada.
+ * Si la respuesta no es exitosa, retorna una respuesta de error con un mensaje traducido o el mensaje por defecto.
+ *
+ * @template T - El tipo de los datos esperados en la respuesta.
+ * @param {Response} response - El objeto Response de la API fetch a manejar.
+ * @param {string} defaultMessage - Mensaje de error por defecto si no hay traducción disponible.
+ * @returns {Promise<TypeResponse<T>>} Una promesa que resuelve a un objeto de respuesta tipado.
+ */
+export async function handleApiJson<T>(response: Response, defaultMessage: string = ""): Promise<TypeResponse<T>> {
+  const res: TypeResponse<T> = await response.json();
+  if (!response?.ok) {
+    return errorResponse({ status: "error", message: res.message ?? defaultMessage });
+  }
+  return res;
 }

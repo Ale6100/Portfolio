@@ -5,7 +5,7 @@
 import { gsap } from 'gsap';
 import { SplitText } from 'gsap/all';
 import { useEffect, useRef, useState } from 'react';
-import { skills } from '@/lib/skills';
+import { skills } from '@/utils/skills';
 import { colorRandom, elementoAlAzar, numeroAlAzar } from '@/lib/utils';
 
 export default function Skills() {
