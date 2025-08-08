@@ -135,9 +135,9 @@ export default function Experience() {
                             {exp.tecnologias.frontend.map((tech) => (
                               <span
                                 key={`${exp.nombre}-frontend-${tech}`}
-                                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-primary/10 text-primary border border-primary/20 rounded hover:bg-primary/15 hover:border-primary/30 transition-all duration-200"
+                                className="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 rounded hover:bg-blue-100 dark:hover:bg-blue-900/60 hover:border-blue-300/80 dark:hover:border-blue-700/80 transition-all duration-200"
                               >
-                                <div className="w-1 h-1 bg-primary/80 rounded-full" />
+                                <div className="w-1 h-1 bg-blue-500/80 rounded-full" />
                                 {tech}
                               </span>
                             ))}

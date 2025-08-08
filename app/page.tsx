@@ -3,6 +3,7 @@
 import About from "@/components/about/About";
 import CardSection from "@/components/common/CardSection";
 import Experience from "@/components/experience/Experience";
+import Technologies from "@/components/technologies/Technologies";
 import Title from "@/components/title/Title";
 import Link from "next/link";
 
@@ -30,6 +31,15 @@ export default function Home() {
         className="mb-10"
       >
         <Experience />
+      </CardSection>
+
+      <CardSection
+        id="technologies"
+        title="Tecnologías"
+        subtitle="Principales herramientas empleadas en mis trabajos"
+        className="mb-10"
+      >
+        <Technologies />
       </CardSection>
 
       {
