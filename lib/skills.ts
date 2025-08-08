@@ -15,13 +15,13 @@ export const skills = [
   // Backend
   "NodeJS | ExpressJS | MongoDB",
   "NestJS | Entity Framework",
-  "Yii | PHP | XAMPP",
+  "Yii 2 | PHP | XAMPP",
 
   // Bases de datos
-  "SQL Server | MySQL | Firebase",
+  "SQL Server | MySQL | Firebase | MongoDB",
 
   // Herramientas de desarrollo
-  "Git | GitHub | GitLab",
+  "Git | GitHub | GitLab | Docker", /// Quitar docker de acá cuando se me ocurra dónde meterlo
 
   // Soft skills destacadas
   "Autodidacta",

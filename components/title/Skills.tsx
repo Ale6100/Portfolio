@@ -23,7 +23,7 @@ export default function Skills() {
       color: "transparent",
       y: 20,
       scale: 0,
-      rotation: () => numeroAlAzar(-180, 180)
+      rotation: () => numeroAlAzar(-180, 180),
     });
 
     const timeline = gsap.timeline({
@@ -73,6 +73,6 @@ export default function Skills() {
   }, [skill]);
 
   return (
-    <p className='text-center text-sm sm:text-lg' ref={skillRef}>{skill}</p>
+    <p className='text-center text-base sm:text-xl' ref={skillRef}>{skill}</p>
   );
 }
