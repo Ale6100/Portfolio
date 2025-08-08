@@ -4,7 +4,8 @@
 
 import { gsap } from 'gsap';
 import { SplitText } from 'gsap/all';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Skills from './Skills';
 import { numeroAlAzar } from '@/lib/utils';
 
@@ -12,6 +13,12 @@ gsap.registerPlugin(SplitText);
 
 export default function Title() {
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
+  const isTabletOrDesktop = useMediaQuery({ minWidth: 768 });
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (!titleRef.current) return;
@@ -52,7 +59,8 @@ export default function Title() {
     <div className='space-y-3'>
       <h1 className='text-center text-xl sm:text-3xl' ref={titleRef}>Portfolio | Alejandro Portaluppi</h1>
 
-      <Skills />
+      {/* No lo renderizo en celulares porque sería muy pesado para muchos de ellos */}
+      {isMounted && isTabletOrDesktop && <Skills />}
     </div>
   )
 }

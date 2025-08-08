@@ -1,6 +1,5 @@
 // components\technologies\Technologies.tsx
 
-import Image from 'next/image'
 import tecnologias from '@/utils/technologies'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
@@ -17,7 +16,6 @@ export default function Technologies() {
         .sort((a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' }))
         .map((t) => {
         const src = t.img
-        const isRemote = src.startsWith('http')
         return (
           <Link
             key={t.title}
@@ -48,13 +46,11 @@ export default function Technologies() {
                   'group-hover:scale-105 group-hover:shadow-md transition-all duration-300'
                 )}
               >
-                <Image
+                <img
                   src={src}
                   alt={t.alt}
-                  fill
-                  sizes="(max-width: 640px) 48px, (max-width: 1024px) 56px, 56px"
-                  className="object-contain p-2"
-                  unoptimized={isRemote}
+                  className="w-full h-full object-contain p-2"
+                  loading="lazy"
                 />
               </div>
 

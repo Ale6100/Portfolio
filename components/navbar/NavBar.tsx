@@ -55,7 +55,6 @@ export default function NavBar() {
               className="text-xl font-bold text-white hover:text-blue-300 transition-colors duration-200 relative group cursor-pointer"
             >
               <span className="relative z-10">Portfolio</span>
-              <span className="text-xs font-normal text-red-400 ml-1 relative z-10">(no terminado)</span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 transition-opacity duration-200 -z-10" />
             </Link>
           </div>

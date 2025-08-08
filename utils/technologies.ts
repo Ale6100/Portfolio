@@ -131,16 +131,22 @@ const tecnologias: tec[] = [
   },
   {
     title: "Yii 2",
-  img: "/img/logo/yii.svg",
+    img: "/img/logo/yii.svg",
     alt: "Yii 2 icon",
     link: "https://www.yiiframework.com/"
   },
   {
     title: "XAMPP",
-  img: "/img/logo/xampp.svg",
+    img: "/img/logo/xampp.svg",
     alt: "XAMPP icon",
     link: "https://www.apachefriends.org/"
   },
+  {
+    title: "HumHub",
+    img: "https://www.humhub.com/wp-content/uploads/2023/03/HumHub_Logo.png",
+    alt: "HumHub icon",
+    link: "https://www.humhub.com"
+  }
 ]
 
 export default tecnologias

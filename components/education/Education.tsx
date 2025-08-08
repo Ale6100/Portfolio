@@ -1,6 +1,5 @@
 // components\education\Education.tsx
 
-import Image from 'next/image';
 import Link from 'next/link';
 import estudios from '@/utils/education';
 import { cn } from '@/lib/utils';
@@ -16,13 +15,11 @@ export default function Education() {
             <div className="relative w-full">
               {estudio.img ? (
                 <div className="relative w-full h-48 sm:h-52 md:h-56 rounded-xl overflow-hidden border border-border/20 bg-muted/20">
-                  <Image
+                  <img
                     src={`/img/education/${estudio.img}`}
                     alt={`Certificado de ${estudio.titulo}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-contain p-4"
-                    priority={index < 4}
+                    className="w-full h-full object-contain p-4"
+                    loading="lazy"
                   />
 
                   {estudio.certificado && (

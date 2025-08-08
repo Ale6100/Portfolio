@@ -5,19 +5,14 @@ import CardSection from "@/components/common/CardSection";
 import Contact from "@/components/contact/Contact";
 import Education from "@/components/education/Education";
 import Experience from "@/components/experience/Experience";
+import Footer from "@/components/footer/Footer";
 import Technologies from "@/components/technologies/Technologies";
 import Title from "@/components/title/Title";
 import Link from "next/link";
 
 export default function Home() {
-  const isProduction = process.env.NODE_ENV === 'production';
-
   return (
-    <main className="px-3 mx-auto max-w-5xl space-y-5 min-h-screen">
-      <p className="sm:text-lg text-center mt-5 text-gray-700 dark:text-gray-300">
-        Estás viendo la nueva versión de mi portfolio, todavía no está listo, pero te agradezco por pasarte! :D
-      </p>
-
+    <main className="px-3 pt-5 mx-auto max-w-5xl space-y-5 min-h-screen">
       <Title />
 
       <CardSection
@@ -65,11 +60,10 @@ export default function Home() {
         title="Proyectos"
         className="mb-10"
       >
-        <p>Antiguamente mostraba acá mis proyectos personales, que son muchos, pero francamente quedaron algo anticuados para lo que puedo hacer actualmente. Eventualmente voy a crear nuevos que reflejen lo que sé actualmente, pero si aún así sentís curiosidad podés ver mi <Link className="text-blue-500 hover:underline" href="https://github.com/Ale6100" target="_blank" rel="noopener noreferrer">listado de proyectos principales en mi GitHub</Link>.</p>
+        <p>Antes solía mostrar acá mis proyectos personales, que son muchos, pero la verdad quedaron algo anticuados para lo que puedo hacer hoy. Más adelante voy a crear nuevos que reflejen lo que sé ahora, pero si igual te da curiosidad, podés ver mi <Link className="text-blue-500 hover:underline" href="https://github.com/Ale6100" target="_blank" rel="noopener noreferrer">listado de proyectos principales en mi GitHub</Link>.</p>
       </CardSection>
-      {
-        isProduction && <Link className='fixed bottom-[1vw] right-[1vw] hover:font-semibold text-sm max-md:text-xs hover:scale-105 hover:translate-x-[-0.25vw] transition-all duration-100' href="https://portfolioalejandrop.netlify.app/" target="_blank" rel="noopener noreferrer">Ver 1ra versión</Link>
-      }
+
+      <Footer />
     </main>
   );
 }
