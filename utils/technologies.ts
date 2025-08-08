@@ -146,6 +146,12 @@ const tecnologias: tec[] = [
     img: "https://www.humhub.com/wp-content/uploads/2023/03/HumHub_Logo.png",
     alt: "HumHub icon",
     link: "https://www.humhub.com"
+  },
+  {
+    title: "Next.js",
+    img: "https://img.icons8.com/color/100/null/nextjs.png",
+    alt: "Next.js icon",
+    link: "https://nextjs.org/"
   }
 ]
 
