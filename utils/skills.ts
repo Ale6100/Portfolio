@@ -7,13 +7,12 @@ export const skills = [
 
   // Frontend
   "HTML | CSS | JavaScript",
-  "ReactJS | NextJS | Vite",
+  "ReactJS | NextJS",
   "Tailwind | Bootstrap",
   "shadcn/ui | Radix UI",
   "zod | react-hook-form",
 
   // Backend
-  "NodeJS | ExpressJS | MongoDB",
   "NestJS | Entity Framework",
   "Yii 2 | PHP | XAMPP",
 
@@ -25,4 +24,8 @@ export const skills = [
 
   // Soft skills destacadas
   "Autodidacta",
+
+  // Extra
+  "MongoDB | ExpressJS | ReactJS | NodeJS",
+  "Vite | SWC | Turbopack"
 ];
