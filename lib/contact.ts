@@ -41,7 +41,7 @@ export async function sendEmail({ data }: sendEmailProps) {
       cache: 'no-cache'
     })
     return await handleApiJson(response, 'Error al enviar el correo');
-  } catch (e) {
+  } catch {
     return errorResponse({ status: 'error', message: 'Error al enviar el correo' });
   }
 }

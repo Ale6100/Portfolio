@@ -32,23 +32,23 @@ export const colorRandom = ({
   disableGreen?: number;
   disableBlue?: number;
 } = {}): `rgb(${number}, ${number}, ${number})` => {
-  if (typeof min !== 'number' || isNaN(min) || min < 0 || min > 255) {
+  if (typeof min !== 'number' || Number.isNaN(min) || min < 0 || min > 255) {
     throw new Error(`El valor mínimo debe ser un número entre 0 y 255. Se recibió ${min}`);
   }
-  if (typeof max !== 'number' || isNaN(max) || max < 0 || max > 255) {
+  if (typeof max !== 'number' || Number.isNaN(max) || max < 0 || max > 255) {
     throw new Error(`El valor máximo debe ser un número entre 0 y 255. Se recibió ${max}`);
   }
   if (min > max) {
     throw new Error(`El valor mínimo debe ser menor o igual al máximo. Se recibió min: ${min}, max: ${max}`);
   }
 
-  if (disableRed !== undefined && (typeof disableRed !== 'number' || isNaN(disableRed) || disableRed < 0 || disableRed > 255)) {
+  if (disableRed !== undefined && (typeof disableRed !== 'number' || Number.isNaN(disableRed) || disableRed < 0 || disableRed > 255)) {
     throw new Error(`disableRed debe ser un número entre 0 y 255. Se recibió ${disableRed}`);
   }
-  if (disableGreen !== undefined && (typeof disableGreen !== 'number' || isNaN(disableGreen) || disableGreen < 0 || disableGreen > 255)) {
+  if (disableGreen !== undefined && (typeof disableGreen !== 'number' || Number.isNaN(disableGreen) || disableGreen < 0 || disableGreen > 255)) {
     throw new Error(`disableGreen debe ser un número entre 0 y 255. Se recibió ${disableGreen}`);
   }
-  if (disableBlue !== undefined && (typeof disableBlue !== 'number' || isNaN(disableBlue) || disableBlue < 0 || disableBlue > 255)) {
+  if (disableBlue !== undefined && (typeof disableBlue !== 'number' || Number.isNaN(disableBlue) || disableBlue < 0 || disableBlue > 255)) {
     throw new Error(`disableBlue debe ser un número entre 0 y 255. Se recibió ${disableBlue}`);
   }
 
@@ -66,7 +66,7 @@ export const colorRandom = ({
  * @returns {number} Un número al azar entre `num1` y `num2` (sin incluir al `num2`)
  */
 export const numeroAlAzar = (num1: number, num2: number): number => {
-  if (typeof num1 !== 'number' || typeof num2 !== 'number' || isNaN(num1) || isNaN(num2)) throw new Error(`numeroAlAzar requiere números válidos. Se recibió ${num1} y ${num2}`);
+  if (typeof num1 !== 'number' || typeof num2 !== 'number' || Number.isNaN(num1) || Number.isNaN(num2)) throw new Error(`numeroAlAzar requiere números válidos. Se recibió ${num1} y ${num2}`);
   if (num1 > num2) throw new Error(`num1 debe ser <= num2. Se recibió ${num1} y ${num2}`);
   return num1 + Math.random() * (num2 - num1);
 }

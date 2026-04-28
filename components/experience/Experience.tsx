@@ -81,7 +81,7 @@ export default function Experience() {
           className="experience-item group relative p-4 rounded-xl border border-border/30 bg-card/50 hover:border-border/60 hover:bg-card/80 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
         >
           <div className="flex flex-col sm:flex-row gap-4">
-            <div className="relative w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto sm:mx-0 flex-shrink-0 rounded-sm overflow-hidden border border-border/20 bg-gradient-to-br from-muted/50 to-muted/20 group-hover:scale-105 transition-transform duration-300">
+            <div className="relative w-16 h-16 sm:w-12 sm:h-12 md:w-16 md:h-16 mx-auto sm:mx-0 shrink-0 rounded-sm overflow-hidden border border-border/20 bg-linear-to-br from-muted/50 to-muted/20 group-hover:scale-105 transition-transform duration-300">
               <img
                 src={`/img/experience/${exp.img}`}
                 alt={`Logo de ${exp.nombre}`}
@@ -127,7 +127,7 @@ export default function Experience() {
                     <div className="space-y-2.5">
                       {exp.tecnologias.frontend && exp.tecnologias.frontend.length > 0 && (
                         <div className="flex items-center gap-2">
-                          <span className="text-xs text-muted-foreground font-medium min-w-[4rem] opacity-75">
+                          <span className="text-xs text-muted-foreground font-medium min-w-16 opacity-75">
                             Frontend:
                           </span>
                           <div className="flex flex-wrap gap-1.5">
@@ -146,7 +146,7 @@ export default function Experience() {
 
                       {exp.tecnologias.backend && exp.tecnologias.backend.length > 0 && (
                         <div className="flex items-center gap-2">
-                          <span className="text-xs text-muted-foreground font-medium min-w-[4rem] opacity-75">
+                          <span className="text-xs text-muted-foreground font-medium min-w-16 opacity-75">
                             Backend:
                           </span>
                           <div className="flex flex-wrap gap-1.5">
@@ -180,10 +180,10 @@ export default function Experience() {
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
                         {exp.responsabilidades.tareas.map((tarea) => (
                           <div
-                            key={`${exp.nombre}-tarea-${tarea.substring(0, 20).replace(/\s+/g, '-')}`}
+                            key={`${exp.nombre}-tarea-${tarea.substring(0, 20).trim().replaceAll(/\s+/g, '-')}`}
                             className="flex items-start gap-2 text-xs text-muted-foreground bg-muted/20 hover:bg-muted/30 rounded-lg p-2 transition-colors duration-200"
                           >
-                            <div className="w-1.5 h-1.5 bg-blue-500/60 rounded-full mt-1.5 flex-shrink-0" />
+                            <div className="w-1.5 h-1.5 bg-blue-500/60 rounded-full mt-1.5 shrink-0" />
                             <span className="leading-relaxed">{tarea}</span>
                           </div>
                         ))}
@@ -195,7 +195,7 @@ export default function Experience() {
             </div>
           </div>
 
-          <div className="absolute left-0 top-0 h-full w-1 rounded-r-full bg-gradient-to-b from-primary/30 via-primary/50 to-primary/30 group-hover:from-primary/50 group-hover:via-primary/70 group-hover:to-primary/50 transition-all duration-300" />
+          <div className="absolute left-0 top-0 h-full w-1 rounded-r-full bg-linear-to-b from-primary/30 via-primary/50 to-primary/30 group-hover:from-primary/50 group-hover:via-primary/70 group-hover:to-primary/50 transition-all duration-300" />
         </div>
       ))}
     </div>

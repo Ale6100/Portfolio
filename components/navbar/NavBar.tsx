@@ -4,7 +4,7 @@
 
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { Menu, X, User, FolderOpen, Code, GraduationCap, Briefcase, Mail } from 'lucide-react'
+import { Menu, X, User, Code, GraduationCap, Briefcase, Mail } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetDescription, SheetTitle } from "@/components/ui/sheet"
 import { useState } from "react"
 import Link from "next/link"
@@ -41,11 +41,11 @@ export default function NavBar() {
   const [ isOpen, setIsOpen ] = useState(false);
 
   return (
-    <nav className="fixed top-0 z-[9999] w-full border-b border-blue-500/30 bg-slate-900/90 backdrop-blur-md supports-[backdrop-filter]:bg-slate-900/70 shadow-lg shadow-blue-500/20">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 via-blue-500/10 to-cyan-400/15 pointer-events-none" />
+    <nav className="fixed top-0 z-9999 w-full border-b border-blue-500/30 bg-slate-900/90 backdrop-blur-md supports-backdrop-filter:bg-slate-900/70 shadow-lg shadow-blue-500/20">
+      <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 via-blue-500/10 to-cyan-400/15 pointer-events-none" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between relative">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link
               href="#"
               onClick={(e) => {
@@ -55,7 +55,7 @@ export default function NavBar() {
               className="text-xl font-bold text-white hover:text-blue-300 transition-colors duration-200 relative group cursor-pointer"
             >
               <span className="relative z-10">Portfolio</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 transition-opacity duration-200 -z-10" />
+              <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 transition-opacity duration-200 -z-10" />
             </Link>
           </div>
 
@@ -72,8 +72,8 @@ export default function NavBar() {
                   )}
                 >
                   <span className="relative z-10">{item.name}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 scale-95 group-hover:scale-100" />
-                  <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-300 group-hover:w-full group-hover:left-0 transition-all duration-200" />
+                  <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 scale-95 group-hover:scale-100" />
+                  <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-linear-to-r from-blue-400 to-cyan-300 group-hover:w-full group-hover:left-0 transition-all duration-200" />
                 </Link>
               ))}
             </div>
@@ -91,8 +91,8 @@ export default function NavBar() {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-72 sm:w-96 [&>button:first-of-type]:hidden z-[10000] backdrop-blur-md bg-slate-900/95 border-blue-500/30">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-blue-500/10 to-cyan-400/15 pointer-events-none" />
+              <SheetContent side="right" className="w-72 sm:w-96 [&>button:first-of-type]:hidden z-10000 backdrop-blur-md bg-slate-900/95 border-blue-500/30">
+                <div className="absolute inset-0 bg-linear-to-br from-blue-600/20 via-blue-500/10 to-cyan-400/15 pointer-events-none" />
                 <SheetDescription hidden />
                 <div className="flex flex-col space-y-1 mt-8 relative">
                   <div className="flex items-center justify-between mb-4 sm:mb-6 px-4">
@@ -124,8 +124,8 @@ export default function NavBar() {
                           )}
                         >
                           <span className="relative z-10">{item.name}</span>
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 scale-95 group-hover:scale-100" />
-                          <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-300 group-hover:w-full group-hover:left-0 transition-all duration-200" />
+                          <div className="absolute inset-0 bg-linear-to-r from-blue-500/20 to-cyan-400/20 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-200 scale-95 group-hover:scale-100" />
+                          <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-linear-to-r from-blue-400 to-cyan-300 group-hover:w-full group-hover:left-0 transition-all duration-200" />
                         </Link>
                       </SheetClose>
                     )

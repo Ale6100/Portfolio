@@ -10,11 +10,13 @@ import { colorRandom, elementoAlAzar, numeroAlAzar } from '@/lib/utils';
 
 export default function Skills() {
   const [ skill, setSkill ] = useState(skills[0]);
+  const [ mounted, setMounted ] = useState(false);
 
   const skillRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     if (!skillRef.current) return;
+    setMounted(true);
 
     const split = new SplitText(skillRef.current, { type: "chars" });
 
@@ -71,6 +73,8 @@ export default function Skills() {
       });
 
   }, [skill]);
+
+  if (!mounted) return null;
 
   return (
     <p className='text-center text-base sm:text-xl' ref={skillRef}>{skill}</p>

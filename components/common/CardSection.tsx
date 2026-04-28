@@ -141,7 +141,7 @@ export default function CardSection({
       )}>
         <div className={cn(
           "absolute inset-0 pointer-events-none",
-          "bg-gradient-to-br from-primary/5 via-transparent to-accent/5",
+          "bg-linear-to-br from-primary/5 via-transparent to-accent/5",
           "opacity-60"
         )} />
 
@@ -160,7 +160,7 @@ export default function CardSection({
               <>
                 <CardTitle className={cn(
                   "text-lg sm:text-xl lg:text-2xl font-bold",
-                  "bg-gradient-to-r from-primary via-primary/90 to-primary/70",
+                  "bg-linear-to-r from-primary via-primary/90 to-primary/70",
                   "bg-clip-text text-transparent",
                   "leading-tight tracking-tight"
                 )}>
@@ -168,20 +168,20 @@ export default function CardSection({
                 </CardTitle>
 
                 <div ref={decorativeRef} className="flex items-center gap-3">
-                  <div className="decorative-bar decorative-bar-1 h-1.5 w-16 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500 via-blue-500 to-blue-500/50 bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/60 to-transparent translate-x-[-100%] animate-[shimmer_1.5s_ease-in-out_infinite]" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/30 to-transparent animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.5s]" />
+                  <div className="decorative-bar decorative-bar-1 h-1.5 w-16 relative overflow-hidden rounded-full bg-linear-to-r from-blue-500 via-blue-500 to-blue-500/50 bg-size-[200%_100%]">
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-200/60 to-transparent -translate-x-full animate-[shimmer_1.5s_ease-in-out_infinite]" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-400/30 to-transparent animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.5s]" />
                   </div>
-                  <div className="decorative-bar decorative-bar-2 h-1 w-10 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500/70 via-blue-500/50 to-transparent bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/50 to-transparent translate-x-[-100%] animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.3s]" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/40 to-transparent animate-[shimmer_2.2s_ease-in-out_infinite] [animation-delay:0.8s]" />
+                  <div className="decorative-bar decorative-bar-2 h-1 w-10 relative overflow-hidden rounded-full bg-linear-to-r from-blue-500/70 via-blue-500/50 to-transparent bg-size-[200%_100%]">
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-200/50 to-transparent -translate-x-full animate-[shimmer_2s_ease-in-out_infinite] [animation-delay:0.3s]" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-400/40 to-transparent animate-[shimmer_2.2s_ease-in-out_infinite] [animation-delay:0.8s]" />
                   </div>
-                  <div className="decorative-bar decorative-bar-3 h-1 w-8 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500/50 via-blue-500/30 to-transparent opacity-80 bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/70 to-transparent translate-x-[-100%] animate-[shimmer_2.5s_ease-in-out_infinite] [animation-delay:0.6s]" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent animate-[shimmer_2.8s_ease-in-out_infinite] [animation-delay:1.1s]" />
+                  <div className="decorative-bar decorative-bar-3 h-1 w-8 relative overflow-hidden rounded-full bg-linear-to-r from-blue-500/50 via-blue-500/30 to-transparent opacity-80 bg-size-[200%_100%]">
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-200/70 to-transparent -translate-x-full animate-[shimmer_2.5s_ease-in-out_infinite] [animation-delay:0.6s]" />
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-400/50 to-transparent animate-[shimmer_2.8s_ease-in-out_infinite] [animation-delay:1.1s]" />
                   </div>
-                  <div className="decorative-bar decorative-bar-4 h-0.5 w-4 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-500/40 to-transparent opacity-60 bg-[length:200%_100%]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-200/80 to-transparent translate-x-[-100%] animate-[shimmer_3s_ease-in-out_infinite] [animation-delay:0.9s]" />
+                  <div className="decorative-bar decorative-bar-4 h-0.5 w-4 relative overflow-hidden rounded-full bg-linear-to-r from-blue-500/40 to-transparent opacity-60 bg-size-[200%_100%]">
+                    <div className="absolute inset-0 bg-linear-to-r from-transparent via-blue-200/80 to-transparent -translate-x-full animate-[shimmer_3s_ease-in-out_infinite] [animation-delay:0.9s]" />
                   </div>
                 </div>
               </>

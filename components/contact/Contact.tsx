@@ -122,7 +122,7 @@ export default function Contact() {
                   <FormControl>
                     <Textarea
                       {...field}
-                      className="mt-1 min-h-[100px] resize-none bg-background/50 border border-border/50 focus:border-primary/60 transition-colors"
+                      className="mt-1 min-h-25 resize-none bg-background/50 border border-border/50 focus:border-primary/60 transition-colors"
                       placeholder="Tu mensaje..."
                       required
                     />
