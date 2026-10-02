@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "agents:update": "git fetch -q --depth 1 https://github.com/Ale6100/Templates-IA.git main && git show FETCH_HEAD:AGENTS-template.md > AGENTS.md"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
