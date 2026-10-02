@@ -1,15 +1,16 @@
-interface IEstudios {
-    img?: `${string}.webp`
-    titulo: string
-    fontSize?: string
-    institucionLink: string
-    institucionNombre: string
-    encurso?: boolean
-    certificado?: string
-    linkExtra?: string
+// content\education.ts
+
+export interface IEstudio {
+  img?: `${string}.webp`
+  titulo: string
+  institucionLink: string
+  institucionNombre: string
+  encurso?: boolean
+  certificado?: string
+  linkExtra?: string
 }
 
-const estudios: IEstudios[] = [
+const estudios: IEstudio[] = [
   {
     titulo: "Licenciatura en Ciencias de la Computación",
     institucionLink: "https://exactas.uba.ar/",
@@ -41,10 +42,9 @@ const estudios: IEstudios[] = [
   {
     img: "Habilidades-para-el-trabajo.webp",
     titulo: "Habilidades para el trabajo y carrera de desarrollo web",
-    fontSize: "text-sm",
     institucionLink: "https://fundacionempujar.org/",
     institucionNombre: "Fundación Empujar",
-    certificado: "./utils/Diploma_empujar_Alejandro_Portaluppi.pdf"
+    certificado: "/utils/Diploma_empujar_Alejandro_Portaluppi.pdf"
   },
   {
     img: "carrera-frontend.webp",
@@ -58,7 +58,7 @@ const estudios: IEstudios[] = [
     titulo: "Taller de Python",
     institucionLink: "https://exactas.uba.ar/",
     institucionNombre: "Facultad de Ciencias Exactas y Naturales",
-    certificado: "./utils/Certificado_taller_python_exactas_Alejandro_Portaluppi.pdf"
+    certificado: "/utils/Certificado_taller_python_exactas_Alejandro_Portaluppi.pdf"
   },
 ]
 

@@ -5,14 +5,22 @@ import "./globals.css";
 import { ReactNode } from "react";
 import NavBar from "@/components/navbar/NavBar";
 import { Toaster } from "@/components/ui/sonner";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geistMono = Geist_Mono({subsets:['latin'],variable:'--font-mono'});
 
 export const metadata: Metadata = {
   title: "Portfolio | Alejandro Portaluppi",
   description: "Portfolio IT de Alejandro Portaluppi, Desarrollador Web Full Stack",
+  openGraph: {
+    title: "Alejandro Portaluppi | Desarrollador Web Full Stack",
+    description: "Portfolio IT de Alejandro Portaluppi, Desarrollador Web Full Stack",
+    type: "website",
+    locale: "es_AR",
+  },
   icons: {
     icon: [
       {
@@ -35,16 +43,14 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="es" className={cn("min-h-screen", "font-sans", geist.variable)}>
-      <head>
-      </head>
-      <body className="antialiased bg-linear-to-br from-background via-background to-muted/20 min-h-screen">
-        <div className="fixed inset-0 bg-[radial-gradient(circle_at_20%_80%,--theme(--color-primary/0.03),transparent_50%),radial-gradient(circle_at_80%_20%,--theme(--color-accent/0.03),transparent_50%),radial-gradient(circle_at_40%_40%,--theme(--color-muted/0.03),transparent_50%)] pointer-events-none -z-10" />
-        <NavBar />
-        <div className="relative pt-16 z-10">
+    // next-themes agrega la clase del tema en <html> antes de hidratar, por eso hay que ignorar esa diferencia
+    <html lang="es" suppressHydrationWarning className={cn("min-h-screen", "font-sans", geist.variable, geistMono.variable)}>
+      <body className="antialiased min-h-screen">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <NavBar />
           {children}
-        </div>
-        <Toaster richColors theme='light' toastOptions={{}} position="top-right" closeButton/>
+          <Toaster richColors position="top-right" closeButton/>
+        </ThemeProvider>
       </body>
     </html>
   );

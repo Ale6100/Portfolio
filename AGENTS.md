@@ -9,7 +9,7 @@ Instrucciones y convenciones para los agentes de IA que trabajan en este proyect
 El **README.md es la documentación única** del proyecto: sirve tanto para humanos como para agentes de IA. Explica qué es el proyecto, cómo está armado y cómo desarrollarlo.
 
 - Al empezar una tarea, leé el README para entender el contexto del proyecto antes de tocar código.
-- **Si el README no existe o está vacío**: si el historial de git tiene una versión anterior, partí de ella. Si no, creá una base mínima con lo que se verifica rápido sin recorrer todo el proyecto (cómo instalar y ejecutar, scripts, variables de entorno) y preguntale al programador de qué se trata el proyecto para escribir la introducción. A partir de ahí, completalo de a poco con lo que toquen las tareas, siguiendo las reglas de esta sección. Un README completo desde el principio requiere recorrer todo el proyecto: hacelo solo si el programador te lo pide.
+- **Si el README no existe, está vacío o es la plantilla por defecto del framework**: si el historial de git tiene una versión anterior, partí de ella. Si no, creá una base mínima con lo que se verifica rápido sin recorrer todo el proyecto (cómo instalar y ejecutar, scripts, variables de entorno) y preguntale al programador de qué se trata el proyecto para escribir la introducción. A partir de ahí, completalo de a poco con lo que toquen las tareas, siguiendo las reglas de esta sección. Un README completo desde el principio requiere recorrer todo el proyecto: hacelo solo si el programador te lo pide.
 - **Obligación proactiva de edición del README**: cuando un cambio afecte cualquier cosa que el README documente o debería documentar (instalación, scripts, variables de entorno, arquitectura, endpoints, estructura de carpetas, permisos, decisiones de diseño, etc.) o detectes cualquier discrepancia con la realidad del código, **actualizá el README.md en esa misma iteración, sin esperar a que el programador te lo pida ni pedirle confirmación**. No alcanza con mencionarlo en tu respuesta: tenés que editar el archivo.
 - **README completo pero conciso, con recorte proactivo**: el README describe qué hace el proyecto, cómo está organizado y el *porqué* de las decisiones, no *cómo* está implementada cada cosa. No van:
   - información repetida en más de un lugar;
@@ -47,12 +47,11 @@ No completes con suposiciones lo que no esté respaldado por el código o por un
 
 Esto incluye especialmente **siglas y nombres propios** (del proyecto, de organismos, áreas, roles o sistemas): no los expandas ni interpretes su significado si el código no lo dice explícitamente, aunque parezca obvio. Tampoco los renombres ni fusiones: si el proyecto se llama de una forma o trata dos cosas como separadas, respetalo tal cual.
 
-## Git y acciones irreversibles: solo con pedido explícito
+## Git y acciones irreversibles
 
-- **Prohibido ejecutar comandos git que modifiquen el repositorio** (`add`, `commit`, `push`, `pull`, `merge`, `rebase`, `reset`, `checkout`/`restore`, `stash`, crear o borrar ramas y tags, etc.) a menos que el programador lo pida explícitamente en ese momento. Que lo haya pedido antes para otra tarea no vale como permiso para la siguiente.
-- Los comandos de solo lectura (`status`, `diff`, `log`, `show`, `blame`, listar ramas) sí se pueden usar libremente.
-- Al terminar un cambio, dejalo sin commitear.
-- **Lo mismo aplica a cualquier acción difícil de revertir o con efectos fuera del repositorio**: borrar archivos o carpetas que no creaste vos en la tarea, correr migraciones o scripts sobre una base de datos real, hacer deploys, o llamar a servicios que cobran por uso, envían mensajes o modifican datos de terceros. Antes de hacerlo, explicá qué vas a hacer y esperá la confirmación del programador.
+- **Git**: podés usar libremente los comandos que no pierden trabajo (`status`, `diff`, `log`, `mv`, ramas locales, etc.). Para deshacer tus propios cambios, editá los archivos en lugar de usar git. Pedí confirmación antes de cualquier comando que pueda descartar cambios sin commitear o reescribir historia (`reset --hard`, `checkout --`/`restore`, `clean`, `stash drop`, `rebase`) y antes de cualquier `push`. Salvo que se te pida, dejá los cambios sin commitear para que el programador los revise.
+- **Acciones con efectos fuera del repositorio**: correr migraciones o scripts sobre una base de datos real, hacer deploys, o llamar a servicios que cobran por uso, envían mensajes o modifican datos de terceros. Antes de hacerlo, explicá qué vas a hacer y esperá la confirmación del programador.
+- Dentro de una tarea acordada podés crear, mover, renombrar o borrar archivos sin pedir permiso aparte, avisándolo en tu respuesta.
 
 ## Cambios del programador entre pedidos
 
