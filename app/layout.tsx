@@ -5,10 +5,11 @@ import "./globals.css";
 import { ReactNode } from "react";
 import NavBar from "@/components/navbar/NavBar";
 import { Toaster } from "@/components/ui/sonner";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 
+const bricolageGrotesque = Bricolage_Grotesque({subsets:['latin'],axes:['opsz'],variable:'--font-heading'});
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const geistMono = Geist_Mono({subsets:['latin'],variable:'--font-mono'});
 
@@ -44,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     // next-themes agrega la clase del tema en <html> antes de hidratar, por eso hay que ignorar esa diferencia
-    <html lang="es" suppressHydrationWarning className={cn("min-h-screen", "font-sans", geist.variable, geistMono.variable)}>
+    <html lang="es" suppressHydrationWarning className={cn("min-h-screen", "font-sans", bricolageGrotesque.variable, geist.variable, geistMono.variable)}>
       <body className="antialiased min-h-screen">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <NavBar />

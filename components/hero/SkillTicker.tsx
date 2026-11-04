@@ -24,7 +24,7 @@ export default function SkillTicker() {
   return (
     <p className="flex items-center gap-2 font-mono text-sm text-muted-foreground" aria-hidden>
       <span className="text-brand">$</span>
-      <span key={skill} className="animate-enter [--enter-order:0] truncate">{skill}</span>
+      <span key={skill} className="animate-enter truncate">{skill}</span>
       <span className="animate-caret h-4 w-2 shrink-0 bg-brand/70" />
     </p>
   );

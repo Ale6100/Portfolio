@@ -2,20 +2,18 @@
 
 import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
-import Reveal from './Reveal';
 
 interface SectionProps {
   readonly id: string;
-  readonly index: number;
   readonly title: string;
   readonly subtitle?: string;
   readonly className?: string;
   readonly children: ReactNode;
 }
 
+/** Contenedor común de las secciones de la página, con encabezado lateral fijo en escritorio. */
 export default function Section({
   id,
-  index,
   title,
   subtitle,
   className,
@@ -31,10 +29,7 @@ export default function Section({
     >
       <div className="grid gap-8 md:grid-cols-[11rem_1fr] md:gap-12">
         <header className="md:sticky md:top-24 md:self-start">
-          <p className="font-mono text-xs text-brand" aria-hidden>
-            {String(index).padStart(2, "0")}
-          </p>
-          <h2 id={headingId} className="mt-1 text-lg font-semibold tracking-tight">
+          <h2 id={headingId} className="text-lg font-semibold tracking-tight">
             {title}
           </h2>
           {subtitle && (
@@ -44,9 +39,9 @@ export default function Section({
           )}
         </header>
 
-        <Reveal className="min-w-0 space-y-6">
+        <div className="min-w-0 space-y-6">
           {children}
-        </Reveal>
+        </div>
       </div>
     </section>
   );

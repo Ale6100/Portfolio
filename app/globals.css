@@ -41,7 +41,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-heading: var(--font-sans);
+  --font-heading: var(--font-heading);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --radius-2xl: calc(var(--radius) * 1.8);
@@ -134,6 +134,12 @@
     @apply bg-background text-foreground;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+
   ::selection {
     @apply bg-brand/20;
   }
@@ -146,7 +152,6 @@
 }
 
 @layer utilities {
-  /* Animación de entrada del hero: es CSS puro para que se vea desde el primer pintado, sin esperar a la hidratación */
   @keyframes enter-up {
     from {
       opacity: 0;
@@ -157,7 +162,6 @@
 
   .animate-enter {
     animation: enter-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-    animation-delay: calc(var(--enter-order, 0) * 90ms);
   }
 
   @keyframes caret-blink {

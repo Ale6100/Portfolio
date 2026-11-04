@@ -54,7 +54,7 @@ export default function Experience() {
 
                 {esActual && (
                   <p className="mt-2 inline-flex items-center gap-2 text-xs font-medium text-emerald-700 dark:text-emerald-400">
-                    <span className="size-1.5 rounded-full bg-current motion-safe:animate-pulse" />
+                    <span className="size-1.5 rounded-full bg-current" />
                     Trabajo actual
                   </p>
                 )}
