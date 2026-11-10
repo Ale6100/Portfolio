@@ -31,7 +31,7 @@ const experiencia: IExperiencia[] = [
     tecnologias: ["React.js", "NestJS", "Entity Framework"],
     tareas: [
       "Supervisión y mejora continua de bases de datos con alcance a cientos de miles de usuarios",
-      "Desarrollador principal en dos de los tres proyectos asignados"
+      "Desarrollador principal en tres de los cuatro proyectos asignados"
     ]
   },
   {
