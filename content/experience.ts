@@ -18,7 +18,7 @@ const experiencia: IExperiencia[] = [
     nombre: "Virtualisa",
     puesto: "Desarrollador Frontend",
     fechaInicio: "03/2025",
-    tecnologias: ["Next.js"],
+    tecnologias: ["Next.js", "Vue.js"],
     tareas: [
       "Desarrollo integral del frontend"
     ]

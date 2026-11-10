@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "cv": "node scripts/build-cv.mjs",
     "agents:update": "git fetch -q --depth 1 https://github.com/Ale6100/Templates-IA.git main && git show FETCH_HEAD:AGENTS-template.md > AGENTS.md"
   },
   "dependencies": {

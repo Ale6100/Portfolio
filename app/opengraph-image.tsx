@@ -78,7 +78,7 @@ export default function OpenGraphImage() {
             color: "#6889ff",
           }}
         >
-          <span>React · Next.js · TypeScript · Node.js · NestJS · SQL</span>
+          <span>React · Next.js · Vue · TypeScript · Node.js · NestJS · SQL</span>
         </div>
       </div>
     ),

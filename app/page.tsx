@@ -38,7 +38,7 @@ export default function Home() {
       </Section>
 
       <Section id="projects" title="Proyectos">
-        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg text-pretty">Antes solía mostrar acá mis proyectos personales, que son muchos, pero la verdad quedaron algo anticuados para lo que puedo hacer hoy. Más adelante voy a crear nuevos que reflejen lo que sé ahora, pero si igual te da curiosidad, podés ver mi <a className="font-medium text-foreground underline decoration-brand/50 underline-offset-4 hover:decoration-brand transition-colors" href="https://github.com/Ale6100" target="_blank" rel="noopener noreferrer">listado de proyectos principales en mi GitHub</a>.</p>
+        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg text-pretty">Antes solía mostrar acá mis proyectos personales, que son muchos, pero la verdad quedaron algo anticuados para lo que puedo hacer hoy. Más adelante voy a mostrar acá nuevos que reflejen lo que sé ahora, pero si igual te da curiosidad, podés ver mi <a className="font-medium text-foreground underline decoration-brand/50 underline-offset-4 hover:decoration-brand transition-colors" href="https://github.com/Ale6100" target="_blank" rel="noopener noreferrer">listado de proyectos principales en mi GitHub</a>.</p>
       </Section>
 
       <Section id="contact" title="Contacto">

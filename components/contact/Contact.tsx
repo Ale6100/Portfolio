@@ -57,7 +57,7 @@ export default function Contact() {
   return (
     <div className="max-w-xl">
       <p className="mb-8 text-base text-muted-foreground text-pretty sm:text-lg">
-        ¿Tenés una propuesta, una consulta o simplemente querés saludar? Escribime por acá o a <a href={`mailto:${EMAIL_CONTACTO}`} className="font-medium text-foreground underline decoration-brand/50 underline-offset-4 hover:decoration-brand transition-colors">{EMAIL_CONTACTO}</a>.
+        Podés escribirme a través del formulario o directamente a <a href={`mailto:${EMAIL_CONTACTO}`} className="font-medium text-foreground underline decoration-brand/50 underline-offset-4 hover:decoration-brand transition-colors">{EMAIL_CONTACTO}</a>.
       </p>
 
       <Form {...form}>

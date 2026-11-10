@@ -17,6 +17,7 @@ npm run dev      # servidor de desarrollo en http://localhost:3000
 npm run build    # build de producción
 npm run lint
 npm test         # corre los tests
+npm run cv       # compila el CV de cv/ a PDF (public/utils/CV_Alejandro_Portaluppi.pdf)
 ```
 
 `npm run agents:update` reemplaza `AGENTS.md` por la última versión de la plantilla del repositorio [Templates-IA](https://github.com/Ale6100/Templates-IA).

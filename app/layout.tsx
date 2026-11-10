@@ -14,6 +14,7 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 const geistMono = Geist_Mono({subsets:['latin'],variable:'--font-mono'});
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolioalejandrop.vercel.app"),
   title: "Portfolio | Alejandro Portaluppi",
   description: "Portfolio IT de Alejandro Portaluppi, Desarrollador Web Full Stack",
   openGraph: {

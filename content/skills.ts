@@ -7,9 +7,9 @@ export const skills = [
 
   // Frontend
   "HTML | CSS | JavaScript",
-  "ReactJS | NextJS",
+  "ReactJS | NextJS | Vue.js",
   "Tailwind | Bootstrap",
-  "shadcn/ui | Radix UI",
+  "shadcn/ui",
   "zod | react-hook-form",
 
   // Backend

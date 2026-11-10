@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "agents:update",
+      "type": "shell",
+      "command": "npm run agents:update",
+      "runOptions": { "runOn": "folderOpen" },
+      "presentation": { "reveal": "silent", "close": true, "panel": "dedicated" },
+      "problemMatcher": []
+    }
+  ]
+}

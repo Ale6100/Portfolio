@@ -16,7 +16,7 @@ type tec = {
 const tecnologias: tec[] = [
   {
     title: "HTML",
-    img: "https://img.icons8.com/color/100/null/html-5--v1.png",
+    img: "/img/logo/html.svg",
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     categoria: "Lenguajes"
   },
@@ -28,62 +28,62 @@ const tecnologias: tec[] = [
   },
   {
     title: "Tailwind CSS",
-    img: "https://img.icons8.com/color/100/null/tailwindcss.png",
+    img: "/img/logo/tailwindcss.svg",
     link: "https://tailwindcss.com/",
     categoria: "Frontend"
   },
   {
     title: "JavaScript",
-    img: "https://img.icons8.com/color/100/null/javascript--v1.png",
+    img: "/img/logo/javascript.svg",
     link: "https://developer.mozilla.org/en-US/docs/Glossary/ECMAScript",
     categoria: "Lenguajes"
   },
   {
     title: "TypeScript",
-    img: "https://img.icons8.com/color/100/null/typescript.png",
+    img: "/img/logo/typescript.svg",
     link: "https://www.typescriptlang.org/",
     categoria: "Lenguajes"
   },
   {
     title: "SQL Server",
-    img: "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg",
+    img: "/img/logo/sqlserver.svg",
     link: "https://www.microsoft.com/en-us/sql-server",
     categoria: "Bases de datos"
   },
   {
     title: 'MySQL',
-    img: "https://img.icons8.com/color/100/null/mysql.png",
+    img: "/img/logo/mysql.svg",
     link: "https://www.mysql.com/",
     categoria: "Bases de datos"
   },
   {
     title: "ExpressJS",
-    img: "https://assets.website-files.com/61ca3f775a79ec5f87fcf937/6202fcdee5ee8636a145a41b_1234.png",
+    img: "/img/logo/express.svg",
     link: "https://expressjs.com/",
     categoria: "Backend",
     invertirEnOscuro: true
   },
   {
     title: "ReactJS",
-    img: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/100/null/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png",
+    img: "/img/logo/react.svg",
     link: "https://reactjs.org/",
     categoria: "Frontend"
   },
   {
     title: "NodeJS",
-    img: "https://img.icons8.com/color/100/null/nodejs.png",
+    img: "/img/logo/nodejs.svg",
     link: "https://nodejs.org/",
     categoria: "Backend"
   },
   {
     title: "Vite",
-    img: "https://vitejs.dev/logo.svg",
+    img: "/img/logo/vite.svg",
     link: "https://vitejs.dev/",
     categoria: "Herramientas"
   },
   {
     title: "NestJS",
-    img: "https://img.icons8.com/color/100/null/nestjs.png",
+    img: "/img/logo/nestjs.svg",
     link: "https://nestjs.com/",
     categoria: "Backend"
   },
@@ -101,32 +101,32 @@ const tecnologias: tec[] = [
   },
   {
     title: "PHP",
-    img: "https://img.icons8.com/color/100/null/php.png",
+    img: "/img/logo/php.svg",
     link: "https://www.php.net/",
     categoria: "Lenguajes"
   },
   {
     title: "Git",
-    img: "https://img.icons8.com/color/100/null/git.png",
+    img: "/img/logo/git.svg",
     link: "https://git-scm.com/",
     categoria: "Herramientas"
   },
   {
     title: "GitHub",
-    img: "https://img.icons8.com/ios-glyphs/100/undefined/github.png",
+    img: "/img/logo/github.svg",
     link: "https://github.com/",
     categoria: "Herramientas",
     invertirEnOscuro: true
   },
   {
     title: "GitLab",
-    img: "https://img.icons8.com/color/100/null/gitlab.png",
+    img: "/img/logo/gitlab.svg",
     link: "https://about.gitlab.com/",
     categoria: "Herramientas"
   },
   {
     title: "Docker",
-    img: "https://img.icons8.com/color/100/null/docker.png",
+    img: "/img/logo/docker.svg",
     link: "https://docs.docker.com/",
     categoria: "Herramientas"
   },
@@ -144,16 +144,22 @@ const tecnologias: tec[] = [
   },
   {
     title: "HumHub",
-    img: "https://www.humhub.com/wp-content/uploads/2023/03/HumHub_Logo.png",
+    img: "/img/logo/humhub.svg",
     link: "https://www.humhub.com",
     categoria: "Backend"
   },
   {
     title: "Next.js",
-    img: "https://img.icons8.com/color/100/null/nextjs.png",
+    img: "/img/logo/nextjs.svg",
     link: "https://nextjs.org/",
     categoria: "Frontend",
     invertirEnOscuro: true
+  },
+  {
+    title: "Vue.js",
+    img: "/img/logo/vue.svg",
+    link: "https://vuejs.org/",
+    categoria: "Frontend"
   }
 ]
 
