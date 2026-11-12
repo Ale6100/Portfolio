@@ -33,11 +33,11 @@ Usa **Vitest** con **Testing Library** sobre `jsdom` para tests unitarios y de i
 | `app/` | Layout raíz (fuentes, tema, metadata) y la página única. |
 | `components/<sección>/` | Un componente por sección de la página, y `common/` para los compartidos entre secciones. |
 | `content/` | Los datos que muestra la página (experiencia, educación, tecnologías, skills, redes). **Para actualizar el contenido del portfolio se editan estos archivos**, no los componentes. |
-| `lib/` | Utilidades y el envío del formulario de contacto. |
+| `lib/` | Utilidades, proyección óptica del hero y el envío del formulario de contacto. |
 | `public/` | Imágenes y PDFs (CV y certificados). |
 
 ## Decisiones de diseño
 
 - **Dirección visual**: editorial y minimalista. Una columna, la tipografía como protagonista (Bricolage Grotesque en títulos, Geist en texto corrido y Geist Mono), paleta neutra con un único color de acento (`--brand` en `app/globals.css`). Los colores se definen como tokens en `:root` y `.dark`; los componentes usan esos tokens y no colores fijos, para que ambos temas funcionen.
-- **Animaciones**: se animan solo los elementos que comunican un cambio o estado (como la rotación de skills en el hero y el estado de envío del formulario), respetando la preferencia de reducir movimiento.
+- **Animaciones**: se animan los elementos que comunican un cambio o estado (como la rotación de skills en el hero y el estado de envío del formulario) y la gota óptica interactiva del hero, respetando la preferencia de reducir movimiento.
 - **Formulario de contacto**: no tiene backend propio. El navegador envía los mensajes a [Web3Forms](https://web3forms.com/), que se usa para reenviarlos por mail (en el plan gratuito solo acepta envíos desde el navegador). La access key de `lib/contact.ts` es pública por diseño y se obtiene en web3forms.com con el mail que recibe los mensajes.
